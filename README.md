@@ -3,9 +3,9 @@ Ten Points Project Plan
 
 ### 1. Team
 
-999999 Peter Venkman
-999998 Ray Stantz
-999997 Egon Spengler
+xxxxxx Relja Paunovic
+605052 Sakshyam Panda
+xxxxxx Sharbel Dahlan
 
 
 ### 2. Goal
