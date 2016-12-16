@@ -3,21 +3,21 @@ Ten Points Project Plan
 
 ### 1. Team
 
-xxxxxx Relja Paunovic
+605078 Relja Paunovic
 605052 Sakshyam Panda
-xxxxxx Sharbel Dahlan
+604626 Sharbel Dahlan
 
 
 ### 2. Goal
 
-In this project, we will build a space ship powered by waste
-cooker oil. Helm is string operated.
+In this project, we build an online javascript game store with the following features
+	1. This platform serves both players and developers. 
+	2. Developers can sell their games by adding it to the platform with a price tag. 
+	3. Players can buy games from a broader range of games and play the purchased games online.
 
 
 ### 3. Plans
 
-First, we need a big fire. Finally, we enclose it in a barrell.
-We will use cockpit purchased from Commander Keen.
 
 #### 3.1. Ship schematics
 
@@ -56,3 +56,7 @@ go into the envelope.
 ### 6. Risk Analysis
 
 If joker shall awaken he will insert kryptonite in our porridge.
+
+
+### 7. Additional Features
+Provide trials before purchasing
