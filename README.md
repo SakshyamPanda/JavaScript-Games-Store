@@ -1,5 +1,3 @@
-Ten Points Project Plan
------------------------
 
 ### 1. Team
 
