@@ -27,7 +27,7 @@ SECRET_KEY = "p9=e2r0tg-s+e)tde4#4@5ectu0(@@nd*=9_r!2*$j1t=yp7y_"
 DEBUG = True
 
 # Application definition
-
+LOGIN_REDIRECT_URL = 'index'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
