@@ -10,8 +10,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
-
-@login_required
+#@login_required
 def index(request):
     if not Product.objects.filter(pk=1).exists():
         data = Product(title="Panda")

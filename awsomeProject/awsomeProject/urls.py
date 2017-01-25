@@ -21,8 +21,8 @@ from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', auth_views.login, {'template_name': 'registration/login.html'}, name='login'),
-    url(r'^logout/$', auth_views.logout, name='logout'),
-    url(r'^register/$', views.register),
+    url(r'^logout/$', auth_views.logout, {'template_name' : 'registration/logout.html'}, name='logout'),
+    url(r'^register/$', views.register, name='register'),
     url(r'^register/success/$', views.register_success),
     url(r'^$', views.index, name='index'),
     url(r'^game/([0-9a-zA-Z]+)/$', views.game, name='game'),
