@@ -1,13 +1,56 @@
 {% extends "base.html" %}
 
 {% block main %}
+<script>
+  window.addEventListener("message", receiveMessage, false);
+
+  function receiveMessage(event)
+  {
+    var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+    //if (origin !== "http://example.org:8080")
+    //  return;
+    if (event.data.messageType == "SAVE"){
+      alert(event.data.gameState['playerItems']);
+    }
+
+    if(event.data.messageType == "SCORE"){
+      var requestData = { 'user': {{ user.pk }} , 'game': {{ game.pk }} , 'score': event.data.score};
+      $.ajax({
+          type: "POST",
+          url: "saveScore/",
+          data: requestData,
+          //contentType: 'application/json',
+          success: function(data){
+              //TODO: dont reload whole page, make it like a AJAX call to refresh highscores only
+              location.reload();
+          },
+          error: function(msg){
+              alert( "There is an error with the server." );
+          }
+      });
+    }
+
+  }
+</script>
+
 <h1> {{ game.name }} </h1>
 <div class="col-sm-6">
   <iframe src="{{ game.url }}" name="game"></iframe>
 </div>
-<div class="col-sm-6">
+<div class="col-sm-6" id="highScores">
   <h1> High Scores </h1>
-
+  <table border="6">
+    <tr>
+        <th>User</th>
+        <th>Score</th>
+    </tr>
+    {% for item in scores %}
+    <tr>
+        <td>{{ item.user }}</td>
+        <td>{{ item.score }}</td>
+    </tr>
+    {% endfor %}
+  </table>
 </div>
 
 {% endblock %}

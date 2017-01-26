@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^register/success/$', views.register_success),
     url(r'^$', views.index, name='index'),
     url(r'^game/([0-9a-zA-Z]+)/$', views.game, name='game'),
+    url(r'^game/[0-9a-zA-Z]+/saveScore/$', views.saveScore, name='saveScore'),
     url(r'^addGame/([0-9a-zA-Z]+)/$', views.addGame, name='addGame'),
 ]

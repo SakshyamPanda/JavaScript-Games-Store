@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import Http404
 from .models import Product
 from .models import Game
+from .models import Scores
 from .files import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -10,6 +11,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
+import json
 #@login_required
 def index(request):
     if not Product.objects.filter(pk=1).exists():
@@ -17,12 +19,30 @@ def index(request):
         data.save()
     return render(request, "index.html", {"title" : Product.objects.values('title').filter(pk=1)[0]['title']})
 
+@login_required
 def game(request, game_name):
     try:
         game = Game.objects.get(name=game_name)
+        # TODO: What if highscores dont exist
+        scores = Scores.objects.all().filter(game=game).order_by("-score")
     except Game.DoesNotExist:
         raise Http404
-    return render(request, "game.html", {"game" : game})
+    return render(request, "game.html", {"game" : game, "scores" : scores})
+
+@login_required
+@csrf_protect
+def saveScore(request):
+    if request.method == "POST" and request.is_ajax():
+        root = dict(request.POST.iterlists())
+        user = User.objects.get(pk = root['user'][0])
+        game = Game.objects.get(pk = root['game'][0])
+        score = root['score'][0]
+        if not Scores.objects.filter(user=user, game=game, score=score).exists():
+            data = Scores(user=user, game=game, score=score)
+            data.save()
+        return HttpResponse(root)
+    else:
+        HttpResponse("Not authorized.")
 
 @csrf_protect
 def register(request):
