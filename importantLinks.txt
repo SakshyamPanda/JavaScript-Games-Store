@@ -6,3 +6,6 @@ https://dry-george-eit.herokuapp.com/
 
 How I solved problem with AJAX and CSRF
 http://stackoverflow.com/questions/6506897/csrf-token-missing-or-incorrect-while-post-parameter-via-ajax-in-django
+
+For Images, who is not lazy, do this pls :D. (dont forget to add stuff to requirement.txt for heroku)
+http://cloudinary.com/documentation/django_integration

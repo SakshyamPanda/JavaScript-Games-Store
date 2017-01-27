@@ -17,10 +17,7 @@ import json
 from django.http import JsonResponse
 #@login_required
 def index(request):
-    if not Product.objects.filter(pk=1).exists():
-        data = Product(title="Panda")
-        data.save()
-    return render(request, "index.html", {"title" : Product.objects.values('title').filter(pk=1)[0]['title']})
+    return render(request, "index.html", {})
 
 @login_required
 def game(request, game_name):
