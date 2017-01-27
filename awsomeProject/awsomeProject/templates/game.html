@@ -11,8 +11,39 @@
     //  return;
     if (event.data.messageType == "SAVE"){
       alert(event.data.gameState['playerItems']);
+      var requestData = { 'user': {{ user.pk }} , 'game': {{ game.pk }} , 'score': event.data.gameState['score'], 'items': event.data.gameState['playerItems']};
+      $.ajax({
+          type: "POST",
+          url: "saveGame/",
+          data: requestData,
+          //contentType: 'application/json',
+          success: function(data){
+              alert('Game Saved!');
+          },
+          error: function(msg){
+              alert( "There is an error with the server." );
+          }
+      });
     }
+    if (event.data.messageType == "LOAD_REQUEST"){
+      var requestData = { 'user': {{ user.pk }} , 'game': {{ game.pk }}};
+      $.ajax({
+          type: "POST",
+          url: "loadGame/",
+          data: requestData,
+          success: function(data){
+              //TODO: send LOAD to game
 
+              var message = data;
+              alert(message.gameState.playerItems);
+              var iframe = document.getElementById("game").contentWindow;
+              iframe.postMessage(message, "{{ game.url }}");
+          },
+          error: function(msg){
+              alert( "There is an error with the server." );
+          }
+      });
+    }
     if(event.data.messageType == "SCORE"){
       var requestData = { 'user': {{ user.pk }} , 'game': {{ game.pk }} , 'score': event.data.score};
       $.ajax({
@@ -35,7 +66,7 @@
 
 <h1> {{ game.name }} </h1>
 <div class="col-sm-6">
-  <iframe src="{{ game.url }}" name="game"></iframe>
+  <iframe src="{{ game.url }}" name="game" id="game"></iframe>
 </div>
 <div class="col-sm-6" id="highScores">
   <h1> High Scores </h1>
