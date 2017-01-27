@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.http import Http404
 from .models import Game
 from .models import Scores
+from .models import Gameplay
+from .models import PlayerItem
 from .files import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -11,10 +13,15 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 import json
+from django.http import JsonResponse
 #@login_required
 def index(request):
     return render(request, "index.html", {})
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 74e8eaecd712f1a1a48829663194f893b60b1fa6
 @login_required
 def game(request, game_name):
     try:
@@ -38,7 +45,54 @@ def saveScore(request):
             data.save()
         return HttpResponse(root)
     else:
-        HttpResponse("Not authorized.")
+        return HttpResponse("Not authorized.")
+
+@login_required
+@csrf_protect
+def saveGame(request):
+    if request.method == "POST" and request.is_ajax():
+        root = dict(request.POST.iterlists())
+
+        user = User.objects.get(pk = root['user'][0])
+        game = Game.objects.get(pk = root['game'][0])
+        score = root['score'][0]
+        items = root['items[]']
+        if Gameplay.objects.filter(user=user, game=game).exists():
+            Gameplay.objects.filter(user=user, game=game).update(score=score)
+        else:
+            data = Gameplay(user=user, game=game, score=score)
+            data.save()
+
+        gameplay = Gameplay.objects.get(user=user, game=game)
+        # Delete previous items from same Gameplay
+        PlayerItem.objects.filter(gameplay=gameplay).delete()
+        for item in items:
+            data = PlayerItem(gameplay=gameplay, itemName = item)
+            data.save()
+        return HttpResponse(root)
+    else:
+        return HttpResponse("Not authorized.")
+
+@login_required
+@csrf_protect
+def loadGame(request):
+    if request.method == "POST" and request.is_ajax():
+        root = dict(request.POST.iterlists())
+
+        user = User.objects.get(pk = root['user'][0])
+        game = Game.objects.get(pk = root['game'][0])
+
+        if Gameplay.objects.filter(user=user, game=game).exists():
+            gameplay = Gameplay.objects.get(user=user, game=game)
+            response = {'messageType' : 'LOAD', 'gameState' : {'playerItems' : [], 'score' : gameplay.score}}
+            # Same as PlayerItem.objects.all().filter(gameplay=gameplay)
+            for item in PlayerItem.objects.filter(gameplay=gameplay):
+                response['gameState']['playerItems'].append(item.itemName)
+            return JsonResponse(response)
+        else:
+            return HttpResponse("No saved games to load.")
+    else:
+        return HttpResponse("Not authorized.")
 
 @csrf_protect
 def register(request):
@@ -65,6 +119,7 @@ def register_success(request):
     return render(request,
     'registration/success.html', {}
     )
+#Incomplete, ignore
 @csrf_protect
 def login(request):
     if request.method == 'POST':
