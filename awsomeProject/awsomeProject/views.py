@@ -42,7 +42,7 @@ def saveScore(request):
             data.save()
         return HttpResponse(root)
     else:
-        HttpResponse("Not authorized.")
+        return HttpResponse("Not authorized.")
 
 @login_required
 @csrf_protect
@@ -61,12 +61,14 @@ def saveGame(request):
             data.save()
 
         gameplay = Gameplay.objects.get(user=user, game=game)
+        # Delete previous items from same Gameplay
+        PlayerItem.objects.filter(gameplay=gameplay).delete()
         for item in items:
             data = PlayerItem(gameplay=gameplay, itemName = item)
             data.save()
         return HttpResponse(root)
     else:
-        HttpResponse("Not authorized.")
+        return HttpResponse("Not authorized.")
 
 @login_required
 @csrf_protect
@@ -85,9 +87,9 @@ def loadGame(request):
                 response['gameState']['playerItems'].append(item.itemName)
             return JsonResponse(response)
         else:
-            HttpResponse("No saved games to load.")
+            return HttpResponse("No saved games to load.")
     else:
-        HttpResponse("Not authorized.")
+        return HttpResponse("Not authorized.")
 
 @csrf_protect
 def register(request):
@@ -114,6 +116,7 @@ def register_success(request):
     return render(request,
     'registration/success.html', {}
     )
+#Incomplete, ignore
 @csrf_protect
 def login(request):
     if request.method == 'POST':

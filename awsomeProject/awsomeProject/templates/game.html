@@ -10,7 +10,6 @@
     //if (origin !== "http://example.org:8080")
     //  return;
     if (event.data.messageType == "SAVE"){
-      alert(event.data.gameState['playerItems']);
       var requestData = { 'user': {{ user.pk }} , 'game': {{ game.pk }} , 'score': event.data.gameState['score'], 'items': event.data.gameState['playerItems']};
       $.ajax({
           type: "POST",
@@ -32,12 +31,14 @@
           url: "loadGame/",
           data: requestData,
           success: function(data){
-              //TODO: send LOAD to game
 
-              var message = data;
-              alert(message.gameState.playerItems);
-              var iframe = document.getElementById("game").contentWindow;
-              iframe.postMessage(message, "{{ game.url }}");
+              if ( data.messageType == "LOAD"){
+                var message = data;
+                var iframe = document.getElementById("game").contentWindow;
+                iframe.postMessage(message, "{{ game.url }}");
+              }
+              else
+                alert(data);
           },
           error: function(msg){
               alert( "There is an error with the server." );
