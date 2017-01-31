@@ -25,6 +25,7 @@ def game(request, game_name):
         game = Game.objects.get(name=game_name)
         # TODO: What if highscores dont exist
         scores = Scores.objects.all().filter(game=game).order_by("-score")
+        #if Transaction.objects.filter(game=game, user=)
     except Game.DoesNotExist:
         raise Http404
     return render(request, "game.html", {"game" : game, "scores" : scores})
@@ -34,7 +35,7 @@ def game(request, game_name):
 def saveScore(request):
     if request.method == "POST" and request.is_ajax():
         root = dict(request.POST.iterlists())
-        user = User.objects.get(pk = root['user'][0])
+        user = request.user
         game = Game.objects.get(pk = root['game'][0])
         score = root['score'][0]
         if not Scores.objects.filter(user=user, game=game, score=score).exists():
@@ -50,7 +51,7 @@ def saveGame(request):
     if request.method == "POST" and request.is_ajax():
         root = dict(request.POST.iterlists())
 
-        user = User.objects.get(pk = root['user'][0])
+        user = request.user
         game = Game.objects.get(pk = root['game'][0])
         score = root['score'][0]
         if 'items[]' in root:
@@ -80,7 +81,7 @@ def loadGame(request):
     if request.method == "POST" and request.is_ajax():
         root = dict(request.POST.iterlists())
 
-        user = User.objects.get(pk = root['user'][0])
+        user = request.user
         game = Game.objects.get(pk = root['game'][0])
 
         if Gameplay.objects.filter(user=user, game=game).exists():

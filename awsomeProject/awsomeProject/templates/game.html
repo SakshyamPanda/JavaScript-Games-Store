@@ -10,7 +10,7 @@
     //if (origin !== "http://example.org:8080")
     //  return;
     if (event.data.messageType == "SAVE"){
-      var requestData = { 'user': {{ user.pk }} , 'game': {{ game.pk }} , 'score': event.data.gameState['score'], 'items': event.data.gameState['playerItems']};
+      var requestData = { 'game': {{ game.pk }} , 'score': event.data.gameState['score'], 'items': event.data.gameState['playerItems']};
       $.ajax({
           type: "POST",
           url: "saveGame/",
@@ -25,7 +25,7 @@
       });
     }
     if (event.data.messageType == "LOAD_REQUEST"){
-      var requestData = { 'user': {{ user.pk }} , 'game': {{ game.pk }}};
+      var requestData = { 'game': {{ game.pk }}};
       $.ajax({
           type: "POST",
           url: "loadGame/",
@@ -46,7 +46,7 @@
       });
     }
     if(event.data.messageType == "SCORE"){
-      var requestData = { 'user': {{ user.pk }} , 'game': {{ game.pk }} , 'score': event.data.score};
+      var requestData ={ 'game': {{ game.pk }} , 'score': event.data.score};
       $.ajax({
           type: "POST",
           url: "saveScore/",
@@ -72,6 +72,7 @@
 </div>
 <div class="col-sm-6" id="highScores">
   <h1> High Scores </h1>
+  <!-- Please style this table in CSS -->
   <table border="6">
     <tr>
         <th>User</th>
