@@ -17,11 +17,7 @@ from django.http import JsonResponse
 #@login_required
 def index(request):
     return render(request, "index.html", {})
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 74e8eaecd712f1a1a48829663194f893b60b1fa6
 @login_required
 def game(request, game_name):
     try:
