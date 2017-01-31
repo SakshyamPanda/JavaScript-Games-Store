@@ -40,7 +40,7 @@ def saveScore(request):
         if not Scores.objects.filter(user=user, game=game, score=score).exists():
             data = Scores(user=user, game=game, score=score)
             data.save()
-        return HttpResponse(root)
+        return HttpResponse("Score Saved")
     else:
         return HttpResponse("Not authorized.")
 
@@ -70,7 +70,7 @@ def saveGame(request):
         for item in items:
             data = PlayerItem(gameplay=gameplay, itemName = item)
             data.save()
-        return HttpResponse(root)
+        return HttpResponse("Game Saved!")
     else:
         return HttpResponse("Not authorized.")
 

@@ -17,7 +17,7 @@
           data: requestData,
           //contentType: 'application/json',
           success: function(data){
-              alert('Game Saved!');
+              alert(data);
           },
           error: function(msg){
               alert( "There is an error with the server." );
@@ -54,7 +54,8 @@
           //contentType: 'application/json',
           success: function(data){
               //TODO: dont reload whole page, make it like a AJAX call to refresh highscores only
-              location.reload();
+                alert(data);
+                location.reload();
           },
           error: function(msg){
               alert( "There is an error with the server." );
