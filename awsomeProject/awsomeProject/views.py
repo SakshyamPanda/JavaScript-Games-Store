@@ -5,6 +5,7 @@ from .models import Game
 from .models import Scores
 from .models import Gameplay
 from .models import PlayerItem
+from .models import UserProfile
 from .files import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -52,7 +53,11 @@ def saveGame(request):
         user = User.objects.get(pk = root['user'][0])
         game = Game.objects.get(pk = root['game'][0])
         score = root['score'][0]
-        items = root['items[]']
+        if 'items[]' in root:
+            items = root['items[]']
+        else:
+            items = []
+
         if Gameplay.objects.filter(user=user, game=game).exists():
             Gameplay.objects.filter(user=user, game=game).update(score=score)
         else:
@@ -101,6 +106,8 @@ def register(request):
             password=form.cleaned_data['password1'],
             email=form.cleaned_data['email']
             )
+            userProfile = UserProfile(user=user, isDeveloper=form.cleaned_data['isDeveloper'])
+            userProfile.save()
             return HttpResponseRedirect('/register/success/')
     else:
         form = RegistrationForm()

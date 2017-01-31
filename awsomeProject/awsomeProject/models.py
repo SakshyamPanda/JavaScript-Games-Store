@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     #TODO add profilePicture attribute
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     isDeveloper = models.BooleanField()
 
 class Game(models.Model):
@@ -14,18 +14,17 @@ class Game(models.Model):
     description = models.TextField(default='')
 
 class DeveloperGame(models.Model):
-    user = models.ForeignKey('UserProfile', on_delete=models.CASCADE) #on_delete=models.CASCADE deletes the entries if the entry in the UserProfile table gets deleed
+    user = models.ForeignKey(User, on_delete=models.CASCADE) #on_delete=models.CASCADE deletes the entries if the entry in the UserProfile table gets deleed
     game = models.ForeignKey('Game', on_delete=models.CASCADE)
 
-
 class Scores(models.Model):
-    user = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     game = models.ForeignKey('Game', on_delete=models.CASCADE)
     score = models.FloatField()
 
 class Gameplay(models.Model):
     #TODO: user and game should be unique as combination if possible
-    user = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.FloatField()
     game = models.ForeignKey('Game', on_delete=models.CASCADE)
 
@@ -34,15 +33,15 @@ class PlayerItem(models.Model):
     itemName = models.CharField(max_length=255)
 
 class Comment(models.Model):
-    user = models.ForeignKey('UserProfile', on_delete = models.CASCADE)
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
     game = models.ForeignKey('Game', on_delete = models.CASCADE)
     commentText = models.TextField()
 
 class Rating(models.Model):
-    user = models.ForeignKey('UserProfile', on_delete = models.CASCADE)
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
     game = models.ForeignKey('Game', on_delete = models.CASCADE)
     rating = models.IntegerField()
 
 class Transaction(models.Model):
-    user = models.ForeignKey('UserProfile', on_delete = models.CASCADE)
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
     game = models.ForeignKey('Game', on_delete = models.CASCADE)
