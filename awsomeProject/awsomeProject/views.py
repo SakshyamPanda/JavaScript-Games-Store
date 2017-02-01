@@ -23,7 +23,20 @@ def index(request):
 @login_required
 def myProfile(request):
     userProfile = UserProfile.objects.get(user=request.user)
-    return render(request, "myProfile.html", {"userProfile" : userProfile})
+    if request.method == 'POST' and userProfile.isDeveloper:
+
+        form = UploadGameForm(request.POST)
+        success = False
+        if form.is_valid():
+            game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'])
+            game.save()
+            form = UploadGameForm()
+            success = True
+    else:
+        form = UploadGameForm()
+        success = False
+
+    return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success   })
 
 def browseGames(request):
     games = Game.objects.all()
@@ -131,10 +144,6 @@ def register(request):
             return HttpResponseRedirect('/register/success/')
     else:
         form = RegistrationForm()
-    variables = RequestContext(request, {
-    'form': form
-    })
-
     return render(request,
     'registration/register.html', {'form' : form}
     )

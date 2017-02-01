@@ -1,6 +1,7 @@
 import re
 from django import forms
 from django.contrib.auth.models import User
+from .models import Game
 from django.utils.translation import ugettext_lazy as _
 
 class RegistrationForm(forms.Form):
@@ -12,6 +13,7 @@ class RegistrationForm(forms.Form):
     isDeveloper = forms.BooleanField(required=False, widget=forms.CheckboxInput, label=_("Developer?"))
 
     def clean_username(self):
+        # Raise error if user already exists (the need to be unique)
         try:
             user = User.objects.get(username__iexact=self.cleaned_data['username'])
         except User.DoesNotExist:
@@ -23,3 +25,16 @@ class RegistrationForm(forms.Form):
             if self.cleaned_data['password1'] != self.cleaned_data['password2']:
                 raise forms.ValidationError(_("The two password fields did not match."))
         return self.cleaned_data
+
+class UploadGameForm(forms.Form):
+    name = forms.RegexField(regex=r'^\w+$', widget=forms.TextInput(attrs=dict(required=True, max_length=30)), label=_("Name"), error_messages={ 'invalid': _("This value must contain only letters, numbers and underscores.") })
+    url = forms.URLField(label='Url to game', required=True, widget=forms.TextInput(attrs=dict(required=True, max_length=30)))
+    price = forms.FloatField(required=True, min_value=0)
+    description = forms.CharField()
+
+    def clean_name(self):
+        try:
+            game = Game.objects .get(name=self.cleaned_data['name'])
+        except Game.DoesNotExist:
+            return self.cleaned_data['name']
+        raise forms.ValidationError(_("Game name already exists, please chose another one."))
