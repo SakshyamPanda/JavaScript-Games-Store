@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^register/$', views.register, name='register'),
     url(r'^register/success/$', views.register_success),
     url(r'^$', views.index, name='index'),
+    #TODO: Change regex to W (word metacharacter)
     url(r'^game/([0-9a-zA-Z]+)/$', views.game, name='game'),
     url(r'^game/[0-9a-zA-Z]+/saveScore/$', views.saveScore, name='saveScore'),
     url(r'^game/[0-9a-zA-Z]+/saveGame/$', views.saveGame, name='saveGame'),
