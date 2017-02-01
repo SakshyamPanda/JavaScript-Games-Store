@@ -20,8 +20,14 @@ from django.http import JsonResponse
 def index(request):
     return render(request, "index.html", {})
 
+#TODO: Implement
+def browseGames(request):
+    return render(request, "browseGames.html", {})
+
+#TODO: implement
 @login_required
 def buyGame(request, game_name):
+
     return render(request, "buyGame.html", {})
 
 @login_required
