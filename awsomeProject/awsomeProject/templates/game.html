@@ -68,7 +68,11 @@
 
 <h1> {{ game.name }} </h1>
 <div class="col-sm-6">
+  {% if gameBought %}
   <iframe src="{{ game.url }}" name="game" id="game"></iframe>
+  {% else %}
+  <p> You dont own the GAME!!!!!! Buy it <a href="{% url 'buyGame' game.name %}"> here </a> </p>
+  {% endif %}
 </div>
 <div class="col-sm-6" id="highScores">
   <h1> High Scores </h1>

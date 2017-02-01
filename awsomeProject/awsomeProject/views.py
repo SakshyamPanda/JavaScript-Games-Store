@@ -6,6 +6,7 @@ from .models import Scores
 from .models import Gameplay
 from .models import PlayerItem
 from .models import UserProfile
+from .models import Transaction
 from .files import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -20,15 +21,22 @@ def index(request):
     return render(request, "index.html", {})
 
 @login_required
+def buyGame(request, game_name):
+    return render(request, "buyGame.html", {})
+
+@login_required
 def game(request, game_name):
     try:
         game = Game.objects.get(name=game_name)
         # TODO: What if highscores dont exist
         scores = Scores.objects.all().filter(game=game).order_by("-score")
-        #if Transaction.objects.filter(game=game, user=)
+        if Transaction.objects.filter(game=game, user=request.user).exists():
+            gameBought = True
+        else:
+            gameBought = False
     except Game.DoesNotExist:
         raise Http404
-    return render(request, "game.html", {"game" : game, "scores" : scores})
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought})
 
 @login_required
 @csrf_protect
