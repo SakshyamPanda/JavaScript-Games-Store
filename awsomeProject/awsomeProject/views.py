@@ -21,7 +21,31 @@ def index(request):
     return render(request, "index.html", {})
 
 @login_required
+def myProfile(request):
+    userProfile = UserProfile.objects.get(user=request.user)
+    if request.method == 'POST' and userProfile.isDeveloper:
+
+        form = UploadGameForm(request.POST)
+        success = False
+        if form.is_valid():
+            game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'])
+            game.save()
+            form = UploadGameForm()
+            success = True
+    else:
+        form = UploadGameForm()
+        success = False
+
+    return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success   })
+
+def browseGames(request):
+    games = Game.objects.all()
+    return render(request, "browseGames.html", {"games" : games })
+
+#TODO: implement
+@login_required
 def buyGame(request, game_name):
+
     return render(request, "buyGame.html", {})
 
 @login_required
@@ -120,10 +144,6 @@ def register(request):
             return HttpResponseRedirect('/register/success/')
     else:
         form = RegistrationForm()
-    variables = RequestContext(request, {
-    'form': form
-    })
-
     return render(request,
     'registration/register.html', {'form' : form}
     )
@@ -131,14 +151,3 @@ def register_success(request):
     return render(request,
     'registration/success.html', {}
     )
-#Incomplete, ignore
-@csrf_protect
-def login(request):
-    if request.method == 'POST':
-        pass
-
-#FOR TESTING PURPOSES
-def addGame(request, game_name):
-    game = Game(name=game_name, url="http://webcourse.cs.hut.fi/example_game.html")
-    game.save()
-    return render(request, "index.html", {"title" : Product.objects.values('title').filter(pk=1)[0]['title']})
