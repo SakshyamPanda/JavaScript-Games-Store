@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+{% if userProfile.isDeveloper %}
+
+Hello developer {{user.username}}
+
+{% else %}
+
+Hi regular user {{user.username}}
+
+{% endif %}
+
+{% endblock %}
