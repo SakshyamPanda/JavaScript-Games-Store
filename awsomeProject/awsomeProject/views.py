@@ -137,23 +137,6 @@ def login(request):
     if request.method == 'POST':
         pass
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #FOR TESTING PURPOSES
 def addGame(request, game_name):
     game = Game(name=game_name, url="http://webcourse.cs.hut.fi/example_game.html")
