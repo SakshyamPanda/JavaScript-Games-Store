@@ -29,7 +29,11 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href={% url "browseGames" %}>Browse Games <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Link</a></li>
+          {% if user.is_authenticated %}
+          <li><a href={% url "myProfile" %}>My Profile </a></li>
+          {% else %}
+          <!-- maybe we want sometinh else here, if not, delete else clause -->
+          {% endif %}
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
             <ul class="dropdown-menu">

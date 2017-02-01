@@ -20,9 +20,14 @@ from django.http import JsonResponse
 def index(request):
     return render(request, "index.html", {})
 
-#TODO: Implement
+@login_required
+def myProfile(request):
+    userProfile = UserProfile.objects.get(user=request.user)
+    return render(request, "myProfile.html", {"userProfile" : userProfile})
+
 def browseGames(request):
-    return render(request, "browseGames.html", {})
+    games = Game.objects.all()
+    return render(request, "browseGames.html", {"games" : games })
 
 #TODO: implement
 @login_required
@@ -137,31 +142,3 @@ def register_success(request):
     return render(request,
     'registration/success.html', {}
     )
-#Incomplete, ignore
-@csrf_protect
-def login(request):
-    if request.method == 'POST':
-        pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#FOR TESTING PURPOSES
-def addGame(request, game_name):
-    game = Game(name=game_name, url="http://webcourse.cs.hut.fi/example_game.html")
-    game.save()
-    return render(request, "index.html", {"title" : Product.objects.values('title').filter(pk=1)[0]['title']})
