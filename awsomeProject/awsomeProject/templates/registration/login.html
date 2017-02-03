@@ -3,6 +3,7 @@
 {% block main %}
   <h2>Login</h2>
   <form method="post">
+    <!-- Cross site request forgery prevention -->
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Login</button>
