@@ -97,16 +97,19 @@ def buyGameResult(request, game_name): # QUESTION how  should we connect this to
         # checksum here is a security checksum calculated using your secret key
         return render(request, "buyGameResult.html", {})
 
+#Main view where user plays game
 @login_required
 def game(request, game_name):
     try:
         game = Game.objects.get(name=game_name)
         # TODO: What if highscores dont exist
         scores = Scores.objects.all().filter(game=game).order_by("-score")
+        #check if user has bought the game a.k.a. has access to it
         if Transaction.objects.filter(game=game, user=request.user).exists():
             gameBought = True
         else:
             gameBought = False
+    # In case game does not exist, display 404
     except Game.DoesNotExist:
         raise Http404
     return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought})
@@ -114,11 +117,15 @@ def game(request, game_name):
 @login_required
 @csrf_protect
 def saveScore(request):
+    # Only available as ajax post call
     if request.method == "POST" and request.is_ajax():
+        #create python dictionary from data sent through post request
         root = dict(request.POST.iterlists())
         user = request.user
+        #extract data from root
         game = Game.objects.get(pk = root['game'][0])
         score = root['score'][0]
+        # Do not save dupicates of Scores (same score from same user for same game)
         if not Scores.objects.filter(user=user, game=game, score=score).exists():
             data = Scores(user=user, game=game, score=score)
             data.save()
@@ -130,22 +137,29 @@ def saveScore(request):
 @csrf_protect
 def saveGame(request):
     if request.method == "POST" and request.is_ajax():
+        #create python dictionary from data sent through post request
         root = dict(request.POST.iterlists())
 
         user = request.user
+        #extract data from root
         game = Game.objects.get(pk = root['game'][0])
         score = root['score'][0]
+        #If user has some items. If 'items' array is sent through POST
         if 'items[]' in root:
             items = root['items[]']
         else:
             items = []
-
+        # If USER already has saved games for current game, just update it
+        # Save space in the database with this
         if Gameplay.objects.filter(user=user, game=game).exists():
             Gameplay.objects.filter(user=user, game=game).update(score=score)
+        #If not, create new save game
         else:
             data = Gameplay(user=user, game=game, score=score)
             data.save()
 
+        # no need to check if gameplay exists, we created it in previous step
+        # if it hasnt existed before
         gameplay = Gameplay.objects.get(user=user, game=game)
         # Delete previous items from same Gameplay
         PlayerItem.objects.filter(gameplay=gameplay).delete()
@@ -160,14 +174,17 @@ def saveGame(request):
 @csrf_protect
 def loadGame(request):
     if request.method == "POST" and request.is_ajax():
+        #create python dictionary from data sent through post request
         root = dict(request.POST.iterlists())
-
         user = request.user
         game = Game.objects.get(pk = root['game'][0])
 
+        # If previously saved games exists, load them
         if Gameplay.objects.filter(user=user, game=game).exists():
             gameplay = Gameplay.objects.get(user=user, game=game)
+            # Prepare response to send to game
             response = {'messageType' : 'LOAD', 'gameState' : {'playerItems' : [], 'score' : gameplay.score}}
+            # Fill items array one item a time
             # Same as PlayerItem.objects.all().filter(gameplay=gameplay)
             for item in PlayerItem.objects.filter(gameplay=gameplay):
                 response['gameState']['playerItems'].append(item.itemName)
@@ -180,16 +197,21 @@ def loadGame(request):
 @csrf_protect
 def register(request):
     if request.method == 'POST':
-
+        # Render the form from data sent through POST
         form = RegistrationForm(request.POST)
+        # If the form is valid, validity of a form is specified in files.py
+        # where the form is defined
         if form.is_valid():
+            #create user
             user = User.objects.create_user(
             username=form.cleaned_data['username'],
             password=form.cleaned_data['password1'],
             email=form.cleaned_data['email']
             )
+            # Create our custom user profile
             userProfile = UserProfile(user=user, isDeveloper=form.cleaned_data['isDeveloper'])
             userProfile.save()
+            # redirect to success page
             return HttpResponseRedirect('/register/success/')
     else:
         form = RegistrationForm()

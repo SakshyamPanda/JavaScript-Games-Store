@@ -6,16 +6,20 @@
 
   function receiveMessage(event)
   {
-    var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+    //TODO: Maybe we should make sure that event comes from the game?
+    //var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
     //if (origin !== "http://example.org:8080")
     //  return;
+
+    // Save game handler
     if (event.data.messageType == "SAVE"){
+      // Data to be sent to coresponding view to process
       var requestData = { 'game': {{ game.pk }} , 'score': event.data.gameState['score'], 'items': event.data.gameState['playerItems']};
+      // Ajax call to view saveGame
       $.ajax({
           type: "POST",
           url: "saveGame/",
           data: requestData,
-          //contentType: 'application/json',
           success: function(data){
               alert(data);
           },
@@ -24,16 +28,21 @@
           }
       });
     }
+    // Load game
     if (event.data.messageType == "LOAD_REQUEST"){
       var requestData = { 'game': {{ game.pk }}};
+      // Ajax call that sends load game data to loadGame view,
+      // Load game view process the data and sends it back
+      // If it is successfull, message with load data is sent to the game
       $.ajax({
           type: "POST",
           url: "loadGame/",
           data: requestData,
           success: function(data){
-
+              // Just checking that correct data is sent
               if ( data.messageType == "LOAD"){
                 var message = data;
+                // Message containing load game data is sent to the game
                 var iframe = document.getElementById("game").contentWindow;
                 iframe.postMessage(message, "{{ game.url }}");
               }
@@ -45,16 +54,17 @@
           }
       });
     }
+    // Used for saving the score of the game, usually after the game has ended
     if(event.data.messageType == "SCORE"){
       var requestData ={ 'game': {{ game.pk }} , 'score': event.data.score};
       $.ajax({
           type: "POST",
           url: "saveScore/",
           data: requestData,
-          //contentType: 'application/json',
           success: function(data){
               //TODO: dont reload whole page, make it like a AJAX call to refresh highscores only
                 alert(data);
+                // Refresh page to see newly updated highscores
                 location.reload();
           },
           error: function(msg){
@@ -69,9 +79,9 @@
 <h1> {{ game.name }} </h1>
 <div class="col-sm-6">
   {% if gameBought %}
-  <iframe src="{{ game.url }}" name="game" id="game"></iframe>
+    <iframe src="{{ game.url }}" name="game" id="game"></iframe>
   {% else %}
-  <p> You dont own the GAME!!!!!! Buy it <a href="{% url 'buyGame' game.name %}"> here </a> </p>
+    <p> You dont own the GAME!!!!!! Buy it <a href="{% url 'buyGame' game.name %}"> here </a> </p>
   {% endif %}
 </div>
 <div class="col-sm-6" id="highScores">
