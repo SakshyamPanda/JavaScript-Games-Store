@@ -7,6 +7,7 @@ from .models import Gameplay
 from .models import PlayerItem
 from .models import UserProfile
 from .models import Transaction
+from .models import Comment
 from .files import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -20,7 +21,7 @@ from django.http import JsonResponse
 def index(request):
     return render(request, "index.html", {})
 
-@login_required
+@login_required(login_url='/login/')
 def myProfile(request):
     userProfile = UserProfile.objects.get(user=request.user)
     if request.method == 'POST' and userProfile.isDeveloper:
@@ -43,13 +44,13 @@ def browseGames(request):
     return render(request, "browseGames.html", {"games" : games })
 
 #TODO: implement
-@login_required
+@login_required(login_url='/login/')
 def buyGame(request, game_name):
 
     return render(request, "buyGame.html", {})
 
 #Main view where user plays game
-@login_required
+@login_required(login_url='/login/')
 def game(request, game_name):
     try:
         game = Game.objects.get(name=game_name)
@@ -60,12 +61,13 @@ def game(request, game_name):
             gameBought = True
         else:
             gameBought = False
+        comments = Comment.objects.all().filter(game=game).order_by("-created")
     # In case game does not exist, display 404
     except Game.DoesNotExist:
         raise Http404
-    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought})
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "comments": comments})
 
-@login_required
+@login_required(login_url='/login/')
 @csrf_protect
 def saveScore(request):
     # Only available as ajax post call
@@ -84,7 +86,7 @@ def saveScore(request):
     else:
         return HttpResponse("Not authorized.")
 
-@login_required
+@login_required(login_url='/login/')
 @csrf_protect
 def saveGame(request):
     if request.method == "POST" and request.is_ajax():
@@ -121,7 +123,7 @@ def saveGame(request):
     else:
         return HttpResponse("Not authorized.")
 
-@login_required
+@login_required(login_url='/login/')
 @csrf_protect
 def loadGame(request):
     if request.method == "POST" and request.is_ajax():
@@ -142,6 +144,23 @@ def loadGame(request):
             return JsonResponse(response)
         else:
             return HttpResponse("No saved games to load.")
+    else:
+        return HttpResponse("Not authorized.")
+
+@login_required(login_url='/login/')
+@csrf_protect
+def addComment(request,game_name):
+    if request.method == "POST" and request.is_ajax():
+        #create python dictionary from data sent through post request
+        root = dict(request.POST.iterlists())
+        if (str(root["comment"][0]) != ""):
+            comment = Comment(user=request.user,
+                                game=Game.objects.get(name=game_name),
+                                commentText=str(root["comment"][0]))
+            comment.save()
+            return HttpResponse("Success")
+        else:
+            return HttpResponse("Your comment is empty")
     else:
         return HttpResponse("Not authorized.")
 

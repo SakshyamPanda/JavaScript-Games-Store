@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.timezone import now
 #from django.contrib.auth.models import AbstractUser
 
 class UserProfile(models.Model):
@@ -36,6 +37,7 @@ class Comment(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     game = models.ForeignKey('Game', on_delete = models.CASCADE)
     commentText = models.TextField()
+    created = models.DateTimeField(default=now, editable=False)
 
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE)

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block main %}
+<!-- Move this to a STATIC folder -->
 <script>
   window.addEventListener("message", receiveMessage, false);
 
@@ -74,31 +75,82 @@
     }
 
   }
+  function addComment(){
+    $.ajax({
+        type: "POST",
+        url: "addComment/",
+        data: {"comment" : $("#comment").val()},
+        success: function(data){
+            //TODO: dont reload whole page, make it like a AJAX call to refresh highscores only
+              alert(data);
+              // Refresh page to see newly updated highscores
+              location.reload();
+        },
+        error: function(msg){
+            alert( "There is an error with the server." );
+        }
+    });
+  }
 </script>
-
-<h1> {{ game.name }} </h1>
-<div class="col-sm-6">
-  {% if gameBought %}
-    <iframe src="{{ game.url }}" name="game" id="game"></iframe>
-  {% else %}
-    <p> You dont own the GAME!!!!!! Buy it <a href="{% url 'buyGame' game.name %}"> here </a> </p>
-  {% endif %}
+<div class="row">
+  <h1> {{ game.name }} </h1>
+  <div class="col-sm-6">
+    {% if gameBought %}
+      <iframe src="{{ game.url }}" name="game" id="game"></iframe>
+    {% else %}
+      <p> You dont own the GAME!!!!!! Buy it <a href="{% url 'buyGame' game.name %}"> here </a> </p>
+    {% endif %}
+  </div>
+  <div class="col-sm-6" id="highScores">
+    <h1> High Scores </h1>
+    <!-- Please style this table in CSS -->
+    <table border="6">
+      <tr>
+          <th>User</th>
+          <th>Score</th>
+      </tr>
+      {% for item in scores %}
+      <tr>
+          <td>{{ item.user }}</td>
+          <td>{{ item.score }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
 </div>
-<div class="col-sm-6" id="highScores">
-  <h1> High Scores </h1>
-  <!-- Please style this table in CSS -->
-  <table border="6">
-    <tr>
-        <th>User</th>
-        <th>Score</th>
-    </tr>
-    {% for item in scores %}
-    <tr>
-        <td>{{ item.user }}</td>
-        <td>{{ item.score }}</td>
-    </tr>
-    {% endfor %}
-  </table>
+<!-- Add comment for user, PANDA please style this -->
+<div class="row">
+  <form action="javascript:;" onsubmit="addComment()">
+    <div class="form-group">
+      <div class="col-sm-12">
+      <label for="comment">Comment:</label>
+      <textarea class="form-control" rows="3" id="comment"></textarea>
+      </div>
+      <div class = "col-sm-4">
+        <input type="submit" value="Submit Comment" />
+      </div>
+    </div>
+  </form>
 </div>
+<!-- TODO: Represent all comments for this game in following way -->
+{% for comment in comments %}
+<div class="row">
+  <div class="col-sm-1">
+    <div class="thumbnail">
+    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+    </div><!-- /thumbnail -->
+  </div><!-- /col-sm-1 -->
 
+  <div class="col-sm-11">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+      </div>
+      <div class="panel-body">
+        {{comment.commentText}}
+      </div><!-- /panel-body -->
+    </div><!-- /panel panel-default -->
+  </div><!-- /col-sm-5 -->
+</div>
+{% endfor %}
 {% endblock %}
