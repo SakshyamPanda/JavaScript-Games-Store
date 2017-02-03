@@ -6,7 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 #class PaymentForm(forms.Form):
-    '''These stuff here are not to be input by anyone. The parameters are either static (like our SID and the urls) or queried from the data (like the PID and the Amount)
+'''These stuff here are not to be input by anyone. The parameters are either static (like our SID and the urls) or queried from the data (like the PID and the Amount)
      below 4 lines are not accurate'''
     #pid = forms.RegexField(regex==r'^\w+$', widget=forms.TextInput(attrs=dict(required=True, max_length=50)), label=_("Payment ID"), error_messages={ 'invalid': _("This value must contain only letters, numbers and underscores.") })
     #sid = forms.RegexField(regex==r'^\w+$', widget=forms.TextInput(attrs=dict(required=True, max_length=50)), label=_("Seller ID"), error_messages={ 'invalid': _("This value must contain only letters, numbers and underscores.") })

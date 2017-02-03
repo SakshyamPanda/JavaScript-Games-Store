@@ -7,7 +7,7 @@
 <form action="http://payments.webcourse.niksula.hut.fi/pay/" method="POST">
 
     <!-- pid is the game's primary key -->
-    <input type="hidden" name="pid" value={{pid}}/>
+    <input type="hidden" name="pid" value={{pid}} />
     <input type="hidden" name="sid" value={{sid}} />
     <!-- the three urls can be the same and then only the "result" parameter from the HTTP GET from the payment service can be different -->
     <input type="hidden" name="success_url"
@@ -20,15 +20,17 @@
     <input type="hidden" name="checksum"
             value={{checksum}} />
 
+    <input type="hidden" name="dev"
+                    value="dev" />
+
     <label for="id_amount">Amount</label>
 
     <!-- amount is the only parameter that is shown and it is read-only -->
     <!-- TODO for the future we can query the game name and add it above the amount to showwhat the user is buying -->
-    <input type="text" id="id_amount" readonly name="amount" value={{price}} />
+    <input type="text" id="id_amount" readonly name="amount" value={{amount}} />
 
     <!-- check technicalities of each button below and how to conect them to the different responses -->
-    <input type="submit" value="Cancel"/>
-    <input type="submit" value="Accept Payment"/>
+    <input type="submit" value="Go To Payment Page"/>
 </form>
 
 {% endblock %}

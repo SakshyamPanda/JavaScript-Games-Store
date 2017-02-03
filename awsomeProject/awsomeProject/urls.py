@@ -34,4 +34,5 @@ urlpatterns = [
     url(r'^game/([0-9a-zA-Z]+)/buyGame/$', views.buyGame, name='buyGame'),
     url(r'^browseGames/$', views.browseGames, name='browseGames'),
     url(r'^myProfile/$', views.myProfile, name='myProfile'),
+    url(r'^payment/$', views.buyGameResult, name='buyGameResult'),
 ]
