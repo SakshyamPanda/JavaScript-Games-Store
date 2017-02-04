@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^game/[0-9a-zA-Z]+/saveGame/$', views.saveGame, name='saveGame'),
     url(r'^game/[0-9a-zA-Z]+/loadGame/$', views.loadGame, name='loadGame'),
     url(r'^game/([0-9a-zA-Z]+)/buyGame/$', views.buyGame, name='buyGame'),
+    url(r'^game/([0-9a-zA-Z]+)/addComment/$', views.addComment, name='addComment'),
     url(r'^browseGames/$', views.browseGames, name='browseGames'),
     url(r'^myProfile/$', views.myProfile, name='myProfile'),
 ]
