@@ -2,7 +2,7 @@
 
 {% block main %}
 
-#HERE IMPLEMENT LOGIC FOR BUYING GAME
+<p>You are about to buy the game for the following price from the external payment service:<p/>
 
 <form action="http://payments.webcourse.niksula.hut.fi/pay/" method="POST">
 
@@ -30,7 +30,7 @@
     <input type="text" id="id_amount" readonly name="amount" value={{amount}} />
 
     <!-- check technicalities of each button below and how to conect them to the different responses -->
-    <input type="submit" value="Go To Payment Page"/>
+    <input type="submit" value="Go to Payment Page"/>
 </form>
 
 {% endblock %}
