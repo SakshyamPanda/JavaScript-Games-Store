@@ -92,13 +92,14 @@
     });
   }
 </script>
+
 <div class="row">
   <h1> {{ game.name }} </h1>
   <div class="col-sm-6">
     {% if gameBought %}
       <iframe src="{{ game.url }}" name="game" id="game"></iframe>
     {% else %}
-      <p> You dont own the GAME!!!!!! Buy it <a href="{% url 'buyGame' game.name %}"> here </a> </p>
+      <p> Oh Shoot! You need to buy the game to play it. Buy it <a href="{% url 'buyGame' game.name %}"> here </a>.  </p>
     {% endif %}
   </div>
   <div class="col-sm-6" id="highScores">
@@ -117,6 +118,7 @@
       {% endfor %}
     </table>
   </div>
+
 </div>
 <!-- Add comment for user, PANDA please style this -->
 <div class="row">
