@@ -133,7 +133,7 @@
   </form>
 </div>
 <!-- TODO: Represent all comments for this game in following way -->
-{% for comment in comments %}
+{% for comment, userProfile in userComments %}
 <div class="row">
   <div class="col-sm-1">
     <div class="thumbnail">
@@ -144,7 +144,7 @@
   <div class="col-sm-11">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+        <strong>{{comment.user}}</strong> <span class="text-muted">Created on : {{comment.created}}</span>
       </div>
       <div class="panel-body">
         {{comment.commentText}}

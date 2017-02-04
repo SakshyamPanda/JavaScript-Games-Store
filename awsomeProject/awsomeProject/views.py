@@ -62,10 +62,16 @@ def game(request, game_name):
         else:
             gameBought = False
         comments = Comment.objects.all().filter(game=game).order_by("-created")
+        # userComments holds information about comments and userProfile of users who made comments
+        userComments = []
+        for comment in comments:
+            userProfile = UserProfile.objects.filter(user=comment.user).first()
+            userComments.append([comment,userProfile])
+        print(userComments)
     # In case game does not exist, display 404
     except Game.DoesNotExist:
         raise Http404
-    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "comments": comments})
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments})
 
 @login_required(login_url='/login/')
 @csrf_protect
