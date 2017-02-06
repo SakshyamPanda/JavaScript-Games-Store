@@ -9,15 +9,6 @@
 
 {% block main %}
 
-<div>
-	<img src='{% static 'images/profile_mockup.png' %}' alt='Profile Pic'>
-	<div class="col-md-12">
-		<p class="lead" style="margin-bottom:0px">{{user.username}}</p>
-		<span><a href="editProfile" style="color:#ddd;">Edit Profile</a></span>
-	</div>
-
-</div>
-
 {% if userProfile.isDeveloper %}
 
 Hello developer {{user.username}}
@@ -26,17 +17,13 @@ Hello developer {{user.username}}
 <p> Upload sucessuful </p>
 
 {% else %}
-
-<div>
-	<form method="post" action="."  enctype="multipart/form-data">
-		{% csrf_token %}
-		<table border="0">
-			{{ form.as_table }}
-		</table>
-		<input type="submit" value="Upload" />
-	</form>
-</div>
-
+<form method="post" action=".">
+        {% csrf_token %}
+        <table border="0">
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Upload" />
+</form>
 {% endif %}
 
 {% else %}

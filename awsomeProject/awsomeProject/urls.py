@@ -35,6 +35,4 @@ urlpatterns = [
     url(r'^game/([0-9a-zA-Z]+)/addComment/$', views.addComment, name='addComment'),
     url(r'^browseGames/$', views.browseGames, name='browseGames'),
     url(r'^myProfile/$', views.myProfile, name='myProfile'),
-	url(r'^test/$', views.upload, name='upload'),
-	url(r'^myProfile/editProfile/$', views.editProfile, name='editProfile'),
 ]

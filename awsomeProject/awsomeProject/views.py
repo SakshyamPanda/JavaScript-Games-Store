@@ -11,28 +11,12 @@ from .models import Comment
 from .files import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from django.views.decorators.csrf import csrf_protect, csrf_exempt
+from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 import json
 from django.http import JsonResponse
-import cloudinary, cloudinary.uploader, cloudinary.api
-#from cloudinary.uploader import upload
-#from cloudinary.utils import cloudinary_url
-#from cloudinary.api import delete_resources_by_tag, resources_by_tag
-from django import forms
-from cloudinary.forms import cl_init_js_callbacks
-#from .models import GameImage, ProfileImage
-from .files import GameImageForm, ProfileImageForm
-
-cloudinary.config( 
-  cloud_name = "sakshyam", 
-  api_key = "623965587187774", 
-  api_secret = "Lf7ULK0njrZJlVdwopnjsMeLdfM" 
-)
-
-
 #@login_required
 def index(request):
     return render(request, "index.html", {})
@@ -41,10 +25,11 @@ def index(request):
 def myProfile(request):
     userProfile = UserProfile.objects.get(user=request.user)
     if request.method == 'POST' and userProfile.isDeveloper:
-        form = UploadGameForm(request.POST, request.FILES)
+
+        form = UploadGameForm(request.POST)
         success = False
         if form.is_valid():
-            game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'], image=form.cleaned_data['image'])
+            game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'])
             game.save()
             form = UploadGameForm()
             success = True
@@ -207,48 +192,3 @@ def register_success(request):
     return render(request,
     'registration/success.html', {}
     )
-
-"""
-#@csrf_exempt
-def upload_prompt(request):
-	#direct_upload_complete(request)
-	context = dict(direct_form = PhotoDirectForm())
-	cl_init_js_callbacks(context['direct_form'], request)
-	return render(request, 'cloudinary.html', context)
-
-@csrf_exempt
-def direct_upload_complete(request):
-	form = PhotoDirectForm(request.POST)
-	print(form)
-	if form.is_valid():
-		form.save()
-		print("image saved.............................")
-		ret = dict(photo_id = form.instance.id)
-	else:
-		ret = dict(errors = form.errors)
-		print("Not there......")
-		
-	return HttpResponse(json.dumps(ret), content_type='application/json')
-
-def test(request):
-	print("inside test..")
-	uploded_image = cloudinary.uploader.upload("C:/Users/user/Desktop/Bluetooth/Sakshyam_Panda.jpg", folder="WSD/", use_filename= 1, unique_filename = 0)
-	image_id = uploded_image['public_id']
-	return render(request, 'test_cloudinary.html', {'id': image_id })
-"""
-
-@login_required(login_url='/login/')	
-@csrf_protect
-def upload(request):
-	context = dict( backend_form = GameImageForm())
-	
-	if request.method == 'POST':
-		form = GameImageForm(request.POST, request.FILES)
-		context['posted'] = form.instance
-		if form.is_valid():
-			form.save()
-		
-	return render(request, 'myProfile.html', context)
-
-def editProfile(request):
-	return render(request, 'editProfile.html', {})
