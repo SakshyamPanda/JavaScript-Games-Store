@@ -90,6 +90,7 @@ def buyGameResult(request,game_name):
         pid = root['pid']
         ref = root['ref']
         result = root['result']
+        checksum_from_url = root['checksum']
 
         #The checksum is calculated from pid, sid, amount, and your secret key. The string is formed like this:
         checksumstr = "pid={}&ref={}&result={}&token={}".format(pid, ref, result, secret_key)
@@ -98,24 +99,33 @@ def buyGameResult(request,game_name):
         m = md5(checksumstr.encode("ascii"))
         checksum = m.hexdigest()
 
-        if( result == 'error'):
-            #response = 'error'
+        if checksum != checksum_from_url:
+            print('la ya 7abeebi')
+            response = "No Habeebi, don't even try that"
+            return render(request, "buyGameResult.html", {'response' : response})
+            #return HttpResponseRedirect('/game/'+game_name+'/')
             #raise Http404
 
-        if( result == 'success'):
-            user = request.user #The user is passed from "request"
-            game= Game.objects.get(name=game_name) #query the game from the Game object
-            transaction = Transaction(user=user,game=game)
-            transaction.save() #save the transactio to the database
-            return HttpResponseRedirect('/game/'+game_name+'/')
+        else:
+            if( result == 'error'):
+                #'pass' if you comment the rest and don't want to do anything here
+                response = "Oops.. Something went wrong with the payment. Don't worry, your money is still in your pocket, though."
+                #raise Http404
 
-        if( result == 'cancel'):
-            response = 'cancel'
-            return HttpResponseRedirect('/game/'+game_name+'/')
+            if( result == 'success'):
+                user = request.user #The user is passed from "request"
+                game= Game.objects.get(name=game_name) #query the game from the Game object
+                transaction = Transaction(user=user,game=game)
+                transaction.save() #save the transactio to the database
+                return HttpResponseRedirect('/game/'+game_name+'/')
+
+            if( result == 'cancel'):
+                response = 'cancel'
+                return HttpResponseRedirect('/game/'+game_name+'/')
 
 
-        print(root)
-        return render(request, "buyGameResult.html", {'response' : response})
+            print(root)
+            return render(request, "buyGameResult.html", {'response' : response})
 
     else:
         return HttpResponse('Not authorised')
