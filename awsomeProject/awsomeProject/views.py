@@ -19,8 +19,23 @@ import json
 from django.http import JsonResponse
 from hashlib import md5
 
-
 secret_key = "26d3858162e10dc081f786319f286025" #This is from the secret key generator they provided. Dunno if this is the right way to put it
+
+import cloudinary, cloudinary.uploader, cloudinary.api
+#from cloudinary.uploader import upload
+#from cloudinary.utils import cloudinary_url
+#from cloudinary.api import delete_resources_by_tag, resources_by_tag
+from django import forms
+from cloudinary.forms import cl_init_js_callbacks
+#from .models import GameImage, ProfileImage
+from .files import GameImageForm, ProfileImageForm
+
+cloudinary.config( 
+  cloud_name = "sakshyam", 
+  api_key = "623965587187774", 
+  api_secret = "Lf7ULK0njrZJlVdwopnjsMeLdfM" 
+)
+
 
 #@login_required
 def index(request):
@@ -83,42 +98,43 @@ def buyGame(request, game_name):
 #TODO: implement the different pages for the different results
 @login_required
 def buyGameResult(request,game_name):
-    if request.method == "GET":
-        #this is supposed to be the result from the payment service, whether success, error, or cancel. (Step 3 in bank api)
-        #print(game_name)
-        root = request.GET
-        pid = root['pid']
-        ref = root['ref']
-        result = root['result']
+	if request.method == "GET":
+		#this is supposed to be the result from the payment service, whether success, error, or cancel. (Step 3 in bank api)
+		#print(game_name)
+		root = request.GET
+		pid = root['pid']
+		ref = root['ref']
+		result = root['result']
 
-        #The checksum is calculated from pid, sid, amount, and your secret key. The string is formed like this:
-        checksumstr = "pid={}&ref={}&result={}&token={}".format(pid, ref, result, secret_key)
+		#The checksum is calculated from pid, sid, amount, and your secret key. The string is formed like this:
+		checksumstr = "pid={}&ref={}&result={}&token={}".format(pid, ref, result, secret_key)
 
-        # checksumstr is the string concatenated above
-        m = md5(checksumstr.encode("ascii"))
-        checksum = m.hexdigest()
+		# checksumstr is the string concatenated above
+		m = md5(checksumstr.encode("ascii"))
+		checksum = m.hexdigest()
 
-        if( result == 'error'):
-            #response = 'error'
-            #raise Http404
+		if( result == 'error'):
+			pass
+			#response = 'error'
+			#raise Http404
 
-        if( result == 'success'):
-            user = request.user #The user is passed from "request"
-            game= Game.objects.get(name=game_name) #query the game from the Game object
-            transaction = Transaction(user=user,game=game)
-            transaction.save() #save the transactio to the database
-            return HttpResponseRedirect('/game/'+game_name+'/')
+		if( result == 'success'):
+			user = request.user #The user is passed from "request"
+			game= Game.objects.get(name=game_name) #query the game from the Game object
+			transaction = Transaction(user=user,game=game)
+			transaction.save() #save the transactio to the database
+			return HttpResponseRedirect('/game/'+game_name+'/')
 
-        if( result == 'cancel'):
-            response = 'cancel'
-            return HttpResponseRedirect('/game/'+game_name+'/')
+		if( result == 'cancel'):
+			response = 'cancel'
+			return HttpResponseRedirect('/game/'+game_name+'/')
 
 
-        print(root)
-        return render(request, "buyGameResult.html", {'response' : response})
+		print(root)
+		return render(request, "buyGameResult.html", {'response' : response})
 
-    else:
-        return HttpResponse('Not authorised')
+	else:
+		return HttpResponse('Not authorised')
 
 #Main view where user plays game
 @login_required(login_url='/login/')
@@ -270,3 +286,17 @@ def register_success(request):
     return render(request,
     'registration/success.html', {}
     )
+
+def upload(request):
+	context = dict( backend_form = GameImageForm())
+	
+	if request.method == 'POST':
+		form = GameImageForm(request.POST, request.FILES)
+		context['posted'] = form.instance
+		if form.is_valid():
+			form.save()
+		
+	return render(request, 'test.html', context)
+
+def editProfile(request):
+	return render(request, 'editProfile.html', {})

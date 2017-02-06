@@ -8,7 +8,6 @@ from .models import Photo
 from cloudinary.forms import CloudinaryJsFileField
 from django.forms import ModelForm 
 
-
 #class PaymentForm(forms.Form):
 '''These stuff here are not to be input by anyone. The parameters are either static (like our SID and the urls) or queried from the data (like the PID and the Amount)
      below 4 lines are not accurate'''

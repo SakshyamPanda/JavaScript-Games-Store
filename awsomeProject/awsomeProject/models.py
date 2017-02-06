@@ -1,18 +1,21 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
+from cloudinary.models import CloudinaryField
 #from django.contrib.auth.models import AbstractUser
 
 class UserProfile(models.Model):
-    #TODO add profilePicture attribute
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    isDeveloper = models.BooleanField()
+	#TODO add profilePicture attribute
+	user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+	isDeveloper = models.BooleanField()
+	image = CloudinaryField('image', default='1')
 
 class Game(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-    url = models.URLField()
-    price = models.FloatField()
-    description = models.TextField(default='')
+	name = models.CharField(max_length=255, unique=True)
+	url = models.URLField()
+	price = models.FloatField()
+	description = models.TextField(default='')
+	image = CloudinaryField('image', default='1')
 
 class DeveloperGame(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE) #on_delete=models.CASCADE deletes the entries if the entry in the UserProfile table gets deleed
@@ -47,3 +50,6 @@ class Rating(models.Model):
 class Transaction(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     game = models.ForeignKey('Game', on_delete = models.CASCADE)
+
+class Photo(models.Model):
+	image = CloudinaryField('image')

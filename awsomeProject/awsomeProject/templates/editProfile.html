@@ -12,10 +12,10 @@
 				<div class="account-edit-panel" style="margin-top:0px">
 					<h3 class="profile-panel-heading">Profile image</h3>
 					<div style="padding:12%">
-						<img src="{% static 'images/profile_mockup.png' %}"  style="width:80%"/>
+						{% load cloudinary %}
+						{% cloudinary 'WSD/profile_mockup.png' class="img-circle profile-thumbnail" %}
 						<!-- <img src= "CLOUDINARY URL" style="width:80%"/> --> 
-						</br></br>
-						
+						<input type='file' onchange="" style="font-size: 80%"/>
 						<br/><br/>
 					</div>
 				</div>

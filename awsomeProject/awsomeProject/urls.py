@@ -36,5 +36,7 @@ urlpatterns = [
     url(r'^browseGames/$', views.browseGames, name='browseGames'),
     url(r'^myProfile/$', views.myProfile, name='myProfile'),
     url(r'^game/([0-9a-zA-Z]+)/payment/$', views.buyGameResult, name='buyGameResult'),
-
+	#url(r'^test/$', views.test, name='test_cloudinary'),
+	url(r'^test/$', views.upload, name='upload'),
+	url(r'^myProfile/editProfile/$', views.editProfile, name='editProfile'),
 ]
