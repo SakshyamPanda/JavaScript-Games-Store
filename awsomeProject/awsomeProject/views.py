@@ -17,6 +17,11 @@ from django.http import HttpResponseRedirect
 from django.template import RequestContext
 import json
 from django.http import JsonResponse
+from hashlib import md5
+
+
+secret_key = "26d3858162e10dc081f786319f286025" #This is from the secret key generator they provided. Dunno if this is the right way to put it
+
 #@login_required
 def index(request):
     return render(request, "index.html", {})
@@ -44,10 +49,76 @@ def browseGames(request):
     return render(request, "browseGames.html", {"games" : games })
 
 #TODO: implement
+
 @login_required(login_url='/login/')
 def buyGame(request, game_name):
+        #I am defining the variables here and then the buyGame.html will only have the variable names
+        #This is querying the game object with the name parameter
+        game = Game.objects.get(name = game_name)  #game primary key to be queried from the game table
+        pid = game.pk
+        sid = "pandareljasharbel" #this is fxed for our service
+        amount = game.price #this is game price queried form game table
 
-    return render(request, "buyGame.html", {})
+
+
+        #The next three could be implemented in one url and then the response parameter from the paymen service will be different
+        success_url = request.build_absolute_uri("../payment")
+        cancel_url =  success_url
+        error_url =  success_url
+
+        #The checksum is calculated from pid, sid, amount, and your secret key. The string is formed like this:
+        checksumstr = "pid={}&sid={}&amount={}&token={}".format(pid, sid, amount, secret_key)
+
+
+        # checksumstr is the string concatenated above
+        m = md5(checksumstr.encode("ascii"))
+        # checksum is the value that should be used in the payment request
+        checksum = m.hexdigest()
+
+
+        return render(request, "buyGame.html", {"pid": pid, "sid":sid, "amount":amount,
+            "success_url": success_url, "cancel_url":cancel_url, "error_url":error_url,
+            "checksum":checksum})
+
+#TODO: implement the different pages for the different results
+@login_required
+def buyGameResult(request,game_name):
+    if request.method == "GET":
+        #this is supposed to be the result from the payment service, whether success, error, or cancel. (Step 3 in bank api)
+        #print(game_name)
+        root = request.GET
+        pid = root['pid']
+        ref = root['ref']
+        result = root['result']
+
+        #The checksum is calculated from pid, sid, amount, and your secret key. The string is formed like this:
+        checksumstr = "pid={}&ref={}&result={}&token={}".format(pid, ref, result, secret_key)
+
+        # checksumstr is the string concatenated above
+        m = md5(checksumstr.encode("ascii"))
+        checksum = m.hexdigest()
+
+        if( result == 'error'):
+            #response = 'error'
+            #raise Http404
+
+        if( result == 'success'):
+            user = request.user #The user is passed from "request"
+            game= Game.objects.get(name=game_name) #query the game from the Game object
+            transaction = Transaction(user=user,game=game)
+            transaction.save() #save the transactio to the database
+            return HttpResponseRedirect('/game/'+game_name+'/')
+
+        if( result == 'cancel'):
+            response = 'cancel'
+            return HttpResponseRedirect('/game/'+game_name+'/')
+
+
+        print(root)
+        return render(request, "buyGameResult.html", {'response' : response})
+
+    else:
+        return HttpResponse('Not authorised')
 
 #Main view where user plays game
 @login_required(login_url='/login/')
@@ -62,10 +133,17 @@ def game(request, game_name):
         else:
             gameBought = False
         comments = Comment.objects.all().filter(game=game).order_by("-created")
+
+        # userComments holds information about comments and userProfile of users who made comments
+        userComments = []
+        for comment in comments:
+            userProfile = UserProfile.objects.filter(user=comment.user).first()
+            userComments.append([comment,userProfile])
+        print(userComments)
     # In case game does not exist, display 404
     except Game.DoesNotExist:
         raise Http404
-    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "comments": comments})
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments})
 
 @login_required(login_url='/login/')
 @csrf_protect
