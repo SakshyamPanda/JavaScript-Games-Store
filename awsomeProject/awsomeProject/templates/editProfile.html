@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+{% load static %}
+	<!-- <h1> Hello, Inside EditProfile!! </h1> -->
+<div class="container-fluid">
+    <a href="/myProfile" class="btn btn-default" style="margin-top: 1%; margin-bottom:2%; color:#333;"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Return to my profile</a>
+    <div class="row">
+		<form method="post" action="."  enctype="multipart/form-data">
+			<div class="span3 col-md-3 " >
+				<div class="account-edit-panel" style="margin-top:0px">
+					<h3 class="profile-panel-heading">Profile image</h3>
+					<div style="padding:12%">
+						<img src="{% static 'images/profile_mockup.png' %}"  style="width:80%"/>
+						<!-- <img src= "CLOUDINARY URL" style="width:80%"/> --> 
+						</br></br>
+						
+						<br/><br/>
+					</div>
+				</div>
+			</div>
+
+			<div class="span9 col-md-9" >
+				<div class="account-edit-panel" style="margin-top:0px">
+				  <h3 class="profile-panel-heading">Update Basic Information</h3>
+				  <div class="profile-form">
+					<div class="form-group ">
+						<label>Name</label>
+						<input type="text" name="username" placeholder="Name" class="form-control" id="form-username">
+					</div>
+					<div class="form-group">
+						<label>Bio</label>
+						<input type="text" name="username" placeholder="Bio" class="form-control" id="form-username">
+					</div>
+				  </div>
+				</div>
+
+				<div class="account-edit-panel" style="margin-bottom:20px">
+					<h3 class="profile-panel-heading">Change Password(credential)</h3>
+					<div class="profile-form">
+						 <div class="form-group">
+							<label>Current Password</label>
+							<input type="password" name="currentPassword" placeholder="Current Password" class="form-control" id="form-password">
+						</div>
+						<div class="form-group">
+							<label>New Password</label>
+							<input type="password" name="newPassword" placeholder="New Password" class="form-control" id="form-password">
+						</div>
+						<div class="form-group">
+							<label>Confirm your new password</br></label>
+							<input type="password" name="confirmedNewPassword" placeholder="Confirm your new password" class="form-control" id="form-password" >
+						</div>
+					</div>
+				</div>
+			</div>
+			<button style="margin-top: 15px" type="submit" value="submit" class="btn btn-warning">Update</button>
+		</form>
+    </div>
+</div>
+
+{% endblock %}
