@@ -5,7 +5,7 @@ from .models import Game, UserProfile
 from django.utils.translation import ugettext_lazy as _
 #from .models import GameImage, ProfileImage
 from .models import Photo
-from cloudinary.forms import CloudinaryJsFileField
+import cloudinary, cloudinary.uploader, cloudinary.forms
 from django.forms import ModelForm 
 
 #class PaymentForm(forms.Form):
@@ -45,38 +45,44 @@ class RegistrationForm(forms.Form):
 # For developers, form for uploading games
 '''
 class UploadGameForm(forms.Form):
-    name = forms.RegexField(regex=r'^\w+$', widget=forms.TextInput(attrs=dict(required=True, max_length=30)), label=_("Name"), error_messages={ 'invalid': _("This value must contain only letters, numbers and underscores.") })
-    url = forms.URLField(label='Url to game', required=True, widget=forms.TextInput(attrs=dict(required=True, max_length=30)))
-    price = forms.FloatField(required=True, min_value=0)
-    description = forms.CharField()
-	image = forms.
+	name = forms.RegexField(regex=r'^\w+$', widget=forms.TextInput(attrs=dict(required=True, max_length=30)), label=_("Name"), error_messages={ 'invalid': _("This value must contain only letters, numbers and underscores.") })
+	url = forms.URLField(label='Url to game', required=True, widget=forms.TextInput(attrs=dict(required=True, max_length=30)))
+	price = forms.FloatField(required=True, min_value=0)
+	description = forms.CharField()
+	image = cloudinary.forms.CloudinaryJsFileField()
 
-    #If game with that name already exists, user is asked to chose another.
-    # Game names are unique
-    def clean_name(self):
-        try:
-            game = Game.objects .get(name=self.cleaned_data['name'])
-        except Game.DoesNotExist:
-            return self.cleaned_data['name']
-        raise forms.ValidationError(_("Game name already exists, please chose another one."))
+	#If game with that name already exists, user is asked to chose another.
+	# Game names are unique
+	def clean_name(self):
+		try:
+			game = Game.objects .get(name=self.cleaned_data['name'])
+		except Game.DoesNotExist:
+			return self.cleaned_data['name']
+		raise forms.ValidationError(_("Game name already exists, please chose another one."))
+
 '''
 class UploadGameForm(ModelForm):
 	class Meta:
 		model = Game
-		exclude = ()
-		
+		fields = '__all__'
+
 class UploadUserProfileForm(ModelForm):
 	class Meta:
 		model = UserProfile
 		exclude = ()
 
+class UploadPhoto(ModelForm):
+	class Meta:
+		model = Photo
+		exclude = ()
+		
 """
 class PhotoDirectForm(ModelForm):
 	class Meta:
 		model = Photo
 		fields = '__all__'
 	image = CloudinaryJsFileField()	
-"""	
+
 class GameImageForm(ModelForm):
 	class Meta:
 		model = Photo
@@ -87,3 +93,5 @@ class ProfileImageForm(ModelForm):
 	class Meta:
 		model = Photo
 		exclude = ()
+
+"""	

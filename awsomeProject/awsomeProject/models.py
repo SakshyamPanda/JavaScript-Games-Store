@@ -9,13 +9,23 @@ class UserProfile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
 	isDeveloper = models.BooleanField()
 	image = CloudinaryField('image', default='1')
+	
 
 class Game(models.Model):
 	name = models.CharField(max_length=255, unique=True)
 	url = models.URLField()
 	price = models.FloatField()
 	description = models.TextField(default='')
-	image = CloudinaryField('image', default='1')
+	image = CloudinaryField('image')
+	
+	""" Informative name for mode """
+	def __unicode__(self):
+		try:
+			public_id = self.image.public_id
+		except AttributeError:
+			public_id = ''
+		return "Photo <%s:%s>" % (self.title, public_id)
+
 
 class DeveloperGame(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE) #on_delete=models.CASCADE deletes the entries if the entry in the UserProfile table gets deleed

@@ -28,7 +28,9 @@ import cloudinary, cloudinary.uploader, cloudinary.api
 from django import forms
 from cloudinary.forms import cl_init_js_callbacks
 #from .models import GameImage, ProfileImage
-from .files import GameImageForm, ProfileImageForm
+#from .files import GameImageForm, ProfileImageForm
+from .files import UploadPhoto
+from cloudinary.models import CloudinaryField
 
 cloudinary.config( 
   cloud_name = "sakshyam", 
@@ -43,21 +45,23 @@ def index(request):
 
 @login_required(login_url='/login/')
 def myProfile(request):
-    userProfile = UserProfile.objects.get(user=request.user)
-    if request.method == 'POST' and userProfile.isDeveloper:
+	userProfile = UserProfile.objects.get(user=request.user)
+	context = dict( backend_form = UploadGameForm())
+	if request.method == 'POST' and userProfile.isDeveloper:
+		form = UploadGameForm(request.POST, request.FILES)
+		context['posted'] = form.instance
+		success = False
+		if form.is_valid():
+			#game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'], image=form.cleaned_data['image'])
+			#game.save()
+			#form = UploadGameForm()
+			success = True
+			form.save()
+	else:
+		form = UploadGameForm()
+		success = False
 
-        form = UploadGameForm(request.POST)
-        success = False
-        if form.is_valid():
-            game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'])
-            game.save()
-            form = UploadGameForm()
-            success = True
-    else:
-        form = UploadGameForm()
-        success = False
-
-    return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success   })
+	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context  })
 
 def browseGames(request):
     games = Game.objects.all()
@@ -98,49 +102,49 @@ def buyGame(request, game_name):
 #TODO: implement the different pages for the different results
 @login_required
 def buyGameResult(request,game_name):
-    if request.method == "GET":
-        #this is supposed to be the result from the payment service, whether success, error, or cancel. (Step 3 in bank api)
-        #print(game_name)
-        root = request.GET
-        pid = root['pid']
-        ref = root['ref']
-        result = root['result']
-        checksum_from_url = root['checksum']
-
+	if request.method == "GET":
+		#this is supposed to be the result from the payment service, whether success, error, or cancel. (Step 3 in bank api)
+		#print(game_name)
+		root = request.GET
+		pid = root['pid']
+		ref = root['ref']
+		result = root['result']
+		checksum_from_url = root['checksum']
+		
 		#The checksum is calculated from pid, sid, amount, and your secret key. The string is formed like this:
 		checksumstr = "pid={}&ref={}&result={}&token={}".format(pid, ref, result, secret_key)
-
+			
 		# checksumstr is the string concatenated above
 		m = md5(checksumstr.encode("ascii"))
 		checksum = m.hexdigest()
+		
+		if checksum != checksum_from_url:
+			print('la ya 7abeebi')
+			response = "No Habeebi, don't even try that"
+			return render(request, "buyGameResult.html", {'response' : response})
+			#return HttpResponseRedirect('/game/'+game_name+'/')
+			#raise Http404
 
-        if checksum != checksum_from_url:
-            print('la ya 7abeebi')
-            response = "No Habeebi, don't even try that"
-            return render(request, "buyGameResult.html", {'response' : response})
-            #return HttpResponseRedirect('/game/'+game_name+'/')
-            #raise Http404
+		else:
+			if( result == 'error'):
+				#'pass' if you comment the rest and don't want to do anything here
+				response = "Oops.. Something went wrong with the payment. Don't worry, your money is still in your pocket, though."
+				#raise Http404
 
-        else:
-            if( result == 'error'):
-                #'pass' if you comment the rest and don't want to do anything here
-                response = "Oops.. Something went wrong with the payment. Don't worry, your money is still in your pocket, though."
-                #raise Http404
+			if( result == 'success'):
+				user = request.user #The user is passed from "request"
+				game= Game.objects.get(name=game_name) #query the game from the Game object
+				transaction = Transaction(user=user,game=game)
+				transaction.save() #save the transactio to the database
+				return HttpResponseRedirect('/game/'+game_name+'/')
 
-            if( result == 'success'):
-                user = request.user #The user is passed from "request"
-                game= Game.objects.get(name=game_name) #query the game from the Game object
-                transaction = Transaction(user=user,game=game)
-                transaction.save() #save the transactio to the database
-                return HttpResponseRedirect('/game/'+game_name+'/')
-
-            if( result == 'cancel'):
-                response = 'cancel'
-                return HttpResponseRedirect('/game/'+game_name+'/')
+			if( result == 'cancel'):
+				response = 'cancel'
+				return HttpResponseRedirect('/game/'+game_name+'/')
 
 
-            print(root)
-            return render(request, "buyGameResult.html", {'response' : response})
+			print(root)
+			return render(request, "buyGameResult.html", {'response' : response})
 
 	else:
 		return HttpResponse('Not authorised')
@@ -148,27 +152,28 @@ def buyGameResult(request,game_name):
 #Main view where user plays game
 @login_required(login_url='/login/')
 def game(request, game_name):
-    try:
-        game = Game.objects.get(name=game_name)
-        # TODO: What if highscores dont exist
-        scores = Scores.objects.all().filter(game=game).order_by("-score")
-        #check if user has bought the game a.k.a. has access to it
-        if Transaction.objects.filter(game=game, user=request.user).exists():
-            gameBought = True
-        else:
-            gameBought = False
-        comments = Comment.objects.all().filter(game=game).order_by("-created")
+	print(request.FILES)
+	try:
+		game = Game.objects.get(name=game_name)
+		# TODO: What if highscores dont exist
+		scores = Scores.objects.all().filter(game=game).order_by("-score")
+		#check if user has bought the game a.k.a. has access to it
+		if Transaction.objects.filter(game=game, user=request.user).exists():
+			gameBought = True
+		else:
+			gameBought = False
+		comments = Comment.objects.all().filter(game=game).order_by("-created")
 
-        # userComments holds information about comments and userProfile of users who made comments
-        userComments = []
-        for comment in comments:
-            userProfile = UserProfile.objects.filter(user=comment.user).first()
-            userComments.append([comment,userProfile])
-        print(userComments)
-    # In case game does not exist, display 404
-    except Game.DoesNotExist:
-        raise Http404
-    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments})
+		# userComments holds information about comments and userProfile of users who made comments
+		userComments = []
+		for comment in comments:
+			userProfile = UserProfile.objects.filter(user=comment.user).first()
+			userComments.append([comment,userProfile])
+		print(userComments)
+	# In case game does not exist, display 404
+	except Game.DoesNotExist:
+		raise Http404
+	return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments})
 
 @login_required(login_url='/login/')
 @csrf_protect
@@ -297,10 +302,10 @@ def register_success(request):
     )
 
 def upload(request):
-	context = dict( backend_form = GameImageForm())
-	
+	context = dict( backend_form = UploadPhoto())
 	if request.method == 'POST':
-		form = GameImageForm(request.POST, request.FILES)
+		form = UploadPhoto(request.POST, request.FILES)
+		print("form instance: ", form.instance)
 		context['posted'] = form.instance
 		if form.is_valid():
 			form.save()
