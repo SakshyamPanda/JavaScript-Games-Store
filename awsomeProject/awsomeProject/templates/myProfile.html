@@ -9,10 +9,10 @@
 
 {% block main %}
 
-<div class="col-md-12"> 
+<div class="col-md-12">
 	<div class="col-md-3 text-center" style="float: none; margin: 0 auto">
 		<div class="col-md-12">
-			<img src="{% static 'images/profile_mockup.png' %} alt="Default Pic" class="img-circle profile-thumbnail">
+			<img src="{% static 'images/profile_mockup.png' %}" alt="Default Pic" class="img-circle profile-thumbnail">
 			{% load cloudinary %}
 			{% cloudinary_includes %}
 			{% cloudinary_js_config %}
@@ -22,7 +22,7 @@
 			<p class="lead" style="margin-bottom:0px">{{user.username}}</p>
 			<span><a href="editProfile" style="color:#ddd;">Edit Profile</a></span>
 		</div>
-	</div>	
+	</div>
 </div>
 
 {% if userProfile.isDeveloper %}

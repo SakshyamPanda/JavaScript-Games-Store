@@ -18,6 +18,7 @@ from django.template import RequestContext
 import json
 from django.http import JsonResponse
 from hashlib import md5
+import cloudinary, cloudinary.uploader, cloudinary.forms
 
 secret_key = "26d3858162e10dc081f786319f286025" #This is from the secret key generator they provided. Dunno if this is the right way to put it
 
@@ -30,10 +31,10 @@ from cloudinary.forms import cl_init_js_callbacks
 #from .models import GameImage, ProfileImage
 from .files import GameImageForm, ProfileImageForm
 
-cloudinary.config( 
-  cloud_name = "sakshyam", 
-  api_key = "623965587187774", 
-  api_secret = "Lf7ULK0njrZJlVdwopnjsMeLdfM" 
+cloudinary.config(
+  cloud_name = "sakshyam",
+  api_key = "623965587187774",
+  api_secret = "Lf7ULK0njrZJlVdwopnjsMeLdfM"
 )
 
 
@@ -47,10 +48,13 @@ def myProfile(request):
     if request.method == 'POST' and userProfile.isDeveloper:
 
         form = UploadGameForm(request.POST)
+        cloudinary.forms.cl_init_js_callbacks(form, request)
         success = False
         if form.is_valid():
-            game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'])
-            game.save()
+            #game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'], image=form.cleaned_data['image'])
+            #game.save()
+            print("image : " + form.cleaned_data['image'])
+            form.save()
             form = UploadGameForm()
             success = True
     else:
@@ -107,12 +111,11 @@ def buyGameResult(request,game_name):
         result = root['result']
         checksum_from_url = root['checksum']
 
-		#The checksum is calculated from pid, sid, amount, and your secret key. The string is formed like this:
-		checksumstr = "pid={}&ref={}&result={}&token={}".format(pid, ref, result, secret_key)
-
-		# checksumstr is the string concatenated above
-		m = md5(checksumstr.encode("ascii"))
-		checksum = m.hexdigest()
+        #The checksum is calculated from pid, sid, amount, and your secret key. The string is formed like this:
+        checksumstr = "pid={}&ref={}&result={}&token={}".format(pid, ref, result, secret_key)
+        # checksumstr is the string concatenated above
+        m = md5(checksumstr.encode("ascii"))
+        checksum = m.hexdigest()
 
         if checksum != checksum_from_url:
             print('la ya 7abeebi')
@@ -126,7 +129,6 @@ def buyGameResult(request,game_name):
                 #'pass' if you comment the rest and don't want to do anything here
                 response = "Oops.. Something went wrong with the payment. Don't worry, your money is still in your pocket, though."
                 #raise Http404
-
             if( result == 'success'):
                 user = request.user #The user is passed from "request"
                 game= Game.objects.get(name=game_name) #query the game from the Game object
@@ -138,12 +140,10 @@ def buyGameResult(request,game_name):
                 response = 'cancel'
                 return HttpResponseRedirect('/game/'+game_name+'/')
 
-
             print(root)
             return render(request, "buyGameResult.html", {'response' : response})
-
-	else:
-		return HttpResponse('Not authorised')
+    else:
+        return HttpResponse('Not authorised')
 
 #Main view where user plays game
 @login_required(login_url='/login/')
@@ -298,13 +298,13 @@ def register_success(request):
 
 def upload(request):
 	context = dict( backend_form = GameImageForm())
-	
+
 	if request.method == 'POST':
 		form = GameImageForm(request.POST, request.FILES)
 		context['posted'] = form.instance
 		if form.is_valid():
 			form.save()
-		
+
 	return render(request, 'test.html', context)
 
 def editProfile(request):
