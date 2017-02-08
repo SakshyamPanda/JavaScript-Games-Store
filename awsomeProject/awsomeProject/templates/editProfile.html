@@ -4,6 +4,8 @@
 {% block main %}
 {% load static %}
 	<!-- <h1> Hello, Inside EditProfile!! </h1> -->
+
+	
 <div class="container-fluid">
     <a href="/myProfile" class="btn btn-default" style="margin-top: 1%; margin-bottom:2%; color:#333;"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Return to my profile</a>
     <div class="row">
@@ -20,19 +22,15 @@
 					</div>
 				</div>
 			</div>
-		</form>
-		<form>
+		<!--</form>
+		<form method="post" action="." enctype="multipart/form-data"> -->
 			<div class="span9 col-md-9" >
 				<div class="account-edit-panel" style="margin-top:0px">
 				  <h3 class="profile-panel-heading">Update Basic Information</h3>
 				  <div class="profile-form">
 					<div class="form-group ">
-						<label>Name</label>
-						<input type="text" name="username" placeholder="Name" class="form-control" id="form-username">
-					</div>
-					<div class="form-group">
-						<label>Bio</label>
-						<input type="text" name="username" placeholder="Bio" class="form-control" id="form-username">
+						<label>Email</label>
+						<input type="email" name="email" placeholder="Email" class="form-control" id="form-username">
 					</div>
 				  </div>
 				</div>
