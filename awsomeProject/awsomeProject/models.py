@@ -8,14 +8,30 @@ class UserProfile(models.Model):
 	#TODO add profilePicture attribute
 	user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
 	isDeveloper = models.BooleanField()
-	image = CloudinaryField('image', default='1')
+	image = CloudinaryField('image')
 	
+	""" Informative name for mode """
+	def __unicode__(self):
+		try:
+			public_id = self.image.public_id
+		except AttributeError:
+			public_id = ''
+		return "Photo <%s:%s>" % (self.title, public_id)
+
 
 class Game(models.Model):
+	Category_Choices = (
+		('Action', 'Action'),
+		('Advanture', 'Adventure'),
+		('Sports', 'Sports'),
+		('Strategy', 'Strategy'),
+	)
 	name = models.CharField(max_length=255, unique=True)
 	url = models.URLField()
 	price = models.FloatField()
 	description = models.TextField(default='')
+	created = models.DateField(default=now, editable=False)
+	category = models.CharField(max_length=20, choices=Category_Choices, default='Action')
 	image = CloudinaryField('image')
 	
 	""" Informative name for mode """
