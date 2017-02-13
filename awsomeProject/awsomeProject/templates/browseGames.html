@@ -19,7 +19,6 @@
                <a href={% url "game" game.name %}>
                   <!-- Source of the picture should be implemented from db -->
                    {% cloudinary '{{game.image}}' %}
-                  <!-- <img class="img-responsive" src="http://placehold.it/700x400" alt=""> -- >
                </a>
                <h3>
                    <a href={% url "game" game.name %}> {{game.name}}</a>
