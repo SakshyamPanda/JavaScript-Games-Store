@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block scriptsAndStylesheets %}
+	{% load cloudinary %}
+	{% cloudinary_includes %}
+	{% cloudinary_js_config %}
+{% endblock %}
+
+{% block main %}
+
+<div class="container" style="background-color: brown">
+	<div class="row" id="welcome-header">
+		<div class="" style="background-color: red;" >
+			{% if user.is_authenticated %}
+			<div class="">
+				<div class="">Welcome Back! {{ user.username }}</div>
+				<div class="">It's Nice To Meet You</div>
+			</div>
+			{% else %}
+			<div class="col-md-12">
+				<div class="col-md-8">
+					<div class="">Welcome!</div>
+					<div class="">It's Nice To Meet You</div>
+				</div>
+				<div class="col-md-4">
+					<a href="{% url "register" %}" class="btn btn-primary btn-lg" role="button">Register</a>
+				</div>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+	
+	<div class="row" id="show-games">
+		<div class="" style="background-color: green">
+			
+			{% for game in games %}
+				
+			<div class="col-md-6 portfolio-item">
+				<a href={% url "game" game.name %}>
+				   {% cloudinary game.image %}
+				</a>
+				<h3>
+				   <a href={% url "game" game.name %}> {{game.name}}</a>
+				</h3>
+				<p> {{game.description}}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	
+</div>
+
+
+{% endblock %}
