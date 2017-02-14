@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, {'template_name' : 'registration/logout.html'}, name='logout'),
     url(r'^register/$', views.register, name='register'),
     url(r'^register/success/$', views.register_success),
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.home, name='index'),
     #TODO: Change regex to W (word metacharacter)
     url(r'^game/([0-9a-zA-Z]+)/$', views.game, name='game'),
     url(r'^game/[0-9a-zA-Z]+/saveScore/$', views.saveScore, name='saveScore'),
@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^game/([0-9a-zA-Z]+)/buyGame/$', views.buyGame, name='buyGame'),
     url(r'^game/([0-9a-zA-Z]+)/addComment/$', views.addComment, name='addComment'),
     url(r'^browseGames/$', views.browseGames, name='browseGames'),
+	url(r'^about/$', views.about, name='about'),
     url(r'^myProfile/$', views.myProfile, name='myProfile'),
     url(r'^game/([0-9a-zA-Z]+)/payment/$', views.buyGameResult, name='buyGameResult'),
 	#url(r'^test/$', views.test, name='test_cloudinary'),

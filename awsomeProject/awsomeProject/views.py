@@ -11,7 +11,7 @@ from .models import Comment
 from .files import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
@@ -19,6 +19,8 @@ import json
 from django.http import JsonResponse
 from hashlib import md5
 import cloudinary, cloudinary.uploader, cloudinary.forms
+import datetime
+from datetime import date, timedelta
 
 secret_key = "26d3858162e10dc081f786319f286025" #This is from the secret key generator they provided. Dunno if this is the right way to put it
 
@@ -40,13 +42,17 @@ cloudinary.config(
 )
 
 
-#@login_required
-def index(request):
-    return render(request, "index.html", {})
+# Landing page showing recent uploaded games
+def home(request):
+	enddate = date.today()
+	startdate = enddate - timedelta(days=31)
+	print(startdate, enddate)
+	games = Game.objects.filter(created__range=[startdate, enddate])
+	return render(request, "home.html", {'games': games })
+
 
 @login_required(login_url='/login/')
 def myProfile(request):
-
 	userProfile = UserProfile.objects.get(user=request.user)
 	context = dict( backend_form = UploadGameForm())
 	if request.method == 'POST' and userProfile.isDeveloper:
@@ -64,11 +70,35 @@ def myProfile(request):
 		success = False
 	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context  })
 
+@login_required(login_url='/login/')
+def editProfile(request):
+	userProfile = UserProfile.objects.get(user=request.user)
+	context = dict( backend_form = EditUserProfileForm())
+	if request.method == 'POST':
+		form = EditUserProfileForm(request.POST, request.FILES)
+		context['posted'] = form.instance
+		success = False
+		if form.is_valid():
+			#game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'], image=form.cleaned_data['image'])
+			#game.save()
+			#form = UploadGameForm()
+			success = True
+			form.save()
+	else:
+		form = EditUserProfileForm()
+		success = False
+	return render(request, "editProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context  })
+	
+		
 def browseGames(request):
     games = Game.objects.all()
     return render(request, "browseGames.html", {"games" : games })
 
-#TODO: implement
+
+# About page- introduction to the project and Team members	
+def about(request):
+	return render(request, "about.html", {})
+
 
 @login_required(login_url='/login/')
 def buyGame(request, game_name):
@@ -288,7 +318,7 @@ def register(request):
             email=form.cleaned_data['email']
             )
             # Create our custom user profile
-            userProfile = UserProfile(user=user, isDeveloper=form.cleaned_data['isDeveloper'])
+            userProfile = UserProfile(user=user, isDeveloper=form.cleaned_data['isDeveloper'], email=form.cleaned_data['email'], password=form.cleaned_data['password1'])
             userProfile.save()
             # redirect to success page
             return HttpResponseRedirect('/register/success/')
@@ -297,11 +327,12 @@ def register(request):
     return render(request,
     'registration/register.html', {'form' : form}
     )
+
 def register_success(request):
     return render(request,
     'registration/success.html', {}
     )
-
+	
 def upload(request):
 	context = dict( backend_form = UploadPhoto())
 	if request.method == 'POST':
@@ -312,6 +343,3 @@ def upload(request):
 			form.save()
 
 	return render(request, 'test.html', context)
-
-def editProfile(request):
-	return render(request, 'editProfile.html', {})
