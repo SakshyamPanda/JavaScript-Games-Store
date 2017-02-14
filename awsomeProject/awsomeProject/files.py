@@ -42,24 +42,6 @@ class RegistrationForm(forms.Form):
                 raise forms.ValidationError(_("The two password fields did not match."))
         return self.cleaned_data
 
-'''
-class EditProfileForm(forms.Form):
-	email = forms.EmailField()
-	current_password = forms.CharField(widget=forms.PasswordInput(attrs=dict(required=True, max_length=30, render_value=False)), label=_("Old Password"))
-	new_password = forms.CharField(widget=forms.PasswordInput(attrs=dict(required=True, max_length=30, render_value=False)), label=_("New Password"))
-	repeat_password = forms.CharField(widget=forms.PasswordInput(attrs=dict(required=True, max_length=30, render_value=False)), label=_("New Password (again)"))
-	#image = cloudinary.forms.CloudinaryJsFileField()
-	# Check if repeated password is the same as other one
-	def clean(self):
-		if 'current_password' in self.cleaned_data:
-			pass
-		
-		if 'new_password' in self.cleaned_data and 'repeat_password' in self.cleaned_data:
-			if self.cleaned_data['new_password'] != self.cleaned_data['repeat_password']:
-				raise forms.ValidationError(_("The two password fields did not match."))
-		return self.cleaned_data
-
-'''
 # For developers, form for uploading games
 '''
 class UploadGameForm(forms.Form):
@@ -83,15 +65,13 @@ class UploadGameForm(forms.Form):
 class UploadGameForm(ModelForm):
 	class Meta:
 		model = Game
-		widgets = {
-			'description': forms.Textarea( attrs={'placeholder': 'Enter short description here!!'}),
-		}
 		fields = '__all__'
 
-class EditUserProfileForm(ModelForm):
+class UploadUserProfileForm(ModelForm):
 	class Meta:
 		model = UserProfile
 		exclude = ()
+
 
 class UploadPhoto(ModelForm):
 	class Meta:
