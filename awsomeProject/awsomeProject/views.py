@@ -8,6 +8,7 @@ from .models import PlayerItem
 from .models import UserProfile
 from .models import Transaction
 from .models import Comment
+from .models import DeveloperGame
 from .files import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -65,6 +66,8 @@ def myProfile(request):
 			#form = UploadGameForm()
             success = True
             form.save()
+            devGame = DeveloperGame(user=request.user, game=Game.objects.get(name=form.cleaned_data['name']))
+            devGame.save()
     else:
         form = UploadGameForm()
         success = False
@@ -343,11 +346,16 @@ def upload(request):
 def manageUploadedGames(request):
     # This should be the view for the developer to see all the games she created, who bought their games, edit game details, and request to remove their uploaded games.
 
-    developer = UserProfile.objects.filter(user=request.user, isDeveloper = True)
-    games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
+    developerProfile = UserProfile.objects.get(user=request.user)
+    if developerProfile.isDeveloper:
+        DeveloperGames = DeveloperGame.objects.all().filter(user=request.user)
+        print(len(DeveloperGames))
+    else:
+        return HttpResponseRedirect('/') #in case address is typed, this redirects them to hom (secure stuff)
+    #games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
 
     #Display the games
-    return render(response, "manageUploadedGames.html", {"developer": developer, "games" : games})
+    return render(request, "manageUploadedGames.html", {"developerProfile": developerProfile})
 
 # TODO: @sharbel, When a game is clicked in manageUploadedGames, you can Edit its details, request to change the price (or just lock the price), and view the game sales
 @login_required(login_url='/login/')
