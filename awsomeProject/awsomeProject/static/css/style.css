@@ -26,19 +26,23 @@ footer {
 	font-weight:400;
 }
 
-#show-games a{
-	text-decoration: none;
+a {
+	text-decoration: none !important;
 }
 
 .section-font{
 	font-size: 16px;
 }
 
+.game-description{
+	height: 140px;
+	margin-bottom: 2%;
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------- */
 
-@media (min-width:768px){
+@media (max-width:768px){
 	.service-heading{
 		margin:15px 0;
 		text-transform:none
@@ -47,6 +51,14 @@ footer {
 	.section-font{
 		font-size: 18px;
 	}
+	
+	.section-subheading{
+		font-size:13px;
+	}
+
+	.game-description{
+		height: 110px;
+	}
 
 }
 
@@ -54,7 +66,14 @@ footer {
 	.section-font{
 		font-size: 22px;
 	}
+	
+	.section-subheading{
+		font-size:14px;
+	}
 
+	.game-description{
+		height: 100px;
+	}
 }
 
 @media (min-width:992px){
@@ -62,4 +81,11 @@ footer {
 		font-size: 26px;
 	}
 
+	.section-subheading{
+		font-size:15px;
+	}
+
+	.game-description{
+		height: 150px;
+	}
 }
