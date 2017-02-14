@@ -2,6 +2,20 @@
 
 {% block main %}
 
-<p> You are logged out <p>
-
+<div class="col-md-12" id="logout">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-body" style="margin-top:2%; margin-bottom: 2%">
+				<div class="col-md-12" style="">
+					<div class="col-md-12 text-center" style="margin-bottom: 2%">
+						<div class="section-font">You are logged out</div>
+					</div>
+					<div class="col-md-12 text-center">
+						<a href="{% url "login" %}" class="btn btn-primary btn-lg" role="button">Login</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}

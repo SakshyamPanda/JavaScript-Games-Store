@@ -8,31 +8,31 @@
 {% block main %}
 
 <div class="col-md-12" id="home">
-	<div class="panel panel-default">
-		<div class="panel-body" style="height: 100px; margin-top:20px;">
-			{% if user.is_authenticated %}
-			<div class="">
-				<div class="">Welcome Back! {{ user.username }}</div>
-				<div class="">It's Nice To Meet You</div>
-			</div>
-			{% else %}
-			<div class="col-md-12">
-				<div class="col-md-6 col-sm-4 col-xs-4">
-					<div class="">Welcome!</div>
-					<div class="">It's Nice To Meet You</div>
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-body" style="height: 100px; margin-top:20px;">
+				{% if user.is_authenticated %}
+				<div class="col-md-12 text-center">
+					<div class="section-font">Welcome! {{ user.username }}</div>
+					<div class="section-font">It's Nice To Meet You</div>
 				</div>
-				<div class="col-md-6 col-sm-3 col-xs-3">
-					<div class='input-group'>
-						<a href="{% url "register" %}" class="btn btn-primary btn-lg" role="button">Register</a>
-						Or
-						<a href="{% url "login" %}" class="btn btn-primary btn-lg" role="button">Login</a>
+				{% else %}
+				<div class="col-md-12">
+					<div class="col-md-6 col-sm-4 col-xs-4">
+						<div class="section-font">Welcome!</div>
+						<div class="section-font">It's Nice To Meet You</div>
+					</div>
+					<div class="col-md-6 col-sm-3 col-xs-3">
+						<div class='input-group'>
+							<a href="{% url "register" %}" class="btn btn-primary btn-lg" role="button">Register</a>
+							<a href="{% url "login" %}" class="btn btn-primary btn-lg" role="button">Login</a>
+						</div>
 					</div>
 				</div>
+				{% endif %}
 			</div>
-			{% endif %}
 		</div>
 	</div>
-
 
 	<div class="col-md-12 text-center" style="padding-top: 18px; padding-bottom:3%">
 		<div class="col-md-6 col-md-offset-3">
