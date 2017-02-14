@@ -29,7 +29,7 @@ class Game(models.Model):
 	name = models.CharField(max_length=255, unique=True)
 	url = models.URLField()
 	price = models.FloatField()
-	description = models.TextField(default='')
+	description = models.TextField(max_length=300, default='')
 	created = models.DateField(default=now, editable=False)
 	category = models.CharField(max_length=20, choices=Category_Choices, default='Action')
 	image = CloudinaryField('image')
