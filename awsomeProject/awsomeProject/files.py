@@ -69,13 +69,26 @@ class UploadGameForm(ModelForm):
 		widgets = {
 			'description': forms.Textarea(attrs={'placeholder': 'Enter description here.'}),
 		}
+'''
+class UpdateProfileForm(forms.Form):
+    email = forms.EmailField(widget=forms.TextInput(attrs=dict(required=True, max_length=30)), label=_("Email address"))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs=dict(required=True, max_length=30, render_value=False)), label=_("New Password"))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs=dict(required=True, max_length=30, render_value=False)), label=_("New Password (again)"))
 
-class EditUserProfileForm(ModelForm):
-	class Meta:
-		model = UserProfile
-		exclude = ()
-
-
+    def clean(self):
+        if 'password1' in self.cleaned_data and 'password2' in self.cleaned_data:
+            if self.cleaned_data['password1'] != self.cleaned_data['password2']:
+                raise forms.ValidationError(_("The two password fields did not match."))
+        return self.cleaned_data
+'''
+class UpdateProfileForm(ModelForm):
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs=dict(required=True, max_length=30, render_value=False)), label=_("Password (again)"))
+    class Meta:
+        model = User
+        fields = ['email', 'password']
+        widgets = {
+            'password': forms.PasswordInput(attrs=dict(required=True, max_length=30, render_value=False)),
+        }
 class UploadPhoto(ModelForm):
 	class Meta:
 		model = Photo

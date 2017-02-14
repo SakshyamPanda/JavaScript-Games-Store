@@ -53,36 +53,43 @@ def home(request):
 
 @login_required(login_url='/login/')
 def myProfile(request):
-	userProfile = UserProfile.objects.get(user=request.user)
-	context = dict( backend_form = UploadGameForm())
-	if request.method == 'POST' and userProfile.isDeveloper:
-		form = UploadGameForm(request.POST, request.FILES)
-		context['posted'] = form.instance
-		success = False
-		if form.is_valid():
+    userProfile = UserProfile.objects.get(user=request.user)
+    context = dict( backend_form = UploadGameForm())
+    if request.method == 'POST' and userProfile.isDeveloper:
+        form = UploadGameForm(request.POST, request.FILES)
+        context['posted'] = form.instance
+        success = False
+        if form.is_valid():
 			#game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'], image=form.cleaned_data['image'])
 			#game.save()
 			#form = UploadGameForm()
-			success = True
-			form.save()
-	else:
-		form = UploadGameForm()
-		success = False
-	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context  })
+            success = True
+            form.save()
+    else:
+        form = UploadGameForm()
+        success = False
+    return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context  })
 
 @login_required(login_url='/login/')
-@csrf_exempt
+@csrf_protect
 def editProfile(request):
-	# in files.py it should access EditUserProfileForm
-	return render(request, "editProfile.html", {} )
+    if request.method == 'POST':
+        form = UpdateProfileForm(data=request.POST, instance=request.user)
+        if form.is_valid():
+            update = form.save(commit=False)
+            update.set_password(form.cleaned_data['password'])
+            update.save()
+            #User.objects.get().update(email=form.cleaned_data['email'], password=form.cleaned_data['password1'])
+    else:
+        form = UpdateProfileForm()
+    return render(request, "editProfile.html", {'form' : form} )
 
-	
 def browseGames(request):
     games = Game.objects.all()
     return render(request, "browseGames.html", {"games" : games })
 
 
-# About page- introduction to the project and Team members	
+# About page- introduction to the project and Team members
 def about(request):
 	return render(request, "about.html", {})
 
@@ -187,7 +194,7 @@ def game(request, game_name):
 		for comment in comments:
 			userProfile = UserProfile.objects.filter(user=comment.user).first()
 			userComments.append([comment,userProfile])
-		print(userComments)
+		#print(userComments)
 	# In case game does not exist, display 404
 	except Game.DoesNotExist:
 		raise Http404
@@ -305,7 +312,7 @@ def register(request):
             email=form.cleaned_data['email']
             )
             # Create our custom user profile
-            userProfile = UserProfile(user=user, isDeveloper=form.cleaned_data['isDeveloper'], email=form.cleaned_data['email'], password=form.cleaned_data['password1'])
+            userProfile = UserProfile(user=user, isDeveloper=form.cleaned_data['isDeveloper'])
             userProfile.save()
             # redirect to success page
             return HttpResponseRedirect('/register/success/')
@@ -319,7 +326,7 @@ def register_success(request):
     return render(request,
     'registration/success.html', {}
     )
-	
+
 def upload(request):
 	context = dict( backend_form = UploadPhoto())
 	if request.method == 'POST':

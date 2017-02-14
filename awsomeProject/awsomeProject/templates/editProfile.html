@@ -5,7 +5,7 @@
 {% load static %}
 	<!-- <h1> Hello, Inside EditProfile!! </h1> -->
 
-	
+
 <div class="container-fluid">
     <a href="/myProfile" class="btn btn-default" style="margin-top: 1%; margin-bottom:2%; color:#333;"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Return to my profile</a>
     <div class="row">
@@ -16,7 +16,7 @@
 					<div style="padding:12%">
 						{% load cloudinary %}
 						{% cloudinary 'WSD/profile_mockup.png' class="img-circle profile-thumbnail" %}
-						<!-- <img src= "CLOUDINARY URL" style="width:80%"/> --> 
+						<!-- <img src= "CLOUDINARY URL" style="width:80%"/> -->
 						<input type='file' onchange="" style="font-size: 80%"/>
 						<br/><br/>
 					</div>
@@ -57,5 +57,11 @@
 		</form>
     </div>
 </div>
-
+<form method="post" action=".">
+        {% csrf_token %}
+        <table border="0">
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Update Profile" />
+    </form>
 {% endblock %}

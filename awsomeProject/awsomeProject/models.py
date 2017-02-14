@@ -8,15 +8,18 @@ class UserProfile(models.Model):
 	#TODO add profilePicture attribute
 	user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
 	isDeveloper = models.BooleanField()
-	image = CloudinaryField('image')
-	
+
+
+	'''image = CloudinaryField('image')
+
 	""" Informative name for mode """
+	# TODO: IT DOENST WORK, YOU GET AttributeError: 'UserProfile' object has no attribute 'title' at return
 	def __unicode__(self):
 		try:
 			public_id = self.image.public_id
 		except AttributeError:
 			public_id = ''
-		return "Photo <%s:%s>" % (self.title, public_id)
+		return "Photo <%s:%s>" % (self.title, public_id)'''
 
 
 class Game(models.Model):
@@ -33,7 +36,7 @@ class Game(models.Model):
 	created = models.DateField(default=now, editable=False)
 	category = models.CharField(max_length=20, choices=Category_Choices, default='Action')
 	image = CloudinaryField('image')
-	
+
 	""" Informative name for mode """
 	def __unicode__(self):
 		try:
