@@ -65,6 +65,9 @@ class UploadGameForm(forms.Form):
 class UploadGameForm(ModelForm):
 	class Meta:
 		model = Game
+		widgets = {
+			'description': forms.Textarea(attrs={'placeholder': 'Enter description here!'}),
+		}
 		fields = '__all__'
 
 class EditUserProfileForm(ModelForm):
