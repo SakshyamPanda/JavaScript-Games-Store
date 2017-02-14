@@ -67,7 +67,7 @@ class UploadGameForm(ModelForm):
 		model = Game
 		fields = '__all__'
 
-class UploadUserProfileForm(ModelForm):
+class EditUserProfileForm(ModelForm):
 	class Meta:
 		model = UserProfile
 		exclude = ()
