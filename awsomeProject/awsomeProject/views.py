@@ -349,13 +349,15 @@ def manageUploadedGames(request):
     developerProfile = UserProfile.objects.get(user=request.user)
     if developerProfile.isDeveloper:
         DeveloperGames = DeveloperGame.objects.all().filter(user=request.user)
-        print(len(DeveloperGames))
+        games = []
+        for game in DeveloperGames:
+            games.append(game.game)
+        #Display the games
     else:
         return HttpResponseRedirect('/') #in case address is typed, this redirects them to hom (secure stuff)
     #games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
 
-    #Display the games
-    return render(request, "manageUploadedGames.html", {"developerProfile": developerProfile})
+    return render(request, "manageUploadedGames.html", {"developerProfile": developerProfile, 'games' : games})
 
 # TODO: @sharbel, When a game is clicked in manageUploadedGames, you can Edit its details, request to change the price (or just lock the price), and view the game sales
 @login_required(login_url='/login/')
