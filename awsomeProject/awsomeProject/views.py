@@ -72,24 +72,10 @@ def myProfile(request):
 
 @login_required(login_url='/login/')
 def editProfile(request):
-	userProfile = UserProfile.objects.get(user=request.user)
-	context = dict( backend_form = EditUserProfileForm())
-	if request.method == 'POST':
-		form = EditUserProfileForm(request.POST, request.FILES)
-		context['posted'] = form.instance
-		success = False
-		if form.is_valid():
-			#game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'], image=form.cleaned_data['image'])
-			#game.save()
-			#form = UploadGameForm()
-			success = True
-			form.save()
-	else:
-		form = EditUserProfileForm()
-		success = False
-	return render(request, "editProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context  })
+	# in files.py it should access EditUserProfileForm
+	return render(request, "editProfile.html", {} )
+
 	
-		
 def browseGames(request):
     games = Game.objects.all()
     return render(request, "browseGames.html", {"games" : games })
