@@ -71,6 +71,7 @@ def myProfile(request):
 	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context  })
 
 @login_required(login_url='/login/')
+@csrf_exempt
 def editProfile(request):
 	# in files.py it should access EditUserProfileForm
 	return render(request, "editProfile.html", {} )
