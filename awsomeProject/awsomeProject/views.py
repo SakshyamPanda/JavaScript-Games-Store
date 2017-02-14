@@ -84,10 +84,6 @@ def editProfile(request):
         form = UpdateProfileForm()
     return render(request, "editProfile.html", {'form' : form} )
 
-<<<<<<< HEAD
-=======
-
->>>>>>> sharbel
 def browseGames(request):
     games = Game.objects.all()
     return render(request, "browseGames.html", {"games" : games })
