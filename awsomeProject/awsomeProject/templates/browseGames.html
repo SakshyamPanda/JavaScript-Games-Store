@@ -9,9 +9,7 @@
 {% block main %}
 
 <div class="col-lg-12">
-	<h1 class="page-header"> Browse Games
-		<small> All Available Games </small>
-	</h1>
+	<h1 class="page-header service-heading"> Browse Games</h1>
 </div>
 
 <div class="" id="browse-games">
@@ -20,7 +18,7 @@
 			<div class="col-md-12 img-thumbnail">
 				<a href={% url "game" game.name %}>
 					<!-- Source of the picture should be implemented from db -->
-					<img class="img-responsive" src="{{game.image.url}}" alt="" width="600" height="200">
+					{% cloudinary game.image width=600 height=200 crop="fill" class="img-responsive" %}
 				</a>
 				<div class="col-md-12">
 					<a href={% url "game" game.name %}> <h4 class="service-heading">{{game.name}}<h4></a>
