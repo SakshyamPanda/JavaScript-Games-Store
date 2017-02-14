@@ -40,4 +40,6 @@ urlpatterns = [
 	#url(r'^test/$', views.test, name='test_cloudinary'),
 	url(r'^test/$', views.upload, name='upload'),
 	url(r'^myProfile/editProfile/$', views.editProfile, name='editProfile'),
+    url(r'^myProfile/manageUploadedGames/$', views.manageUploadedGames, name='manageUploadedGames'),
+    url(r'^myProfile/manageUploadedGames/manageGame/$', views.manageGame, name='manageGame'),
 ]

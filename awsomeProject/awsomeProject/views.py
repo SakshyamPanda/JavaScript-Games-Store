@@ -84,6 +84,10 @@ def editProfile(request):
         form = UpdateProfileForm()
     return render(request, "editProfile.html", {'form' : form} )
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> sharbel
 def browseGames(request):
     games = Game.objects.all()
     return render(request, "browseGames.html", {"games" : games })
@@ -337,3 +341,24 @@ def upload(request):
 			form.save()
 
 	return render(request, 'test.html', context)
+
+# TODO: @sharbel, As a developer, they should be able to: see list of game sales
+@login_required(login_url='/login/')
+def manageUploadedGames(request):
+    # This should be the view for the developer to see all the games she created, who bought their games, edit game details, and request to remove their uploaded games.
+
+    developer = UserProfile.objects.filter(user=request.user, isDeveloper = True)
+    games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
+
+    #Display the games
+    return render(response, "manageUploadedGames.html", {"developer": developer, "games" : games})
+
+# TODO: @sharbel, When a game is clicked in manageUploadedGames, you can Edit its details, request to change the price (or just lock the price), and view the game sales
+@login_required(login_url='/login/')
+def manageGame(request):
+    #Import all game details to view them.
+    #Make some changeable while others locked (like price?)
+    #This is probably implemented as a form.. check about POST resquest
+
+    #View game sales
+    return render(response, "manageGame.html", {"game": game})
