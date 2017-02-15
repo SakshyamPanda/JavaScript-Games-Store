@@ -1,11 +1,30 @@
 {% extends "base.html" %}
 
 {% block main %}
-  <h2>Login</h2>
-  <form method="post">
-    <!-- Cross site request forgery prevention -->
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
+<div class="col-md-12 text-center">
+	<form method="post">
+		<label for="Login"><h2>Login</h2></label>
+		<!-- Cross site request forgery prevention -->
+		{% csrf_token %}
+		{% for field in form %}
+			<div class="fieldWrapper">
+				{{ field.label_tag }} {{ field }}
+				
+			</div>
+		{% endfor %}
+		<button type="submit" class="btn btn-primary btn-lg">Login</button>
+	</form>
+	
+	
+	{% if form.errors %}
+		<div id="error" style="margin-top: 20px">
+			<p>
+				<span>Please enter a correct username and password.</span>
+				<span>Note that both fields may be case-sensitive.</span>
+			</p>
+		</div>
+	{% endif %}
+	
+</div>
+
 {% endblock %}
