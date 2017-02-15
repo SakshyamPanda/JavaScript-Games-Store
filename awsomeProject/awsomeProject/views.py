@@ -361,6 +361,7 @@ def activation(request,id):
         return Http404
     user.is_active=True
     user.save()
+    login(request, user)
     return HttpResponseRedirect('/')
 
 def send_email(toaddr,url):
