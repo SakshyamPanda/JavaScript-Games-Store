@@ -329,16 +329,20 @@ def register(request):
             userProfile = UserProfile(user=user, isDeveloper=form.cleaned_data['isDeveloper'])
             userProfile.save()
 
+            #Authenticate user
             username=request.POST['username']
             password=request.POST['password1']
             user=authenticate(username=username,password=password)
 
+            #Make it inactive until he/she activates account via email
             user.is_active=False
             user.save()
 
+            #prepare data for sending email to user
             id=user.id
             email=user.email
             url = request.build_absolute_uri(reverse('activation', args=(id, )))
+            #Custom function that prepares and sends email to user
             send_email(email,url)
 
             # redirect to success page
@@ -348,13 +352,15 @@ def register(request):
     return render(request,
     'registration/register.html', {'form' : form}
     )
-
+#after registration user is redirected here, getting further instructions
 def register_success(request):
     return render(request,
     'registration/success.html', {}
     )
 
+# After user clicks link provided in email he is redirected here
 def activation(request,id):
+    #Change user status to active and login him/her
     try:
         user = User.objects.get(id=id)
     except User.DoesNotExist:
@@ -364,22 +370,25 @@ def activation(request,id):
     login(request, user)
     return HttpResponseRedirect('/')
 
+# Not a view, just a function that sends email to user for validation
 def send_email(toaddr,url):
-
-	text = "Hi!\n To finish registration, follow this link to activate your account:%s" %(url)
-	# Record the MIME types of both parts - text/plain and text/html.
-	part1 = MIMEText(text, 'plain')
-	msg = MIMEMultipart('alternative')
-	msg.attach(part1)
-	subject="Activate your account at WSD Awsome Project"
-	msg="""\From: %s\nTo: %s\nSubject: %s\n\n%s""" %(fromaddr,toaddr,subject,msg.as_string())
-	server = smtplib.SMTP('smtp.gmail.com:587')
-	server.ehlo()
-	server.starttls()
-	server.login(username,password)
-	server.sendmail(fromaddr,[toaddr],msg)
-	server.quit()
-
+    # Body of email
+    text = "Hi!\n To finish registration, follow this link to activate your account:%s" %(url)
+    # Record the MIME types of both parts - text/plain and text/html.
+    part1 = MIMEText(text, 'plain')
+    msg = MIMEMultipart('alternative')
+    msg.attach(part1)
+    #Subject of email
+    subject="Activate your account at WSD Awsome Project"
+    msg="""\From: %s\nTo: %s\nSubject: %s\n\n%s""" %(fromaddr,toaddr,subject,msg.as_string())
+    #Open server, authenticate and send email
+    server = smtplib.SMTP('smtp.gmail.com:587')
+    server.ehlo()
+    server.starttls()
+    server.login(username,password)
+    server.sendmail(fromaddr,[toaddr],msg)
+    server.quit()
+    
 
 def upload(request):
 	context = dict( backend_form = UploadPhoto())
