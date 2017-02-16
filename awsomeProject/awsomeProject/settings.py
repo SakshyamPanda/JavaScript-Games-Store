@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'awsomeProject',
 	'cloudinary',
+	'bootstrapform',
 ]
 
 MIDDLEWARE_CLASSES = [

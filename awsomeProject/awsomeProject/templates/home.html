@@ -13,7 +13,7 @@
 			<div class="panel-body">
 				{% if user.is_authenticated %}
 				<div class="col-md-12 text-center">
-					<div class="section-font">Welcome Back! {{ user.username }}</div>
+					<div class="section-font">Welcome Back {{ user.username }}!</div>
 					<div class="section-font">It's Nice To Meet You</div>
 				</div>
 				{% else %}
@@ -32,8 +32,8 @@
 		</div>
 	</div>
 	
-	<div class="col-md-12" style="margin-bottom:15px">
-		<div class="section-font">Most Recent Games</div>
+	<div class="col-md-12" style="margin-bottom:18px">
+		<label class="section-font control-label">Most Recent Games</label>
 	</div>
 	
 	<div class="" id="show-games">
