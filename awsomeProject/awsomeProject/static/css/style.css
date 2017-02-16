@@ -1,10 +1,10 @@
 @CHARSET "UTF-8";
 
 * {
-  @include box-sizing(border-box); 
+  @include box-sizing(border-box);
 }
 
-body{ 
+body{
 	padding-top: 55px;
 	/*overflow-x:hidden;*/
 	font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -60,7 +60,9 @@ a {
 .main{
 	margin-bottom: 80px;
 }
-
+#game {
+  height: 100%
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------- */
@@ -70,11 +72,11 @@ a {
 		margin:14px 0;
 		text-transform:none
 	}
-	
+
 	.section-font{
 		font-size: 16px;
 	}
-	
+
 	.section-subheading{
 		font-size:13px;
 	}
@@ -82,7 +84,7 @@ a {
 	.game-description{
 		height: 160px;
 	}
-	
+
 	.main{
 		margin-bottom: 70px;
 	}
@@ -94,11 +96,11 @@ a {
 		margin:15px 0;
 		text-transform:none
 	}
-	
+
 	.section-font{
 		font-size: 18px;
 	}
-	
+
 	.section-subheading{
 		font-size:13px;
 	}
@@ -106,7 +108,7 @@ a {
 	.game-description{
 		height: 150px;
 	}
-	
+
 	.main{
 		margin-bottom: 70px;
 	}
@@ -116,7 +118,7 @@ a {
 	.section-font{
 		font-size: 22px;
 	}
-	
+
 	.section-subheading{
 		font-size:14px;
 	}
@@ -124,7 +126,7 @@ a {
 	.game-description{
 		height: 100px;
 	}
-	
+
 	.main{
 		margin-bottom: 70px;
 	}
@@ -142,7 +144,7 @@ a {
 	.game-description{
 		height: 155px;
 	}
-	
+
 	.main{
 		margin-bottom: 60px;
 	}
