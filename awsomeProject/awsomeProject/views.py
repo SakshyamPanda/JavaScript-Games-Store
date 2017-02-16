@@ -99,8 +99,13 @@ def editProfile(request):
     return render(request, "editProfile.html", {'form' : form} )
 
 def browseGames(request):
-    games = Game.objects.all()
-    return render(request, "browseGames.html", {"games" : games })
+    action = Game.objects.all().filter(category='Action')
+    adventure = Game.objects.all().filter(category='Adventure')
+    sports = Game.objects.all().filter(category='Sports')
+    strategy = Game.objects.all().filter(category='Strategy')
+    puzzle = Game.objects.all().filter(category='Puzzle')
+    print(len(adventure))
+    return render(request, "browseGames.html", {"action" : action, "adventure" : adventure, "sports" : sports, "strategy" : strategy, "puzzle" : puzzle })
 
 
 # About page- introduction to the project and Team members
@@ -388,7 +393,7 @@ def send_email(toaddr,url):
     server.login(username,password)
     server.sendmail(fromaddr,[toaddr],msg)
     server.quit()
-    
+
 
 def upload(request):
 	context = dict( backend_form = UploadPhoto())
