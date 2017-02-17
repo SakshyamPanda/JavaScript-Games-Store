@@ -17,9 +17,11 @@
 			<div class="col-md-12">
 				<p class="lead" style="margin-bottom:0px">{{user.username}}</p>
 				<span><a href="editProfile" style="color:#ddd;">Edit Profile</a></span>
+				<br/>
+				<span><a href="manageUploadedGames">Manage Uploaded Games</a></span>
 			</div>
 		</div>
-		<span><a href="manageUploadedGames">Manage Uploaded Games</a></span>
+
 	</div>
 
 </div>
@@ -53,7 +55,10 @@ Hello developer {{user.username}}
         </table>
 		<input type="submit" value="Upload">
 	</form>
-	<!-- ##############################################   donot remove this please
+{% endif %}
+{% endif %}
+{% endblock %}
+<!-- ##############################################   donot remove this please
 	{% if posted %}
 		<div class="results">
 			{% if posted.errors %}
@@ -85,9 +90,7 @@ Hello developer {{user.username}}
 		</div>
 	{% endif %}
 </div>
-
-{% endblock %}
-
+-->
 <!-- ##############################################   donot remove this please
 							{% if posted %}
 								<div class="results">
