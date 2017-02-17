@@ -8,7 +8,7 @@ class UserProfile(models.Model):
 	#TODO add profilePicture attribute
 	user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
 	isDeveloper = models.BooleanField()
-
+	key = models.CharField(max_length = 300, default="")
 
 	'''image = CloudinaryField('image')
 

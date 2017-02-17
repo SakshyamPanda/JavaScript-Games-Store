@@ -17,12 +17,13 @@
 			<div class="col-md-12">
 				<p class="lead" style="margin-bottom:0px">{{user.username}}</p>
 				<span><a href="editProfile" style="color:#ddd;">Edit Profile</a></span>
+				<span><a href={% url "registerForAPI" %}> Request API Key </a></span>
 			</div>
 		</div>
 	</div>
 
 	{% if userProfile.isDeveloper %}
-		
+
 		{% if success %}
 			<p> Upload sucessuful </p>
 
@@ -36,7 +37,7 @@
 						<button type="button" class="btn btn-default" href="#tab2" id="purchased-game" data-toggle="tab">Purchased Games</button>
 					</div>
 				</div>
-				
+
 				<div class="well col-md-12">
 					<div class="tab-content">
 						<div class="tab-pane fade in active" id="tab1">
@@ -44,7 +45,7 @@
 								<button type="button" id="add-game-btn" class="btn btn-info btn-block">New Game</button>
 								<button type="button" class="btn btn-info btn-block" id="clear-btn" style="display:none">Clear</button>
 							</div>
-							
+
 							<div class="col-md-10">
 								<div id="new-game" class="collapse">
 									<div class="col-md-10 col-md-offset-2">
@@ -57,25 +58,25 @@
 													{{ form|bootstrap }}
 												</div>
 												<button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 30px">Upload</button>
-											</form>							
+											</form>
 										</div>
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="col-md-12">
 								<p>Your Games</p>
 							</div>
 						</div>
-						
+
 						<div class="tab-pane fade in" id="tab2">
 							<h3>Purchased Games</h3>
 							<button type="button" id="buy-game-btn" class="btn btn-info btn-lg">Buy Games</button>
 						</div>
-						
+
 					</div>
 				</div>
-				
+
 			</div>
 		{% endif %}
 
