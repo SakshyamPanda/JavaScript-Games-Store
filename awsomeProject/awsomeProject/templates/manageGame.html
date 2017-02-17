@@ -23,37 +23,20 @@
           </table>
       <input type="submit" name="updateGame" value="Update Game Details">
       <input type="submit"  name="deleteGame" value="Delete Game">
-     <!--<button type="submit" name="updateGame" value="1">Update Game Details</button>
-      <button type="submit"  name="deleteGame" value="1">Delete Game</button>-->
     </form>
   </div>
   <div>
-  <!--  <form action="#" method="POST">
-      {{ backend_form }}
-      <input id="deleteButton" type="submit" style="color:#FF0000"  name="delete_game" value="Delete Game"/>
-    </form>-->
   </div>
 
 <p>{{messageOfUpdate}}</p>
 </div>
 
-{% for game in games %}
+
 <div class="col-md-6 portfolio-item">
   <h2> View {{game.name}} sales </h2>
     {% for buyer, timestamp in transactions %}
       <p> {{buyer}} Bought the game on {{timestamp}}</p>
     {% endfor %}
 </div>
-
-
-
-<!--<form method="post" action=".">
-        {% csrf_token %}
-        <table border="0">
-            {{ form.as_table }}
-        </table>
-        <input type="submit" value="Update Profile" />
-</form> -->
-
 
 {% endblock %}

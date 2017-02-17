@@ -61,6 +61,8 @@ class UploadGameForm(forms.Form):
 			return self.cleaned_data['name']
 		raise forms.ValidationError(_("Game name already exists, please chose another one."))
 '''
+def special_match(strg, search=re.compile(r'[^a-zA-Z0-9 ]').search):
+    return not bool(search(strg))
 
 class UploadGameForm(ModelForm):
     class Meta:
@@ -72,7 +74,7 @@ class UploadGameForm(ModelForm):
 
     def clean_name(self):
         if 'name' in self.cleaned_data:
-            if re.search(r'\b[a-zA-Z0-9 ]+\b',self.cleaned_data['name']):
+            if special_match(self.cleaned_data['name']):
                 return self.cleaned_data['name']
             else:
                 raise forms.ValidationError(_("Name can't contain any special characters"))
@@ -96,7 +98,7 @@ class UpdateGameForm(ModelForm):
     class Meta:
         model = Game
         fields = '__all__' '''
-        
+
 '''
 class UpdateProfileForm(forms.Form):
     email = forms.EmailField(widget=forms.TextInput(attrs=dict(required=True, max_length=30)), label=_("Email address"))
