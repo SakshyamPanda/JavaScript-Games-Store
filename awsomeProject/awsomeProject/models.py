@@ -25,9 +25,10 @@ class UserProfile(models.Model):
 class Game(models.Model):
 	Category_Choices = (
 		('Action', 'Action'),
-		('Advanture', 'Adventure'),
+		('Adventure', 'Adventure'),
 		('Sports', 'Sports'),
 		('Strategy', 'Strategy'),
+		('Puzzle', 'Puzzle')
 	)
 	name = models.CharField(max_length=255, unique=True)
 	url = models.URLField()

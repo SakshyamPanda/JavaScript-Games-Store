@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'registration/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'template_name' : 'registration/logout.html'}, name='logout'),
     url(r'^register/$', views.register, name='register'),
+    url(r'^register/([0-9]+)/$', views.activation, name='activation'),
     url(r'^register/success/$', views.register_success),
     url(r'^$', views.home, name='index'),
     #TODO: Change regex to W (word metacharacter)

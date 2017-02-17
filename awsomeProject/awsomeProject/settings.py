@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'awsomeProject',
 	'cloudinary',
+	'bootstrapform',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -125,6 +126,17 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'wsdAwsomeProject@gmail.com'
+EMAIL_HOST_PASSWORD = 'reljathegreat'
+
+#SMTP one for production
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#Testing purposes
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 

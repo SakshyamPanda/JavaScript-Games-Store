@@ -27,10 +27,12 @@
 	<!-- CUSTOM FONT -->
 	<!-- <link href="{% static 'font_awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css"> -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
+	<!--<script type="text/javascript" src="{% static 'js/profile.js' %}"></script>
+	<link href="{% static 'css/profile.css' %}" rel='stylesheet' type='text/css'> -->
 	{% block scriptsAndStylesheets %}
 
 
@@ -83,7 +85,7 @@
 
 
 	<!-- Welcome section -->
-	<div class="container text-center">
+	<div class="container text-center main">
 		<div class="row">
 			<div class="text-center">
 			{% block main %}
@@ -94,15 +96,21 @@
 	</div>
 
     <!-- Footer Section -->
-	<footer>
+	<div>
 		<div class="container">
 			<div class="row">
+
 				<div class="">
 					<p class="copyright text-muted small" style="margin-top:18px;">Copyright &copy; Awesome WSD Team, 2017. All Rights Reserved.</p>
 				</div>
+<!--
+				<div class="" id="footer">
+					<p class="copyright text-muted small text-center" style="margin-top:18px;">Copyright &copy; Awesome WSD Team, 2017. All Rights Reserved.</p>
+				</div>
+-->
 			</div>
 		</div>
-	</footer>
+	</div>
 	<!-- <span class="sr-only">(current)</span> -->
 </body>
 </html>

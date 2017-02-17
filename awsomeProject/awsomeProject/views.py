@@ -11,8 +11,9 @@ from .models import Comment
 from .models import DeveloperGame
 from .files import *
 from django.forms.models import model_to_dict
+from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout
+from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
@@ -23,7 +24,11 @@ from hashlib import md5
 import cloudinary, cloudinary.uploader, cloudinary.forms
 import datetime
 from datetime import date, timedelta, datetime
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
+#For banking service
 secret_key = "26d3858162e10dc081f786319f286025" #This is from the secret key generator they provided. Dunno if this is the right way to put it
 
 import cloudinary, cloudinary.uploader, cloudinary.api
@@ -42,6 +47,12 @@ cloudinary.config(
   api_key = "623965587187774",
   api_secret = "Lf7ULK0njrZJlVdwopnjsMeLdfM"
 )
+
+
+#For Email Verification
+fromaddr='wsdAwsomeProject@gmail.com'
+username=fromaddr
+password='reljathegreat'
 
 
 # Landing page showing recent uploaded games
@@ -89,13 +100,18 @@ def editProfile(request):
     return render(request, "editProfile.html", {'form' : form} )
 
 def browseGames(request):
-    games = Game.objects.all()
-    return render(request, "browseGames.html", {"games" : games })
+    action = Game.objects.all().filter(category='Action')
+    adventure = Game.objects.all().filter(category='Adventure')
+    sports = Game.objects.all().filter(category='Sports')
+    strategy = Game.objects.all().filter(category='Strategy')
+    puzzle = Game.objects.all().filter(category='Puzzle')
+    print(len(adventure))
+    return render(request, "browseGames.html", {"action" : action, "adventure" : adventure, "sports" : sports, "strategy" : strategy, "puzzle" : puzzle })
 
 
 # About page- introduction to the project and Team members
 def about(request):
-	return render(request, "about.html", {})
+    return render(request, "about.html", {})
 
 
 @login_required(login_url='/login/')
@@ -126,7 +142,7 @@ def buyGame(request, game_name):
 
         return render(request, "buyGame.html", {"pid": pid, "sid":sid, "amount":amount,
             "success_url": success_url, "cancel_url":cancel_url, "error_url":error_url,
-            "checksum":checksum})
+            "checksum":checksum, "game_name":game_name})
 
 #TODO: implement the different pages for the different results
 @login_required
@@ -318,6 +334,23 @@ def register(request):
             # Create our custom user profile
             userProfile = UserProfile(user=user, isDeveloper=form.cleaned_data['isDeveloper'])
             userProfile.save()
+
+            #Authenticate user
+            username=request.POST['username']
+            password=request.POST['password1']
+            user=authenticate(username=username,password=password)
+
+            #Make it inactive until he/she activates account via email
+            user.is_active=False
+            user.save()
+
+            #prepare data for sending email to user
+            id=user.id
+            email=user.email
+            url = request.build_absolute_uri(reverse('activation', args=(id, )))
+            #Custom function that prepares and sends email to user
+            send_email(email,url)
+
             # redirect to success page
             return HttpResponseRedirect('/register/success/')
     else:
@@ -325,11 +358,43 @@ def register(request):
     return render(request,
     'registration/register.html', {'form' : form}
     )
-
+#after registration user is redirected here, getting further instructions
 def register_success(request):
     return render(request,
     'registration/success.html', {}
     )
+
+# After user clicks link provided in email he is redirected here
+def activation(request,id):
+    #Change user status to active and login him/her
+    try:
+        user = User.objects.get(id=id)
+    except User.DoesNotExist:
+        return Http404
+    user.is_active=True
+    user.save()
+    login(request, user)
+    return HttpResponseRedirect('/')
+
+# Not a view, just a function that sends email to user for validation
+def send_email(toaddr,url):
+    # Body of email
+    text = "Hi!\n To finish registration, follow this link to activate your account:%s" %(url)
+    # Record the MIME types of both parts - text/plain and text/html.
+    part1 = MIMEText(text, 'plain')
+    msg = MIMEMultipart('alternative')
+    msg.attach(part1)
+    #Subject of email
+    subject="Activate your account at WSD Awsome Project"
+    msg="""\From: %s\nTo: %s\nSubject: %s\n\n%s""" %(fromaddr,toaddr,subject,msg.as_string())
+    #Open server, authenticate and send email
+    server = smtplib.SMTP('smtp.gmail.com:587')
+    server.ehlo()
+    server.starttls()
+    server.login(username,password)
+    server.sendmail(fromaddr,[toaddr],msg)
+    server.quit()
+
 
 def upload(request):
 	context = dict( backend_form = UploadPhoto())

@@ -12,7 +12,6 @@
 
                 <h1 class="page-header"> Manage {{game.name}} </h1>
 </div>
-
 <div class="col-md-6 portfolio-item">
   <div id='backend_upload'>
     <h2> Edit {{game.name}} </h2>
@@ -38,6 +37,7 @@
 <p>{{messageOfUpdate}}</p>
 </div>
 
+{% for game in games %}
 <div class="col-md-6 portfolio-item">
   <h2> View {{game.name}} sales </h2>
     {% for buyer, timestamp in transactions %}

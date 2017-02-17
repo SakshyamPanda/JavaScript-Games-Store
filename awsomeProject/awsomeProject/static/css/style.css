@@ -1,15 +1,32 @@
 @CHARSET "UTF-8";
 
 * {
-  @include box-sizing(border-box); 
+  @include box-sizing(border-box);
 }
 
-body{ 
+body{
 	padding-top: 55px;
-	overflow-x:hidden;
+	/*overflow-x:hidden;*/
 	font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0;
+   min-height:50px;
+   width:100%;
+   background-color:#222;
+   border-color: #222;
+}
+
+/* IE 6 */
+* html #footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+
+/*
 footer {
   background-color: #222;
   border-color: #222;
@@ -17,6 +34,7 @@ footer {
   min-height: 50px;
   width: 100%;
 }
+*/
 
 .section-subheading{
 	font-size:16px;
@@ -26,28 +44,74 @@ footer {
 	font-weight:400;
 }
 
-#show-games a{
-	text-decoration: none;
+a {
+	text-decoration: none !important;
 }
 
 .section-font{
 	font-size: 16px;
 }
 
+.game-description{
+	height: 140px;
+	margin-bottom: 2%;
+}
+
+.main{
+	margin-bottom: 80px;
+}
+#game {
+  height: 100%
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------- */
 
-@media (min-width:768px){
+@media (max-width:500px) {
+	.service-heading{
+		margin:14px 0;
+		text-transform:none
+	}
+
+	.section-font{
+		font-size: 16px;
+	}
+
+	.section-subheading{
+		font-size:13px;
+	}
+
+	.game-description{
+		height: 160px;
+	}
+
+	.main{
+		margin-bottom: 70px;
+	}
+}
+
+
+@media (min-width:500px){
 	.service-heading{
 		margin:15px 0;
 		text-transform:none
 	}
-	
+
 	.section-font{
 		font-size: 18px;
 	}
 
+	.section-subheading{
+		font-size:13px;
+	}
+
+	.game-description{
+		height: 150px;
+	}
+
+	.main{
+		margin-bottom: 70px;
+	}
 }
 
 @media (min-width: 768px) {
@@ -55,6 +119,17 @@ footer {
 		font-size: 22px;
 	}
 
+	.section-subheading{
+		font-size:14px;
+	}
+
+	.game-description{
+		height: 100px;
+	}
+
+	.main{
+		margin-bottom: 70px;
+	}
 }
 
 @media (min-width:992px){
@@ -62,4 +137,15 @@ footer {
 		font-size: 26px;
 	}
 
+	.section-subheading{
+		font-size:15px;
+	}
+
+	.game-description{
+		height: 155px;
+	}
+
+	.main{
+		margin-bottom: 60px;
+	}
 }
