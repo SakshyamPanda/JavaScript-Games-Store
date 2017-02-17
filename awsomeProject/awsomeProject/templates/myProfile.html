@@ -22,7 +22,9 @@
 			<p class="lead" style="margin-bottom:0px">{{user.username}}</p>
 			<span><a href="editProfile" style="color:#ddd;">Edit Profile</a></span>
 		</div>
+		<span><a href="manageUploadedGames">Manage Uploaded Games</a></span>
 	</div>
+
 </div>
 
 {% if userProfile.isDeveloper %}
@@ -30,7 +32,7 @@
 Hello developer {{user.username}}
 {% if success %}
 
-<p> Upload sucessuful </p>
+<p> Upload successful </p>
 
 {% else %}
 <!--
@@ -44,7 +46,7 @@ Hello developer {{user.username}}
 </form>
 -->
 <div id='backend_upload'>
-
+	<h2>Upload New Game</h2>
 	<form action="." method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{ backend_form }}
