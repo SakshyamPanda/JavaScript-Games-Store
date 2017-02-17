@@ -10,6 +10,7 @@ from .models import Transaction
 from .models import Comment
 from .models import DeveloperGame
 from .files import *
+from django.forms.models import model_to_dict
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
@@ -22,7 +23,7 @@ from django.http import JsonResponse
 from hashlib import md5
 import cloudinary, cloudinary.uploader, cloudinary.forms
 import datetime
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -146,52 +147,52 @@ def buyGame(request, game_name):
 #TODO: implement the different pages for the different results
 @login_required
 def buyGameResult(request,game_name):
-	if request.method == "GET":
-		#this is supposed to be the result from the payment service, whether success, error, or cancel. (Step 3 in bank api)
-		#print(game_name)
-		root = request.GET
-		pid = root['pid']
-		ref = root['ref']
-		result = root['result']
-		checksum_from_url = root['checksum']
+    if request.method == "GET":
+        #this is supposed to be the result from the payment service, whether success, error, or cancel. (Step 3 in bank api)
+        #print(game_name)
+        root = request.GET
+        pid = root['pid']
+        ref = root['ref']
+        result = root['result']
+        checksum_from_url = root['checksum']
 
-		#The checksum is calculated from pid, sid, amount, and your secret key. The string is formed like this:
-		checksumstr = "pid={}&ref={}&result={}&token={}".format(pid, ref, result, secret_key)
+        #The checksum is calculated from pid, sid, amount, and your secret key. The string is formed like this:
+        checksumstr = "pid={}&ref={}&result={}&token={}".format(pid, ref, result, secret_key)
 
-		# checksumstr is the string concatenated above
-		m = md5(checksumstr.encode("ascii"))
-		checksum = m.hexdigest()
+        # checksumstr is the string concatenated above
+        m = md5(checksumstr.encode("ascii"))
+        checksum = m.hexdigest()
 
-		if checksum != checksum_from_url:
-			print('la ya 7abeebi')
-			response = "No Habeebi, don't even try that"
-			return render(request, "buyGameResult.html", {'response' : response})
-			#return HttpResponseRedirect('/game/'+game_name+'/')
-			#raise Http404
+        if checksum != checksum_from_url:
+            print('la ya 7abeebi')
+            response = "No Habeebi, don't even try that"
+            return render(request, "buyGameResult.html", {'response' : response})
+            #return HttpResponseRedirect('/game/'+game_name+'/')
+            #raise Http404
 
-		else:
-			if( result == 'error'):
-				#'pass' if you comment the rest and don't want to do anything here
-				response = "Oops.. Something went wrong with the payment. Don't worry, your money is still in your pocket, though."
-				#raise Http404
+        else:
+            if( result == 'error'):
+                #'pass' if you comment the rest and don't want to do anything here
+                response = "Oops.. Something went wrong with the payment. Don't worry, your money is still in your pocket, though."
+                #raise Http404
 
-			if( result == 'success'):
-				user = request.user #The user is passed from "request"
-				game= Game.objects.get(name=game_name) #query the game from the Game object
-				transaction = Transaction(user=user,game=game)
-				transaction.save() #save the transactio to the database
-				return HttpResponseRedirect('/game/'+game_name+'/')
+            if( result == 'success'):
+                user = request.user #The user is passed from "request"
+                game= Game.objects.get(name=game_name) #query the game from the Game object
+                timestamp = datetime.now()
+                transaction = Transaction(user=user,game=game, timestamp= timestamp)
+                transaction.save() #save the transactio to the database
+                return HttpResponseRedirect('/game/'+game_name+'/')
 
-			if( result == 'cancel'):
-				response = 'cancel'
-				return HttpResponseRedirect('/game/'+game_name+'/')
+            if( result == 'cancel'):
+                response = 'cancel'
+                return HttpResponseRedirect('/game/'+game_name+'/')
 
+            print(root)
+            return render(request, "buyGameResult.html", {'response' : response})
 
-			print(root)
-			return render(request, "buyGameResult.html", {'response' : response})
-
-	else:
-		return HttpResponse('Not authorised')
+    else:
+        return HttpResponse('Not authorised')
 
 #Main view where user plays game
 @login_required(login_url='/login/')
@@ -413,23 +414,84 @@ def manageUploadedGames(request):
 
     developerProfile = UserProfile.objects.get(user=request.user)
     if developerProfile.isDeveloper:
-        DeveloperGames = DeveloperGame.objects.all().filter(user=request.user)
+        DeveloperGames = DeveloperGame.objects.all().filter(user=request.user) #Querying from the developer game table all objects whose user matches request.user
         games = []
-        for game in DeveloperGames:
-            games.append(game.game)
-        #Display the games
+        numberOfPurchasesList = []
+        for developerGame in DeveloperGames:
+            #put the games in a list
+            games.append(developerGame.game) # developerGame is an instance (a row in the database table) of DeveloperGames
+            #print(games)
+            Purchases = Transaction.objects.all().filter(game=developerGame.game) #Querying from the Transaction table the all transactions objects with games matching the chosen game
+            numberOfPurchasesList.append(len(Purchases))
+
+        gamePurchases = zip(games, numberOfPurchasesList)
+        #gamePurchases.append
     else:
-        return HttpResponseRedirect('/') #in case address is typed, this redirects them to hom (secure stuff)
+        return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
     #games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
 
-    return render(request, "manageUploadedGames.html", {"developerProfile": developerProfile, 'games' : games})
+    return render(request, "manageUploadedGames.html", {"developerProfile": developerProfile, "gamePurchases": gamePurchases})
 
 # TODO: @sharbel, When a game is clicked in manageUploadedGames, you can Edit its details, request to change the price (or just lock the price), and view the game sales
 @login_required(login_url='/login/')
-def manageGame(request):
-    #Import all game details to view them.
-    #Make some changeable while others locked (like price?)
-    #This is probably implemented as a form.. check about POST resquest
+@csrf_protect
+def manageGame(request, game_name):
+    messageOfUpdate=""
+    developerProfile = UserProfile.objects.get(user=request.user)
+    if developerProfile.isDeveloper:
+        try:
+            #Import all editable game details as a form.
+            game = Game.objects.get(name = game_name)
+            context = dict( backend_form = UpdateGameForm())
+            if request.method == 'POST':
+                # Create a form instance from POST data.
+                form = UpdateGameForm(request.POST, request.FILES, instance = game)
 
-    #View game sales
-    return render(response, "manageGame.html", {"game": game})
+                #context['posted'] = form.instance
+                success = False
+
+                if request.POST.get("updateGame"):
+
+                    if form.is_valid():
+                        # Create, but don't save the new author instance.
+                        updatedGame = form.save(commit=False) #This enables editng the data in some way before actually saving it to the
+                                                              #  database. For example: updatedGame.description = "Forced Description no matter what you write"
+                        updatedGame.save()
+                        success = True
+                        messageOfUpdate = "Game Successfully Updated"
+                    print("updateGame")
+
+                elif request.POST.get("deleteGame"):
+                    #Implement Remove Game (Delete from database). Should prompt some confirmation message.
+                    print("deleteGame")
+                    print(game.name)
+                    game.delete() #game is an instance.. game = Game.objects.get(name = game_name)
+                    return HttpResponseRedirect('/myProfile/manageUploadedGames/')
+
+
+            else:
+                form = UpdateGameForm(initial={"url": game.url, "price": game.price, "description": game.description})
+                success = False
+
+
+
+            #View game sales in a list of buyer names and timestamps
+            Purchases = Transaction.objects.all().filter(game=game) #Querying from the transactions game table all objects whose game matches game_name
+            buyers = []
+            timestamps = []
+            for purchase in Purchases:
+                buyers.append(purchase.user) #purchase is an instance (a row in the database) of Purchases
+                timestamps.append(purchase.timestamp)
+
+            transactions = zip(buyers, timestamps)
+
+            game = Game.objects.get(name = game_name)
+
+        except Game.DoesNotExist:
+            raise Http404
+
+    else:
+        return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
+
+
+    return render(request, "manageGame.html", {"game": game, "form" : form, "success" : success, "context" : context, "transactions": transactions, "messageOfUpdate": messageOfUpdate})

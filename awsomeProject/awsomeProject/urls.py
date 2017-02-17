@@ -42,5 +42,5 @@ urlpatterns = [
 	url(r'^test/$', views.upload, name='upload'),
 	url(r'^myProfile/editProfile/$', views.editProfile, name='editProfile'),
     url(r'^myProfile/manageUploadedGames/$', views.manageUploadedGames, name='manageUploadedGames'),
-    url(r'^myProfile/manageUploadedGames/manageGame/$', views.manageGame, name='manageGame'),
+    url(r'^myProfile/manageUploadedGames/([a-zA-Z0-9 ]+)/$', views.manageGame, name='manageGame'),
 ]

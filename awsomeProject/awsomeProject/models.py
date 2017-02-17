@@ -78,8 +78,9 @@ class Rating(models.Model):
     rating = models.IntegerField()
 
 class Transaction(models.Model):
-    user = models.ForeignKey(User, on_delete = models.CASCADE)
-    game = models.ForeignKey('Game', on_delete = models.CASCADE)
+	user = models.ForeignKey(User, on_delete = models.CASCADE)
+	game = models.ForeignKey('Game', on_delete = models.CASCADE)
+	timestamp = models.DateTimeField(default=now, editable=False)
 
 class Photo(models.Model):
 	image = CloudinaryField('image')

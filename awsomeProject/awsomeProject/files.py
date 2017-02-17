@@ -76,6 +76,27 @@ class UploadGameForm(ModelForm):
                 return self.cleaned_data['name']
             else:
                 raise forms.ValidationError(_("Name can't contain any special characters"))
+
+class UpdateGameForm(ModelForm):
+    class Meta:
+        model = Game
+        fields = ['url', 'description', 'price']
+        widgets = {
+            'description': forms.Textarea(attrs={'placeholder': 'Enter description here.'}),
+        }
+
+    def clean_name(self):
+        if 'name' in self.cleaned_data:
+            if re.search(r'\b[a-zA-Z0-9 ]+\b',self.cleaned_data['name']):
+                return self.cleaned_data['name']
+            else:
+                raise forms.ValidationError(_("Name can't contain any special characters"))
+
+'''class DeleteGameForm(ModelForm):
+    class Meta:
+        model = Game
+        fields = '__all__' '''
+        
 '''
 class UpdateProfileForm(forms.Form):
     email = forms.EmailField(widget=forms.TextInput(attrs=dict(required=True, max_length=30)), label=_("Email address"))
