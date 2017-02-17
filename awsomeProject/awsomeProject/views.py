@@ -96,24 +96,26 @@ def home(request):
 
 @login_required(login_url='/login/')
 def myProfile(request):
-    userProfile = UserProfile.objects.get(user=request.user)
-    context = dict( backend_form = UploadGameForm())
-    if request.method == 'POST' and userProfile.isDeveloper:
-        form = UploadGameForm(request.POST, request.FILES)
-        context['posted'] = form.instance
-        success = False
-        if form.is_valid():
+	userProfile = UserProfile.objects.get(user=request.user)
+	context = dict( backend_form = UploadGameForm())
+	if request.method == 'POST' and userProfile.isDeveloper:
+		form = UploadGameForm(request.POST, request.FILES)
+		context['posted'] = form.instance
+		success = False
+		if form.is_valid():
 			#game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'], image=form.cleaned_data['image'])
 			#game.save()
 			#form = UploadGameForm()
-            success = True
-            form.save()
-            devGame = DeveloperGame(user=request.user, game=Game.objects.get(name=form.cleaned_data['name']))
-            devGame.save()
-    else:
-        form = UploadGameForm()
-        success = False
-    return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context  })
+			success = True
+			form.save()
+			devGame = DeveloperGame(user=request.user, game=Game.objects.get(name=form.cleaned_data['name']))
+			devGame.save()
+			form = UploadGameForm()
+			context = UploadGameForm()
+	else:
+		form = UploadGameForm()
+		success = False
+	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context  })
 
 @login_required(login_url='/login/')
 @csrf_protect
@@ -256,21 +258,22 @@ def game(request, game_name):
 @login_required(login_url='/login/')
 @csrf_protect
 def saveScore(request):
-    # Only available as ajax post call
-    if request.method == "POST" and request.is_ajax():
-        #create python dictionary from data sent through post request
-        root = dict(request.POST.iterlists())
-        user = request.user
-        #extract data from root
-        game = Game.objects.get(pk = root['game'][0])
-        score = root['score'][0]
-        # Do not save dupicates of Scores (same score from same user for same game)
-        if not Scores.objects.filter(user=user, game=game, score=score).exists():
-            data = Scores(user=user, game=game, score=score)
-            data.save()
-        return HttpResponse("Score Saved")
-    else:
-        return HttpResponse("Not authorized.")
+	# Only available as ajax post call
+	if request.method == "POST" and request.is_ajax():
+		#create python dictionary from data sent through post request
+		#root = dict(request.POST.lists())	#python2.7
+		root = dict(request.POST.iterlists()) #python3
+		user = request.user
+		#extract data from root
+		game = Game.objects.get(pk = root['game'][0])
+		score = root['score'][0]
+		# Do not save dupicates of Scores (same score from same user for same game)
+		if not Scores.objects.filter(user=user, game=game, score=score).exists():
+			data = Scores(user=user, game=game, score=score)
+			data.save()
+		return HttpResponse("Score Saved")
+	else:
+		return HttpResponse("Not authorized.")
 
 @login_required(login_url='/login/')
 @csrf_protect
@@ -312,43 +315,45 @@ def saveGame(request):
 @login_required(login_url='/login/')
 @csrf_protect
 def loadGame(request):
-    if request.method == "POST" and request.is_ajax():
-        #create python dictionary from data sent through post request
-        root = dict(request.POST.iterlists())
-        user = request.user
-        game = Game.objects.get(pk = root['game'][0])
+	if request.method == "POST" and request.is_ajax():
+		#create python dictionary from data sent through post request
+		#root = dict(request.POST.iterlists())  #python2.7
+		root = dict(request.POST.lists())	#python3
+		user = request.user
+		game = Game.objects.get(pk = root['game'][0])
 
-        # If previously saved games exists, load them
-        if Gameplay.objects.filter(user=user, game=game).exists():
-            gameplay = Gameplay.objects.get(user=user, game=game)
-            # Prepare response to send to game
-            response = {'messageType' : 'LOAD', 'gameState' : {'playerItems' : [], 'score' : gameplay.score}}
-            # Fill items array one item a time
-            # Same as PlayerItem.objects.all().filter(gameplay=gameplay)
-            for item in PlayerItem.objects.filter(gameplay=gameplay):
-                response['gameState']['playerItems'].append(item.itemName)
-            return JsonResponse(response)
-        else:
-            return HttpResponse("No saved games to load.")
-    else:
-        return HttpResponse("Not authorized.")
+		# If previously saved games exists, load them
+		if Gameplay.objects.filter(user=user, game=game).exists():
+			gameplay = Gameplay.objects.get(user=user, game=game)
+			# Prepare response to send to game
+			response = {'messageType' : 'LOAD', 'gameState' : {'playerItems' : [], 'score' : gameplay.score}}
+			# Fill items array one item a time
+			# Same as PlayerItem.objects.all().filter(gameplay=gameplay)
+			for item in PlayerItem.objects.filter(gameplay=gameplay):
+				response['gameState']['playerItems'].append(item.itemName)
+			return JsonResponse(response)
+		else:
+			return HttpResponse("No saved games to load.")
+	else:
+		return HttpResponse("Not authorized.")
 
 @login_required(login_url='/login/')
 @csrf_protect
 def addComment(request,game_name):
-    if request.method == "POST" and request.is_ajax():
-        #create python dictionary from data sent through post request
-        root = dict(request.POST.iterlists())
-        if (str(root["comment"][0]) != ""):
-            comment = Comment(user=request.user,
-                                game=Game.objects.get(name=game_name),
-                                commentText=str(root["comment"][0]))
-            comment.save()
-            return HttpResponse("Success")
-        else:
-            return HttpResponse("Your comment is empty")
-    else:
-        return HttpResponse("Not authorized.")
+	if request.method == "POST" and request.is_ajax():
+		#create python dictionary from data sent through post request
+		#root = dict(request.POST.iterlists()) 	#python2.7
+		root = dict(request.POST.lists())	#python3
+		if (str(root["comment"][0]) != ""):
+			comment = Comment(user=request.user,
+								game=Game.objects.get(name=game_name),
+								commentText=str(root["comment"][0]))
+			comment.save()
+			return HttpResponse("Success")
+		else:
+			return HttpResponse("Your comment is empty")
+	else:
+		return HttpResponse("Not authorized.")
 
 @csrf_protect
 def register(request):
