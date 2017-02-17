@@ -197,28 +197,31 @@ def buyGameResult(request,game_name):
 #Main view where user plays game
 @login_required(login_url='/login/')
 def game(request, game_name):
-	print(request.FILES)
-	try:
-		game = Game.objects.get(name=game_name)
-		# TODO: What if highscores dont exist
-		scores = Scores.objects.all().filter(game=game).order_by("-score")
-		#check if user has bought the game a.k.a. has access to it
-		if Transaction.objects.filter(game=game, user=request.user).exists():
-			gameBought = True
-		else:
-			gameBought = False
-		comments = Comment.objects.all().filter(game=game).order_by("-created")
+    print(request.FILES)
+    try:
+        game = Game.objects.get(name=game_name)
+        # TODO: What if highscores dont exist
+        scores = Scores.objects.all().filter(game=game).order_by("-score")
+        #check if user has bought the game a.k.a. has access to it
+        if Transaction.objects.filter(game=game, user=request.user).exists():
+            gameBought = True
+        else:
+            gameBought = False
+            # If the user uploadded game, let him play it
+            if DeveloperGame.objects.filter(user=request.user, game=game).exists():
+                gameBought = True
+        comments = Comment.objects.all().filter(game=game).order_by("-created")
 
-		# userComments holds information about comments and userProfile of users who made comments
-		userComments = []
-		for comment in comments:
-			userProfile = UserProfile.objects.filter(user=comment.user).first()
-			userComments.append([comment,userProfile])
-		#print(userComments)
-	# In case game does not exist, display 404
-	except Game.DoesNotExist:
-		raise Http404
-	return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments})
+        # userComments holds information about comments and userProfile of users who made comments
+        userComments = []
+        for comment in comments:
+            userProfile = UserProfile.objects.filter(user=comment.user).first()
+            userComments.append([comment,userProfile])
+        #print(userComments)
+    # In case game does not exist, display 404
+    except Game.DoesNotExist:
+        raise Http404
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments})
 
 @login_required(login_url='/login/')
 @csrf_protect
