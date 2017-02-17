@@ -141,7 +141,7 @@ def buyGame(request, game_name):
 
         return render(request, "buyGame.html", {"pid": pid, "sid":sid, "amount":amount,
             "success_url": success_url, "cancel_url":cancel_url, "error_url":error_url,
-            "checksum":checksum})
+            "checksum":checksum, "game_name":game_name})
 
 #TODO: implement the different pages for the different results
 @login_required
