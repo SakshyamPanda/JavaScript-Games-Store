@@ -41,6 +41,8 @@ from cloudinary.forms import cl_init_js_callbacks
 #from .files import GameImageForm, ProfileImageForm
 from .files import UploadPhoto
 from cloudinary.models import CloudinaryField
+import string
+import random
 
 cloudinary.config(
   cloud_name = "sakshyam",
@@ -54,6 +56,34 @@ fromaddr='wsdAwsomeProject@gmail.com'
 username=fromaddr
 password='reljathegreat'
 
+def random_string_generator(size=20, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
+
+@login_required(login_url ='/login/')
+def registerForAPI(request):
+    user = UserProfile.objects.get(user=request.user)
+    if user.isDeveloper:
+        if user.key == "":
+            user.key = random_string_generator()
+            user.save()
+        return render(request, "registration/api.html", {"key" : user.key})
+    else:
+        return Http404
+
+@login_required(login_url ='/login/')
+def searchGamesAPI(request):
+    if request.method == "GET" and 'key' in request.GET and request.GET['key'] != "" and UserProfile.objects.get(user=request.user, key=request.GET['key']) != None:
+        if 'q' not in request.GET:
+            games = Game.objects.all()
+        else:
+            games = Game.objects.all().filter(name=request.GET['q'])
+        response = {"games" : []}
+        for game in games:
+            developer = DeveloperGame.objects.all().filter(game=game).first()
+            response["games"].append({"name" : game.name, "description" : game.description, "price" : game.price, "category" : game.category, "created" : game.created, "developed by" : developer.user.username})
+        return JsonResponse({"response" : response})
+    else:
+        return JsonResponse({"response" : "Did you register to use API?"})
 
 # Landing page showing recent uploaded games
 def home(request):
@@ -100,13 +130,13 @@ def editProfile(request):
     return render(request, "editProfile.html", {'form' : form} )
 
 def browseGames(request):
-    action = Game.objects.all().filter(category='Action')
-    adventure = Game.objects.all().filter(category='Adventure')
-    sports = Game.objects.all().filter(category='Sports')
-    strategy = Game.objects.all().filter(category='Strategy')
-    puzzle = Game.objects.all().filter(category='Puzzle')
-    print(len(adventure))
-    return render(request, "browseGames.html", {"action" : action, "adventure" : adventure, "sports" : sports, "strategy" : strategy, "puzzle" : puzzle })
+    all = Game.objects.all()
+    action = all.filter(category='Action')
+    adventure = all.filter(category='Adventure')
+    sports = all.filter(category='Sports')
+    strategy = all.filter(category='Strategy')
+    puzzle = all.filter(category='Puzzle')
+    return render(request, "browseGames.html", {"action" : action, "adventure" : adventure, "sports" : sports, "strategy" : strategy, "puzzle" : puzzle, "all" : all })
 
 
 # About page- introduction to the project and Team members

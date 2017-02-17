@@ -17,36 +17,35 @@
 			<div class="col-md-12">
 				<p class="lead" style="margin-bottom:0px">{{user.username}}</p>
 				<span><a href="editProfile" style="color:#ddd;">Edit Profile</a></span>
+				<span><a href={% url "registerForAPI" %}> Request API Key </a></span>
 			</div>
 		</div>
 	</div>
 
 	{% if userProfile.isDeveloper %}
-		
+
 		{% if success %}
 			<p> Upload sucessuful </p>
 
 		{% else %}
 			<div class="col-md-12">
 				<div class="btn-group btn-group-justified" role="group" aria-label="..." data-toggle="buttons">
-					<div class="btn-group" role="group">
-						<button type="button" class="btn btn-default" href="#tab1" id="created-game" data-toggle="tab">Your Games</button>
+					<div class="btn-group btn-pref" role="group">
+						<button type="button" class="btn btn-primary" href="#tab1" id="create-new-game" data-toggle="tab">Add New Game</button>
 					</div>
-					<div class="btn-group" role="group">
-						<button type="button" class="btn btn-default" href="#tab2" id="purchased-game" data-toggle="tab">Purchased Games</button>
+					<div class="btn-group btn-pref" role="group">
+						<button type="button" class="btn btn-default" href="#tab2" id="created-game" data-toggle="tab">Your Games</button>
+					</div>
+					<div class="btn-group btn-pref" role="group">
+						<button type="button" class="btn btn-default" href="#tab3" id="purchased-game" data-toggle="tab">Purchased Games</button>
 					</div>
 				</div>
-				
+
 				<div class="well col-md-12">
 					<div class="tab-content">
 						<div class="tab-pane fade in active" id="tab1">
-							<div class="col-md-2" style="margin-bottom: 20px; margin-top:20px">
-								<button type="button" id="add-game-btn" class="btn btn-info btn-block">New Game</button>
-								<button type="button" class="btn btn-info btn-block" id="clear-btn" style="display:none">Clear</button>
-							</div>
-							
 							<div class="col-md-10">
-								<div id="new-game" class="collapse">
+								<div id="new-game" class="">
 									<div class="col-md-10 col-md-offset-2">
 										<div id='backend_upload'>
 											<form action="." method="post" enctype="multipart/form-data">
@@ -57,25 +56,30 @@
 													{{ form|bootstrap }}
 												</div>
 												<button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 30px">Upload</button>
-											</form>							
+											</form>
 										</div>
 									</div>
 								</div>
 							</div>
+						</div>
+						
+						<div class="tab-pane fade in" id="tab2">
+							<h3>Your Games</h3>
+							<button type="button" id="buy-game-btn" class="btn btn-info btn-lg">Buy Games</button>
 							
 							<div class="col-md-12">
 								<p>Your Games</p>
 							</div>
 						</div>
 						
-						<div class="tab-pane fade in" id="tab2">
+						<div class="tab-pane fade in" id="tab3">
 							<h3>Purchased Games</h3>
 							<button type="button" id="buy-game-btn" class="btn btn-info btn-lg">Buy Games</button>
 						</div>
-						
+
 					</div>
 				</div>
-				
+
 			</div>
 		{% endif %}
 
