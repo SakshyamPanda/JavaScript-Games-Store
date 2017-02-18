@@ -162,24 +162,45 @@ def home(request):
 def myProfile(request):
 	userProfile = UserProfile.objects.get(user=request.user)
 	context = dict( backend_form = UploadGameForm())
-	if request.method == 'POST' and userProfile.isDeveloper:
-		form = UploadGameForm(request.POST, request.FILES)
-		context['posted'] = form.instance
-		success = False
-		if form.is_valid():
-			#game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'], image=form.cleaned_data['image'])
-			#game.save()
-			#form = UploadGameForm()
-			success = True
-			form.save()
-			devGame = DeveloperGame(user=request.user, game=Game.objects.get(name=form.cleaned_data['name']))
-			devGame.save()
+	
+	if userProfile.isDeveloper:
+		if request.method == 'POST':
+			form = UploadGameForm(request.POST, request.FILES)
+			context['posted'] = form.instance
+			success = False
+			if form.is_valid():
+				#game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'], image=form.cleaned_data['image'])
+				#game.save()
+				#form = UploadGameForm()
+				success = True
+				form.save()
+				devGame = DeveloperGame(user=request.user, game=Game.objects.get(name=form.cleaned_data['name']))
+				devGame.save()
+				form = UploadGameForm()
+				context = UploadGameForm()
+		else:
 			form = UploadGameForm()
-			context = UploadGameForm()
+			success = False
+			
+		DeveloperGames = DeveloperGame.objects.all().filter(user=request.user) 
+		#Querying from the developer game table all objects whose user matches request.user
+		games = []
+		numberOfPurchasesList = []
+		for developerGame in DeveloperGames:
+			#put the games in a list
+			games.append(developerGame.game) # developerGame is an instance (a row in the database table) of DeveloperGames
+			#print(games)
+			Purchases = Transaction.objects.all().filter(game=developerGame.game)	# Querying from the Transaction table
+																					# all transactions objects with games matching the chosen game
+			numberOfPurchasesList.append(len(Purchases))
+
+		gamePurchases = zip(games, numberOfPurchasesList)
+		#gamePurchases.append
 	else:
-		form = UploadGameForm()
-		success = False
-	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context  })
+		return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
+	#games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
+
+	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context, "gamePurchases": gamePurchases  })
 
 @login_required(login_url='/login/')
 @csrf_protect
@@ -512,29 +533,30 @@ def upload(request):
 # TODO: @sharbel, As a developer, they should be able to: see list of game sales
 @login_required(login_url='/login/')
 def manageUploadedGames(request):
-    # This should be the view for the developer to see all the games she created, who bought their games, edit game details, and request to remove their uploaded games.
+    # This should be the view for the developer to see all the games she created, who bought their games, 
+	# edit game details, and request to remove their uploaded games.
+	developerProfile = UserProfile.objects.get(user=request.user)
+	if developerProfile.isDeveloper:
+		DeveloperGames = DeveloperGame.objects.all().filter(user=request.user) #Querying from the developer game table all objects whose user matches request.user
+		games = []
+		numberOfPurchasesList = []
+		for developerGame in DeveloperGames:
+			#put the games in a list
+			games.append(developerGame.game) # developerGame is an instance (a row in the database table) of DeveloperGames
+			#print(games)
+			Purchases = Transaction.objects.all().filter(game=developerGame.game) #Querying from the Transaction table the all transactions objects with games matching the chosen game
+			numberOfPurchasesList.append(len(Purchases))
 
-    developerProfile = UserProfile.objects.get(user=request.user)
-    if developerProfile.isDeveloper:
-        DeveloperGames = DeveloperGame.objects.all().filter(user=request.user) #Querying from the developer game table all objects whose user matches request.user
-        games = []
-        numberOfPurchasesList = []
-        for developerGame in DeveloperGames:
-            #put the games in a list
-            games.append(developerGame.game) # developerGame is an instance (a row in the database table) of DeveloperGames
-            #print(games)
-            Purchases = Transaction.objects.all().filter(game=developerGame.game) #Querying from the Transaction table the all transactions objects with games matching the chosen game
-            numberOfPurchasesList.append(len(Purchases))
+		gamePurchases = zip(games, numberOfPurchasesList)
+		#gamePurchases.append
+	else:
+		return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
+	#games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
 
-        gamePurchases = zip(games, numberOfPurchasesList)
-        #gamePurchases.append
-    else:
-        return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
-    #games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
+	return render(request, "manageUploadedGames.html", {"developerProfile": developerProfile, "gamePurchases": gamePurchases})
 
-    return render(request, "manageUploadedGames.html", {"developerProfile": developerProfile, "gamePurchases": gamePurchases})
-
-# TODO: @sharbel, When a game is clicked in manageUploadedGames, you can Edit its details, request to change the price (or just lock the price), and view the game sales
+# TODO: @sharbel, When a game is clicked in manageUploadedGames, 
+#you can Edit its details, request to change the price (or just lock the price), and view the game sales
 @login_required(login_url='/login/')
 @csrf_protect
 def manageGame(request, game_name):
