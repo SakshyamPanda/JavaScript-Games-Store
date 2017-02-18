@@ -1,0 +1,193 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Memory Game</title>
+  <meta name="description" content="Memory Game">
+  <meta name="author" content="Relja">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <style>
+    #container { width: 800px; }
+    ul { padding: 0;  margin: 0;}
+    li {
+      padding: 0;
+      float: left;
+      margin: 10px;
+      list-style: none;
+      outline: solid;
+      width: 150px;
+      height: 150px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <script>
+
+    var images = [];
+    // randomize array of images
+    function randomizeImages(){
+      Array.prototype.randomize = function(){
+        var i = this.length, j, temp;
+        while ( --i )
+        {
+          j = Math.floor( Math.random() * (i - 1) );
+          temp = this[i];
+          this[i] = this[j];
+          this[j] = temp;
+        }
+      };
+      images.randomize();
+    }
+
+    images.push("https://s16.postimg.org/zas0uyln9/image.jpg");
+    images.push("https://s16.postimg.org/zas0uyln9/image.jpg");
+
+    images.push("https://s16.postimg.org/5wwafdixh/image.png");
+    images.push("https://s16.postimg.org/5wwafdixh/image.png");
+
+    images.push("https://s16.postimg.org/4vw1q91xx/image.png");
+    images.push("https://s16.postimg.org/4vw1q91xx/image.png");
+
+    images.push("https://s16.postimg.org/iquc8pwd1/image.png");
+    images.push("https://s16.postimg.org/iquc8pwd1/image.png");
+
+    images.push("https://s16.postimg.org/bowemisr9/image.jpg");
+    images.push("https://s16.postimg.org/bowemisr9/image.jpg");
+
+    images.push("https://s16.postimg.org/cftq61kid/image.jpg");
+    images.push("https://s16.postimg.org/cftq61kid/image.jpg");
+
+    images.push("https://s16.postimg.org/vyybfej9x/image.jpg");
+    images.push("https://s16.postimg.org/vyybfej9x/image.jpg");
+
+    images.push("https://s16.postimg.org/4cvjupzx1/image.png");
+    images.push("https://s16.postimg.org/4cvjupzx1/image.png");
+    randomizeImages();
+
+    // output images then hide them
+    var output = "<ol>";
+    for (var i = 0; i < 16; i++) {
+      output += "<li>";
+      output += "<img src = '" + images[i] + "'/>";
+      output += "</li>";
+    }
+    output += "</ol>";
+
+    window.onload = function(){
+      var message =  {
+        messageType: "SETTING",
+        options: {
+        	"width": 800, //Integer
+          "height": 800 //Integer
+          }
+      };
+      window.parent.postMessage(message, "*");
+
+      var start_time =  Math.floor(Date.now() / 1000);
+
+
+      $("#container").html(output);
+      $("img").hide();
+
+      var guess1 = "";
+      var guess2 = "";
+      var count = 0;
+
+      var numberOfMatches = 0;
+      var guessedPictures = []
+      $("li").click(function() {
+        if ((count < 2) &&  ($(this).children("img").hasClass("face-up")) === false) {
+
+          // increment guess count, show image, mark it as face up
+          count++;
+          $(this).children("img").show();
+          $(this).children("img").addClass("face-up");
+
+          //guess #1
+          if (count === 1 ) {
+            guess1 = $(this).children("img").attr("src");
+          }
+
+          //guess #2
+          else {
+            guess2 = $(this).children("img").attr("src");
+
+            // since it's the 2nd guess check for match
+            if (guess1 === guess2) {
+              numberOfMatches++;
+              if( numberOfMatches === 8){
+                var end_time = Math.floor(Date.now() / 1000);
+                // Simulates "game over" when a score would be sent
+                var msg = {
+                  "messageType": "SCORE",
+                  "score": parseFloat(end_time - start_time)
+                };
+                window.parent.postMessage(msg, "*");
+                location.reload();
+              }
+              $("li").children("img[src='" + guess2 + "']").addClass("match");
+              guessedPictures.push($(this).children("img").attr("src"));
+            }
+            // else it's a miss
+            else {
+              setTimeout(function() {
+                $("img").not(".match").hide();
+                $("img").not(".match").removeClass("face-up");
+              }, 1000);
+            }
+
+            // reset
+            count = 0;
+            setTimeout(function() { console.clear(); }, 30000);
+          }
+        }
+      });
+      $("#save").click( function () {
+        var end_time = Math.floor(Date.now() / 1000);
+        var msg = {
+          "messageType": "SAVE",
+          "gameState": {
+            "playerItems": guessedPictures,
+            "score": parseFloat(end_time - start_time)
+          }
+        };
+        window.parent.postMessage(msg, "*");
+      });
+      $("#load").click( function () {
+        var msg = {
+          "messageType": "LOAD_REQUEST",
+        };
+        window.parent.postMessage(msg, "*");
+      });
+      window.addEventListener("message", function(evt) {
+        if(evt.data.messageType === "LOAD") {
+
+          start_time = Math.floor(Date.now() / 1000) - evt.data.gameState.score;
+          numberOfMatches = evt.data.gameState.playerItems.length;
+          for (var i = 0; i < numberOfMatches; ++i){
+            guessedPictures.push(evt.data.gameState.playerItems[i]);
+            $("li").children("img[src='" + evt.data.gameState.playerItems[i] + "']").show();
+            $("li").children("img[src='" + evt.data.gameState.playerItems[i] + "']").addClass("match");
+          }
+        } else if (evt.data.messageType === "ERROR") {
+          alert(evt.data.info);
+        }
+      });
+    }
+
+  </script>
+</head>
+
+<body>
+
+  <div id="container"></div>
+  <button id="save"> Save </button>
+  <button id="load"> Load </button>
+
+</body>
+</html>

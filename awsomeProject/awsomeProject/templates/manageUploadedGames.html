@@ -29,4 +29,10 @@
 </div>
 
 {% endfor %}
+
+{% for purchasedGame, purchasedWhen in boughtGames %}
+	<p>{{purchasedGame}}, {{purchasedWhen}}</p>
+
+{% endfor %}
+
 {% endblock %}

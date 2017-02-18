@@ -52,7 +52,7 @@
 										<p>Successfully added a new game.<br>
 											Thank you.
 										</p>
-									</div>								
+									</div>
 									{% endif %}
 									<div id='backend_upload'>
 										<form action="." method="post" enctype="multipart/form-data" id="add-game-form">
@@ -69,20 +69,15 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="tab-pane fade in active" id="tab2">
 						<div class="">
 							<div>
 								<h1 class="page-header"> Manage Games </h1>
 							</div>
-							<div class="col-md-4">
-								<a href="" class="thumbnail">
-									Buy Games
-								</a>
-							</div>
 							
 							<div>
-								<!-- TODO Implement the page for managing games where clicking 
+								<!-- TODO Implement the page for managing games where clicking
 								one game from the list will redirect to a page where only that game is edited or the sales list is shown -->
 								{% for game, numberOfPurchases in gamePurchases %}
 									<div class="col-md-4 text-center" style="padding-bottom:30px;">
@@ -107,10 +102,33 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="tab-pane fade in" id="tab3">
 						<h3>Purchased Games</h3>
-						<button type="button" id="buy-game-btn" class="btn btn-info btn-lg">Buy Games</button>
+						<div class="col-md-4">
+							<a href="" class="thumbnail">
+								Buy Games
+							</a>
+						</div>
+						{% for game, purchasedWhen, count in boughtGames %}
+							<div class="col-md-4 text-center" style="padding-bottom:30px;">
+								<div class="img-thumbnail text-center">
+									<div class="col-md-12">
+										<a href={% url "game" game.name %}>
+										   {% cloudinary game.image width=600 height=200 crop="fill" class="img-responsive" style="display:block; margin:none" %}
+										</a>
+									</div>
+									<div class="col-md-12">
+										<a href={% url "game" game.name %}> <h4 class="service-heading">{{game.name}}<h4></a>
+										<h5 class="section-subheading text-muted">[ {{game.category}} ]</h5>
+									</div>
+									<div class="col-md-12 text-left game-description">
+										<h5 class="service-heading"><strong>Description:</strong></h5>
+										<p class="section-subheading text-muted">{{game.description}}</p>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
 					</div>
 
 				</div>
