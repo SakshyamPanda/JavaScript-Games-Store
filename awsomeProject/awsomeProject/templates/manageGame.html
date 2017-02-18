@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load bootstrap %}
 
 {% block scriptsAndStylesheets %}
   {% load cloudinary %}
@@ -8,35 +9,49 @@
 
 {% block main %}
 
-<div class="col-lg-12">
+<div class="col-md-12">
 
-                <h1 class="page-header"> Manage {{game.name}} </h1>
+	<div class="col-md-6 col-sm-6 highlight">
+		<div id='backend_upload'>
+			<label class="section-font control-label">Update {{game.name}}</label>
+			<form action="." method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="text-left">	
+				  {{ form|bootstrap }}
+				</div>
+				<input type="submit" name="updateGame" value="Update Details" class="btn btn-primary btn-lg btn-block" style="margin-top: 30px">
+				<input type="submit"  name="deleteGame" value="Delete Game" class="btn btn-danger btn-lg btn-block" style="margin-top: 30px" onclick="return confirm('Are you sure?')">
+			</form>
+		</div>
+	</div>
+
+	<div class="col-md-6 col-sm-6">
+		<div class="bd-example col-md-12" id="sales">
+			<label class="section-font control-label">Buyers List</label>
+			<table class="table table-hover">
+				<thead class="thead-default">
+					<tr>
+						<th class="text-center">#</th>
+						<th class="text-center">Buyer</th>
+						<th class="text-center">Purchased on</th>
+					</tr>
+				</thead>
+				<tbody>
+				{% for buyer, timestamp, counts in transactions %}
+					<tr>
+						<td>{{ counts }}</td>
+						<td>{{ buyer }}</td>
+						<td>{{ timestamp }}</td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<div>
+		<p>{{messageOfUpdate}}</p>
+	</div>
+	
 </div>
-<div class="col-md-6 portfolio-item">
-  <div id='backend_upload'>
-    <h2> Edit {{game.name}} </h2>
-    <form action="." method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      {{ backend_form }}
-      <table border="0">
-              {{ form.as_table }}
-          </table>
-      <input type="submit" name="updateGame" value="Update Game Details">
-      <input type="submit"  name="deleteGame" value="Delete Game">
-    </form>
-  </div>
-  <div>
-  </div>
-
-<p>{{messageOfUpdate}}</p>
-</div>
-
-
-<div class="col-md-6 portfolio-item">
-  <h2> View {{game.name}} sales </h2>
-    {% for buyer, timestamp in transactions %}
-      <p> {{buyer}} Bought the game on {{timestamp}}</p>
-    {% endfor %}
-</div>
-
 {% endblock %}
