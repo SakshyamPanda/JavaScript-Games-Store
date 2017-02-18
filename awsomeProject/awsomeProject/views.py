@@ -212,7 +212,7 @@ def myProfile(request):
 	else:
 		return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
 	#games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
-	
+
 	#All games the user purchased
 	PurchasedGames = Transaction.objects.all().filter(user=request.user) #accessing purchased games list from Transaction Table
 	purchasedGames = []
@@ -224,9 +224,9 @@ def myProfile(request):
 		purchasedWhen.append(boughtGame.timestamp)
 		i += 1
 		counts.append(i)
-		
+
 	boughtGames = zip(purchasedGames, purchasedWhen, counts)
-	
+
 	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success,
 					"context" : context, "gamePurchases": gamePurchases, "boughtGames": boughtGames })
 
@@ -572,7 +572,7 @@ def manageUploadedGames(request):
 			#put the games in a list
 			games.append(developerGame.game) # developerGame is an instance (a row in the database table) of DeveloperGames
 			#print(games)
-			Purchases = Transaction.objects.all().filter(game=developerGame.game) 	# Querying from the Transaction table the all transactions objects 
+			Purchases = Transaction.objects.all().filter(game=developerGame.game) 	# Querying from the Transaction table the all transactions objects
 																					# with games matching the chosen game
 			numberOfPurchasesList.append(len(Purchases))
 
@@ -581,16 +581,16 @@ def manageUploadedGames(request):
 	else:
 		return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
 	#games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
-	
+
 	PurchasedGames = Transaction.objects.all().filter(user=request.user)
 	purchasedGames = []
 	purchasedWhen = []
 	for boughtGame in PurchasedGames:
 		purchasedGames.append(boughtGame.game.name)
 		purchasedWhen.append(boughtGame.timestamp)
-	
+
 	boughtGames = zip(purchasedGames, purchasedWhen)
-	
+
 	return render(request, "manageUploadedGames.html", {"developerProfile": developerProfile, "gamePurchases": gamePurchases, "boughtGames": boughtGames})
 
 # TODO: @sharbel, When a game is clicked in manageUploadedGames,
@@ -621,8 +621,8 @@ def manageGame(request, game_name):
 						updatedGame.save()
 						success = True
 						messageOfUpdate = "Game Successfully Updated"
-					print("updateGame")	
-					
+					print("updateGame")
+
 				elif request.POST.get("deleteGame"):
 					#Implement Remove Game (Delete from database). Should prompt some confirmation message.
 					print("deleteGame")

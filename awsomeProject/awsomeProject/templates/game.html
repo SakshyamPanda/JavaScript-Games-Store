@@ -99,7 +99,7 @@
 </script>
 
 <div class="col-md-12">
-	<div class="col-md-6 col-sm-6">
+	<div class="col-md-12">
 		<div class="bd-example">
 			<label class="section-font control-label">{{ game.name }}</label>
 			{% if gameBought %}
@@ -112,8 +112,10 @@
 				</div>
 			{% endif %}
 		</div>
+  </div>
 
-		<div class="bd-example" id="highScores">
+	<div class="col-md-12 col-sm-12">
+    <div class="bd-example col-md-6" id="highScores">
 			<label class="section-font control-label">High Scores</label>
 			<table class="table table-hover">
 				<thead class="thead-default">
@@ -132,12 +134,8 @@
 				</tbody>
 			</table>
 		</div>
-
-	</div>
-
-	<div class="col-md-6 col-sm-6">
 		<!-- Add comment for user -->
-		<div class="bd-example" style="margin-bottom: 10px;">
+		<div class="bd-example col-md-6" style="margin-bottom: 10px;">
 			<form action="javascript:;" onsubmit="addComment()">
 				<label for="add-comment" class="control-label text-center section-font" style="margin-bottom: 20px;">Comment</label>
 				<div class=" text-left">
