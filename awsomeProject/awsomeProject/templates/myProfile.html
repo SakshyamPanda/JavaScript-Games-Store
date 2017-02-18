@@ -28,10 +28,10 @@
 		<div class="col-md-12">
 			<div class="btn-group btn-group-justified" role="group" aria-label="..." data-toggle="buttons">
 				<div class="btn-group btn-pref" role="group">
-					<button type="button" class="btn btn-primary" href="#tab1" id="create-new-game" data-toggle="tab">Add New Game</button>
+					<button type="button" class="btn btn-default" href="#tab1" id="create-new-game" data-toggle="tab">Add New Game</button>
 				</div>
 				<div class="btn-group btn-pref" role="group">
-					<button type="button" class="btn btn-default" href="#tab2" id="created-game" data-toggle="tab">Your Games</button>
+					<button type="button" class="btn btn-primary" href="#tab2" id="created-game" data-toggle="tab">Your Games</button>
 				</div>
 				<div class="btn-group btn-pref" role="group">
 					<button type="button" class="btn btn-default" href="#tab3" id="purchased-game" data-toggle="tab">Purchased Games</button>
@@ -40,7 +40,7 @@
 
 			<div class="well col-md-12">
 				<div class="tab-content">
-					<div class="tab-pane fade in active" id="tab1">
+					<div class="tab-pane fade in" id="tab1">
 						<div class="col-md-10">
 							<div id="new-game" class="">
 								<div class="col-md-10 col-md-offset-2">
@@ -70,12 +70,41 @@
 						</div>
 					</div>
 					
-					<div class="tab-pane fade in" id="tab2">
-						<h3>Your Games</h3>
-						<button type="button" id="buy-game-btn" class="btn btn-info btn-lg">Buy Games</button>
-						
-						<div class="col-md-12">
-							<p>Your Games</p>
+					<div class="tab-pane fade in active" id="tab2">
+						<div class="">
+							<div>
+								<h1 class="page-header"> Manage Games </h1>
+							</div>
+							<div class="col-md-4">
+								<a href="" class="thumbnail">
+									Buy Games
+								</a>
+							</div>
+							
+							<div>
+								<!-- TODO Implement the page for managing games where clicking 
+								one game from the list will redirect to a page where only that game is edited or the sales list is shown -->
+								{% for game, numberOfPurchases in gamePurchases %}
+									<div class="col-md-4 text-center" style="padding-bottom:30px;">
+										<div class="img-thumbnail text-center">
+											<div class="col-md-12">
+												<a href={% url "game" game.name %}>
+												   {% cloudinary game.image width=600 height=200 crop="fill" class="img-responsive" style="display:block; margin:none" %}
+												</a>
+											</div>
+											<div class="col-md-12">
+												<a href={% url "game" game.name %}> <h4 class="service-heading">{{game.name}}<h4></a>
+												<a href={% url "manageGame" game.name %} style="color:#ddd;">Manage Game</a>
+											</div>
+											<div class="col-md-12 text-left">
+												<a href={% url "manageGame" game.name %}></a>
+												<p> Number of Purchases: {{numberOfPurchases}}</p>
+												<p> {{game.description}}</p>
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
 						</div>
 					</div>
 					

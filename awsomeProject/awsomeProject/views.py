@@ -63,6 +63,8 @@ def random_string_generator(size=20, chars=string.ascii_uppercase + string.digit
 def registerForAPI(request):
     user = UserProfile.objects.get(user=request.user)
     if user.isDeveloper:
+        # If user has unchanged key, assign him new one
+        # If user has already requested key, just reming him what is it
         if user.key == "":
             user.key = random_string_generator()
             user.save()
@@ -70,15 +72,23 @@ def registerForAPI(request):
     else:
         return Http404
 
-@login_required(login_url ='/login/')
 def searchGamesAPI(request):
-    if request.method == "GET" and 'key' in request.GET and request.GET['key'] != "" and UserProfile.objects.get(user=request.user, key=request.GET['key']) != None:
+    #Cheeck identity through API key
+    try:
+        user = UserProfile.objects.get(key=request.GET['key'])
+    except UserProfile.DoesNotExist:
+        user = None
+
+    # GET requests are only valid ones
+    if request.method == "GET" and 'key' in request.GET and request.GET['key'] != "" and user != None:
+        #q is gane of the game, if ommited, all games are shown
         if 'q' not in request.GET:
             games = Game.objects.all()
         else:
             games = Game.objects.all().filter(name=request.GET['q'])
         response = {"games" : []}
         for game in games:
+            # .first() is only used to force database call
             developer = DeveloperGame.objects.all().filter(game=game).first()
             #highScore data is None unless the game has scores
             highScore = 'None'
@@ -98,52 +108,56 @@ def searchGamesAPI(request):
     else:
         return JsonResponse({"response" : "Did you register to use API?"})
 
-
-
-@login_required(login_url ='/login/')
 def searchGameSalesAPI(request):
-
-#TODO 1) Implement Authentication, 2) query for a specific timestamp or game
-
-    if request.method == "GET" and 'key' in request.GET and request.GET['key'] != "" and UserProfile.objects.get(user=request.user, key=request.GET['key']) != None:
-
+    #Check identity through API key
+    try:
+        user = UserProfile.objects.get(key=request.GET['key'])
+    except UserProfile.DoesNotExist:
+        user = None
+    # GET requests are only valid ones for simplicity sake
+    if request.method == "GET" and 'key' in request.GET and request.GET['key'] != "" and user != None and user.isDeveloper:
         if 'q' not in request.GET:
             games = Game.objects.all()
         else:
             games = Game.objects.all().filter(name=request.GET['q'])
         response = {"games" : []}
         for game in games:
+            # first() is used to force database call
             developer = DeveloperGame.objects.all().filter(game=game).first()
             if Transaction.objects.all().filter(game=game).exists(): #if the game has an entry in the Transactions table (i.e. someone bought it)
                 #then assign the transation values
                 Purchases = Transaction.objects.all().filter(game=game) #Querying from the transactions game table all objects whose game matches game_name
-                buyers = []
+                buyersAndTimestamps = []
                 timestamps = []
                 for purchase in Purchases:
-                    buyers.append(purchase.user.username) #purchase is an instance (a row in the database) of Purchases
-                    timestamps.append(purchase.timestamp)
-
-                transactions = zip(buyers, timestamps)
+                    buyersAndTimestamps.append({"bought by" : purchase.user.username, "on" : purchase.timestamp})
 
             response["games"].append({"name" : game.name, "price" : game.price, "category" : game.category,
-                "created" : game.created, "developed by" : developer.user.username, "buyers": buyers, "timestamps": timestamps}) #"transactions": transactions issues with zip: not json serializeable
+                "created" : game.created, "developed by" : developer.user.username, "sales" : buyersAndTimestamps}) #"transactions": transactions issues with zip: not json serializeable
         return JsonResponse({"response" : response})
     else:
         return JsonResponse({"response" : "Did you register to use API?"})
 
 
-@login_required(login_url= '/login/')
 def searchHighScoresAPI(request):
-    if request.method == "GET" and 'key' in request.GET and request.GET['key'] != "" and UserProfile.objects.get(user=request.user, key=request.GET['key']) != None:
+    #Check identity through API key
+    try:
+        user = UserProfile.objects.get(key=request.GET['key'])
+    except UserProfile.DoesNotExist:
+        user = None
+    # GET requests are only valid ones for simplicity sake
+    if request.method == "GET" and 'key' in request.GET and request.GET['key'] != "" and user != None:
         if 'q' not in request.GET:
-            scores = Scores.objects.all()
+            games = Game.objects.all()
         else:
-            scores = Scores.objects.all().filter(game=request.GET['q']) # if 'q' is given in the GET request then query for scores with that filter
-        response = {"scores" :[]} #make a json string that is a list
-        for score in scores:
-            #score = Score.objects.all().filter(score=score).first()
-            game= Gameplay.objects.all().filter(game=game)#first() to force django to query from the database
-            response["scores"].append({"user":score.user, "game":score.game, "score":score.score})
+            games = Game.objects.all().filter(name=request.GET['q'])
+        response = {"games" :[]}
+        for game in games:
+            scores = Scores.objects.all().filter(game=game).order_by("-score")
+            scoreList = []
+            for score in scores:
+                scoreList.append({'user' : score.user.username, "score": score.score})
+            response["games"].append({"name" : game.name, "scores" : scoreList})
         return JsonResponse({"response": response})
     else:
         return JsonResponse({"response" : "Did you register to use API?"})
@@ -153,7 +167,6 @@ def searchHighScoresAPI(request):
 def home(request):
 	enddate = date.today()
 	startdate = enddate - timedelta(days=31)
-	print(startdate, enddate)
 	games = Game.objects.filter(created__range=[startdate, enddate])
 	return render(request, "home.html", {'games': games })
 
@@ -162,24 +175,45 @@ def home(request):
 def myProfile(request):
 	userProfile = UserProfile.objects.get(user=request.user)
 	context = dict( backend_form = UploadGameForm())
-	if request.method == 'POST' and userProfile.isDeveloper:
-		form = UploadGameForm(request.POST, request.FILES)
-		context['posted'] = form.instance
-		success = False
-		if form.is_valid():
-			#game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'], image=form.cleaned_data['image'])
-			#game.save()
-			#form = UploadGameForm()
-			success = True
-			form.save()
-			devGame = DeveloperGame(user=request.user, game=Game.objects.get(name=form.cleaned_data['name']))
-			devGame.save()
+
+	if userProfile.isDeveloper:
+		if request.method == 'POST':
+			form = UploadGameForm(request.POST, request.FILES)
+			context['posted'] = form.instance
+			success = False
+			if form.is_valid():
+				#game = Game(name=form.cleaned_data['name'], url=form.cleaned_data['url'], price=form.cleaned_data['price'], description=form.cleaned_data['description'], image=form.cleaned_data['image'])
+				#game.save()
+				#form = UploadGameForm()
+				success = True
+				form.save()
+				devGame = DeveloperGame(user=request.user, game=Game.objects.get(name=form.cleaned_data['name']))
+				devGame.save()
+				form = UploadGameForm()
+				context = UploadGameForm()
+		else:
 			form = UploadGameForm()
-			context = UploadGameForm()
+			success = False
+
+		DeveloperGames = DeveloperGame.objects.all().filter(user=request.user)
+		#Querying from the developer game table all objects whose user matches request.user
+		games = []
+		numberOfPurchasesList = []
+		for developerGame in DeveloperGames:
+			#put the games in a list
+			games.append(developerGame.game) # developerGame is an instance (a row in the database table) of DeveloperGames
+			#print(games)
+			Purchases = Transaction.objects.all().filter(game=developerGame.game)	# Querying from the Transaction table
+																					# all transactions objects with games matching the chosen game
+			numberOfPurchasesList.append(len(Purchases))
+
+		gamePurchases = zip(games, numberOfPurchasesList)
+		#gamePurchases.append
 	else:
-		form = UploadGameForm()
-		success = False
-	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context  })
+		return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
+	#games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
+
+	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context, "gamePurchases": gamePurchases  })
 
 @login_required(login_url='/login/')
 @csrf_protect
@@ -512,29 +546,30 @@ def upload(request):
 # TODO: @sharbel, As a developer, they should be able to: see list of game sales
 @login_required(login_url='/login/')
 def manageUploadedGames(request):
-    # This should be the view for the developer to see all the games she created, who bought their games, edit game details, and request to remove their uploaded games.
+    # This should be the view for the developer to see all the games she created, who bought their games,
+	# edit game details, and request to remove their uploaded games.
+	developerProfile = UserProfile.objects.get(user=request.user)
+	if developerProfile.isDeveloper:
+		DeveloperGames = DeveloperGame.objects.all().filter(user=request.user) #Querying from the developer game table all objects whose user matches request.user
+		games = []
+		numberOfPurchasesList = []
+		for developerGame in DeveloperGames:
+			#put the games in a list
+			games.append(developerGame.game) # developerGame is an instance (a row in the database table) of DeveloperGames
+			#print(games)
+			Purchases = Transaction.objects.all().filter(game=developerGame.game) #Querying from the Transaction table the all transactions objects with games matching the chosen game
+			numberOfPurchasesList.append(len(Purchases))
 
-    developerProfile = UserProfile.objects.get(user=request.user)
-    if developerProfile.isDeveloper:
-        DeveloperGames = DeveloperGame.objects.all().filter(user=request.user) #Querying from the developer game table all objects whose user matches request.user
-        games = []
-        numberOfPurchasesList = []
-        for developerGame in DeveloperGames:
-            #put the games in a list
-            games.append(developerGame.game) # developerGame is an instance (a row in the database table) of DeveloperGames
-            #print(games)
-            Purchases = Transaction.objects.all().filter(game=developerGame.game) #Querying from the Transaction table the all transactions objects with games matching the chosen game
-            numberOfPurchasesList.append(len(Purchases))
+		gamePurchases = zip(games, numberOfPurchasesList)
+		#gamePurchases.append
+	else:
+		return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
+	#games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
 
-        gamePurchases = zip(games, numberOfPurchasesList)
-        #gamePurchases.append
-    else:
-        return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
-    #games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
+	return render(request, "manageUploadedGames.html", {"developerProfile": developerProfile, "gamePurchases": gamePurchases})
 
-    return render(request, "manageUploadedGames.html", {"developerProfile": developerProfile, "gamePurchases": gamePurchases})
-
-# TODO: @sharbel, When a game is clicked in manageUploadedGames, you can Edit its details, request to change the price (or just lock the price), and view the game sales
+# TODO: @sharbel, When a game is clicked in manageUploadedGames,
+#you can Edit its details, request to change the price (or just lock the price), and view the game sales
 @login_required(login_url='/login/')
 @csrf_protect
 def manageGame(request, game_name):
