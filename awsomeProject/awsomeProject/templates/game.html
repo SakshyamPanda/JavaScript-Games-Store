@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{%load bootstrap %}
 
 {% block main %}
 <!-- Move this to a STATIC folder -->
@@ -93,75 +94,73 @@
   }
 </script>
 
-<div class="row">
+<div class="col-md-12">
+	<div class="col-md-6 col-sm-6">
+		<div class="bd-example">
+			<label class="section-font control-label">{{ game.name }}</label>
+			{% if gameBought %}
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe src="{{ game.url }}" name="game" id="game"></iframe>
+				</div>
+			{% else %}
+				<div class="alert alert-info" role="alert">
+					<p> <strong>Oh Shoot!</strong> You need to buy the game to play it.<br/> 
+						<a type="button" href="{% url 'buyGame' game.name %}" class="btn btn-primary">Buy</a>
+					</p>
+				</div>
+			{% endif %}
+		</div>
+		
+		<div class="bd-example" id="highScores">
+			<label class="section-font control-label">High Scores</label>
+			<table class="table table-hover table-sm">
+				<thead>
+					<tr>
+						<th>User</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+				{% for item in scores %}
+					<tr>
+						<td>{{ item.user }}</td>
+						<td>{{ item.score }}</td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	
+	</div>
+	
+	<div class="col-md-6 col-sm-6">
+		<!-- Add comment for user -->	
+		<div class="bd-example" style="margin-bottom: 10px;">
+			<form action="javascript:;" onsubmit="addComment()">
+				<label for="add-comment" class="control-label text-center section-font" style="margin-bottom: 20px;">Comment</label>
+				<div class=" text-left">
+					<textarea class="form-control" rows="4" id="comment"></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 30px">Submit</button>
+			</form>
+		</div>
+	
+		<!-- TODO: Represent all comments for this game in following way -->
 
-  <div class="col-sm-6">
-    <h1> {{ game.name }} </h1>
-    {% if gameBought %}
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe src="{{ game.url }}" name="game" id="game"></iframe>
-      </div>
-    {% else %}
-      <p> Oh Shoot! You need to buy the game to play it. Buy it <a href="{% url 'buyGame' game.name %}"> here </a>.  </p>
-    {% endif %}
-  </div>
-  <div class="col-sm-6" id="highScores">
-    <h1> High Scores </h1>
-    <table class="table table-striped table-hover">
-      <thead>
-        <tr>
-            <th>User</th>
-            <th>Score</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in scores %}
-        <tr>
-            <td>{{ item.user }}</td>
-            <td>{{ item.score }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-
+		{% for comment, userProfile in userComments %}
+			<div class="text-left highlight">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>{{comment.user}}</strong>
+					</div>
+					<div class="panel-body">
+						{{comment.commentText}}
+					</div><!-- /panel-body -->
+					<div class="panel-footer text-right"><span class="text-muted small">{{comment.created}}</span></div>
+				</div><!-- /panel panel-default -->
+			</div><!-- /col-sm-5 -->
+		{% endfor %}
+	</div>
 </div>
-<!-- Add comment for user, PANDA please style this -->
-<div class="row">
-  <form action="javascript:;" onsubmit="addComment()">
-    <div class="form-group">
-      <div class="col-sm-12">
-      <label for="comment">Comment:</label>
-      <textarea class="form-control" rows="3" id="comment"></textarea>
-      </div>
-      <div class = "col-sm-4">
-        <input type="submit" value="Submit Comment" />
-      </div>
-    </div>
-  </form>
-</div>
-<!-- TODO: Represent all comments for this game in following way -->
 
-{% for comment, userProfile in userComments %}
-<div class="row">
-  <div class="col-sm-1">
-    <div class="thumbnail">
-    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-    </div><!-- /thumbnail -->
-  </div><!-- /col-sm-1 -->
-
-  <div class="col-sm-11">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-
-        <strong>{{comment.user}}</strong> <span class="text-muted">Created on : {{comment.created}}</span>
-
-      </div>
-      <div class="panel-body">
-        {{comment.commentText}}
-      </div><!-- /panel-body -->
-    </div><!-- /panel panel-default -->
-  </div><!-- /col-sm-5 -->
-</div>
-{% endfor %}
 {% endblock %}
