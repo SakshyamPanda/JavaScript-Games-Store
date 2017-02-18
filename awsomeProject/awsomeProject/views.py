@@ -199,8 +199,23 @@ def myProfile(request):
 	else:
 		return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
 	#games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
-
-	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success, "context" : context, "gamePurchases": gamePurchases  })
+	
+	#All games the user purchased
+	PurchasedGames = Transaction.objects.all().filter(user=request.user) #accessing purchased games list from Transaction Table
+	purchasedGames = []
+	purchasedWhen = []
+	counts = []
+	i = 0
+	for boughtGame in PurchasedGames:
+		purchasedGames.append(boughtGame.game)
+		purchasedWhen.append(boughtGame.timestamp)
+		i += 1
+		counts.append(i)
+		
+	boughtGames = zip(purchasedGames, purchasedWhen, counts)
+	
+	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success,
+					"context" : context, "gamePurchases": gamePurchases, "boughtGames": boughtGames })
 
 @login_required(login_url='/login/')
 @csrf_protect
@@ -544,7 +559,8 @@ def manageUploadedGames(request):
 			#put the games in a list
 			games.append(developerGame.game) # developerGame is an instance (a row in the database table) of DeveloperGames
 			#print(games)
-			Purchases = Transaction.objects.all().filter(game=developerGame.game) #Querying from the Transaction table the all transactions objects with games matching the chosen game
+			Purchases = Transaction.objects.all().filter(game=developerGame.game) 	# Querying from the Transaction table the all transactions objects 
+																					# with games matching the chosen game
 			numberOfPurchasesList.append(len(Purchases))
 
 		gamePurchases = zip(games, numberOfPurchasesList)
@@ -552,70 +568,79 @@ def manageUploadedGames(request):
 	else:
 		return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
 	#games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
-
-	return render(request, "manageUploadedGames.html", {"developerProfile": developerProfile, "gamePurchases": gamePurchases})
+	
+	PurchasedGames = Transaction.objects.all().filter(user=request.user)
+	purchasedGames = []
+	purchasedWhen = []
+	for boughtGame in PurchasedGames:
+		purchasedGames.append(boughtGame.game.name)
+		purchasedWhen.append(boughtGame.timestamp)
+	
+	boughtGames = zip(purchasedGames, purchasedWhen)
+	
+	return render(request, "manageUploadedGames.html", {"developerProfile": developerProfile, "gamePurchases": gamePurchases, "boughtGames": boughtGames})
 
 # TODO: @sharbel, When a game is clicked in manageUploadedGames, 
 #you can Edit its details, request to change the price (or just lock the price), and view the game sales
 @login_required(login_url='/login/')
 @csrf_protect
 def manageGame(request, game_name):
-    messageOfUpdate=""
-    developerProfile = UserProfile.objects.get(user=request.user)
-    if developerProfile.isDeveloper:
-        try:
-            #Import all editable game details as a form.
-            game = Game.objects.get(name = game_name)
-            context = dict( backend_form = UpdateGameForm())
-            if request.method == 'POST':
-                # Create a form instance from POST data.
-                form = UpdateGameForm(request.POST, request.FILES, instance = game)
+	messageOfUpdate=""
+	developerProfile = UserProfile.objects.get(user=request.user)
+	if developerProfile.isDeveloper:
+		try:
+			#Import all editable game details as a form.
+			game = Game.objects.get(name = game_name)
+			context = dict( backend_form = UpdateGameForm())
+			if request.method == 'POST':
+				# Create a form instance from POST data.
+				form = UpdateGameForm(request.POST, request.FILES, instance = game)
 
-                #context['posted'] = form.instance
-                success = False
+				#context['posted'] = form.instance
+				success = False
 
-                if request.POST.get("updateGame"):
+				if request.POST.get("updateGame"):
 
-                    if form.is_valid():
-                        # Create, but don't save the new author instance.
-                        updatedGame = form.save(commit=False) #This enables editng the data in some way before actually saving it to the
-                                                              #  database. For example: updatedGame.description = "Forced Description no matter what you write"
-                        updatedGame.save()
-                        success = True
-                        messageOfUpdate = "Game Successfully Updated"
-                    print("updateGame")
+					if form.is_valid():
+						# Create, but don't save the new author instance.
+						updatedGame = form.save(commit=False)   #This enables editng the data in some way before actually saving it to the
+																#  database. For example: updatedGame.description = "Forced Description no matter what you write"
+						updatedGame.save()
+						success = True
+						messageOfUpdate = "Game Successfully Updated"
+					print("updateGame")	
+					
+				elif request.POST.get("deleteGame"):
+					#Implement Remove Game (Delete from database). Should prompt some confirmation message.
+					print("deleteGame")
+					print(game.name)
+					game.delete() #game is an instance.. game = Game.objects.get(name = game_name)
+					return HttpResponseRedirect('/myProfile/')
 
-                elif request.POST.get("deleteGame"):
-                    #Implement Remove Game (Delete from database). Should prompt some confirmation message.
-                    print("deleteGame")
-                    print(game.name)
-                    game.delete() #game is an instance.. game = Game.objects.get(name = game_name)
-                    return HttpResponseRedirect('/myProfile/manageUploadedGames/')
+			else:
+				form = UpdateGameForm(initial={"url": game.url, "price": game.price, "description": game.description})
+				success = False
 
+			#View game sales in a list of buyer names and timestamps
+			Purchases = Transaction.objects.all().filter(game=game) #Querying from the transactions game table all objects whose game matches game_name
+			buyers = []
+			timestamps = []
+			counts = []
+			i = 0
+			for purchase in Purchases:
+				buyers.append(purchase.user) #purchase is an instance (a row in the database) of Purchases
+				timestamps.append(purchase.timestamp)
+				i += 1
+				counts.append(i)
 
-            else:
-                form = UpdateGameForm(initial={"url": game.url, "price": game.price, "description": game.description})
-                success = False
+			transactions = zip(buyers, timestamps, counts)
+			game = Game.objects.get(name = game_name)
 
+		except Game.DoesNotExist:
+			raise Http404
 
+	else:
+		return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
 
-            #View game sales in a list of buyer names and timestamps
-            Purchases = Transaction.objects.all().filter(game=game) #Querying from the transactions game table all objects whose game matches game_name
-            buyers = []
-            timestamps = []
-            for purchase in Purchases:
-                buyers.append(purchase.user) #purchase is an instance (a row in the database) of Purchases
-                timestamps.append(purchase.timestamp)
-
-            transactions = zip(buyers, timestamps)
-
-            game = Game.objects.get(name = game_name)
-
-        except Game.DoesNotExist:
-            raise Http404
-
-    else:
-        return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
-
-
-    return render(request, "manageGame.html", {"game": game, "form" : form, "success" : success, "context" : context, "transactions": transactions, "messageOfUpdate": messageOfUpdate})
+	return render(request, "manageGame.html", {"game": game, "form" : form, "success" : success, "context" : context, "transactions": transactions,
+					"messageOfUpdate": messageOfUpdate})
