@@ -12,6 +12,10 @@
     //var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
     //if (origin !== "http://example.org:8080")
     //  return;
+    if(event.data.messageType == "SETTING"){
+      $("#game").attr("width", event.data.options["width"]);
+      $("#game").attr("height", event.data.options["height"]);
+    }
 
     // Save game handler
     if (event.data.messageType == "SAVE"){
@@ -99,18 +103,16 @@
 		<div class="bd-example">
 			<label class="section-font control-label">{{ game.name }}</label>
 			{% if gameBought %}
-				<div class="embed-responsive embed-responsive-16by9">
 					<iframe src="{{ game.url }}" name="game" id="game"></iframe>
-				</div>
 			{% else %}
 				<div class="alert alert-info" role="alert">
-					<p> <strong>Oh Shoot!</strong> You need to buy the game to play it.<br/> 
+					<p> <strong>Oh Shoot!</strong> You need to buy the game to play it.<br/>
 						<a type="button" href="{% url 'buyGame' game.name %}" class="btn btn-primary">Buy</a>
 					</p>
 				</div>
 			{% endif %}
 		</div>
-		
+
 		<div class="bd-example" id="highScores">
 			<label class="section-font control-label">High Scores</label>
 			<table class="table table-hover table-sm">
@@ -130,11 +132,11 @@
 				</tbody>
 			</table>
 		</div>
-	
+
 	</div>
-	
+
 	<div class="col-md-6 col-sm-6">
-		<!-- Add comment for user -->	
+		<!-- Add comment for user -->
 		<div class="bd-example" style="margin-bottom: 10px;">
 			<form action="javascript:;" onsubmit="addComment()">
 				<label for="add-comment" class="control-label text-center section-font" style="margin-bottom: 20px;">Comment</label>
@@ -144,7 +146,7 @@
 				<button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 30px">Submit</button>
 			</form>
 		</div>
-	
+
 		<!-- TODO: Represent all comments for this game in following way -->
 
 		{% for comment, userProfile in userComments %}

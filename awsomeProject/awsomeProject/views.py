@@ -115,7 +115,7 @@ def searchGameSalesAPI(request):
     except UserProfile.DoesNotExist:
         user = None
     # GET requests are only valid ones for simplicity sake
-    if request.method == "GET" and 'key' in request.GET and request.GET['key'] != "" and user != None and user.isDeveloper:
+    if request.method == "GET" and 'key' in request.GET and request.GET['key'] != "" and user != None:
         if 'q' not in request.GET:
             games = Game.objects.all()
         else:
