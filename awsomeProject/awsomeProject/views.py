@@ -346,6 +346,10 @@ def game(request, game_name):
     print(request.FILES)
     try:
         game = Game.objects.get(name=game_name)
+        gameURL = request.build_absolute_uri(reverse("game", args = (game_name, )))
+        #gameURL = "sharbeldahlan.com"
+
+        print (gameURL)
         # TODO: What if highscores dont exist
         scores = Scores.objects.all().filter(game=game).order_by("-score")
         #check if user has bought the game a.k.a. has access to it
@@ -367,7 +371,7 @@ def game(request, game_name):
     # In case game does not exist, display 404
     except Game.DoesNotExist:
         raise Http404
-    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments})
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
 
 @login_required(login_url='/login/')
 @csrf_protect

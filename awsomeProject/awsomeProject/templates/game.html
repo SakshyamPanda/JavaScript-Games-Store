@@ -111,11 +111,20 @@
 					</p>
 				</div>
 			{% endif %}
+      <a href="https://www.facebook.com/sharer/sharer.php?status=Check%20out%20this%20%23AwsomeGame%20called%20%22{{ game.name }}%22%20on%20AwsomeGames%3A%20{{ gameURL }}" target="_blank">
+        Share on Facebook
+      </a>
+      <a href="https://twitter.com/home?status=Check%20out%20this%20%23AwsomeGame%20called%20%22{{ game.name }}%22%20on%20AwsomeGames%3A%20{{ gameURL }}" target="_blank">
+        Share on Twitter
+      </a>
+
 		</div>
+
   </div>
 
 	<div class="col-md-12 col-sm-12">
     <div class="bd-example col-md-6" id="highScores">
+
 			<label class="section-font control-label">High Scores</label>
 			<table class="table table-hover">
 				<thead class="thead-default">
@@ -134,8 +143,10 @@
 				</tbody>
 			</table>
 		</div>
+
 		<!-- Add comment for user -->
 		<div class="bd-example col-md-6" style="margin-bottom: 10px;">
+
 			<form action="javascript:;" onsubmit="addComment()">
 				<label for="add-comment" class="control-label text-center section-font" style="margin-bottom: 20px;">Comment</label>
 				<div class=" text-left">
