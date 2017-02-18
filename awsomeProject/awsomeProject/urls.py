@@ -45,4 +45,7 @@ urlpatterns = [
     url(r'^myProfile/manageUploadedGames/([a-zA-Z0-9 ]+)/$', views.manageGame, name='manageGame'),
     url(r'^registerForAPI/$', views.registerForAPI, name='registerForAPI'),
     url(r'^searchGamesAPI/v1/$', views.searchGamesAPI, name='searchGamesAPI'),
+    url(r'^searchHighScoresAPI/v1/$', views.searchHighScoresAPI, name='searchHighScoresAPI'),
+    url(r'^searchGameSalesAPI/v1/$', views.searchGameSalesAPI, name='searchGameSalesAPI'),
+
 ]
