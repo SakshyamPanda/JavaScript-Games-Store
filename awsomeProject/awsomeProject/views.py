@@ -115,6 +115,7 @@ def searchGameSalesAPI(request):
     except UserProfile.DoesNotExist:
         user = None
     # GET requests are only valid ones for simplicity sake
+
     if request.method == "GET" and 'key' in request.GET and request.GET['key'] != "" and user != None:
         if 'q' not in request.GET:
             games = Game.objects.all()
@@ -124,11 +125,10 @@ def searchGameSalesAPI(request):
         for game in games:
             # first() is used to force database call
             developer = DeveloperGame.objects.all().filter(game=game).first()
+            buyersAndTimestamps = []
             if Transaction.objects.all().filter(game=game).exists(): #if the game has an entry in the Transactions table (i.e. someone bought it)
                 #then assign the transation values
                 Purchases = Transaction.objects.all().filter(game=game) #Querying from the transactions game table all objects whose game matches game_name
-                buyersAndTimestamps = []
-                timestamps = []
                 for purchase in Purchases:
                     buyersAndTimestamps.append({"bought by" : purchase.user.username, "on" : purchase.timestamp})
 
@@ -362,6 +362,10 @@ def game(request, game_name):
     print(request.FILES)
     try:
         game = Game.objects.get(name=game_name)
+        gameURL = request.build_absolute_uri(reverse("game", args = (game_name, )))
+        #gameURL = "sharbeldahlan.com"
+
+        print (gameURL)
         # TODO: What if highscores dont exist
         scores = Scores.objects.all().filter(game=game).order_by("-score")
         #check if user has bought the game a.k.a. has access to it
@@ -383,7 +387,7 @@ def game(request, game_name):
     # In case game does not exist, display 404
     except Game.DoesNotExist:
         raise Http404
-    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments})
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
 
 @login_required(login_url='/login/')
 @csrf_protect
@@ -405,12 +409,13 @@ def saveScore(request):
 	else:
 		return HttpResponse("Not authorized.")
 
+
 @login_required(login_url='/login/')
 @csrf_protect
 def saveGame(request):
     if request.method == "POST" and request.is_ajax():
         #create python dictionary from data sent through post request
-        root = dict(request.POST.iterlists())
+        root = dict(request.POST)
 
         user = request.user
         #extract data from root
@@ -445,27 +450,28 @@ def saveGame(request):
 @login_required(login_url='/login/')
 @csrf_protect
 def loadGame(request):
-	if request.method == "POST" and request.is_ajax():
-		#create python dictionary from data sent through post request
-		#root = dict(request.POST.iterlists())  #python2.7
-		root = dict(request.POST.lists())	#python3
-		user = request.user
-		game = Game.objects.get(pk = root['game'][0])
+    if request.method == "POST" and request.is_ajax():
+        #create python dictionary from data sent through post request
+        #root = dict(request.POST.iterlists())  #python2.7
 
-		# If previously saved games exists, load them
-		if Gameplay.objects.filter(user=user, game=game).exists():
-			gameplay = Gameplay.objects.get(user=user, game=game)
-			# Prepare response to send to game
-			response = {'messageType' : 'LOAD', 'gameState' : {'playerItems' : [], 'score' : gameplay.score}}
-			# Fill items array one item a time
-			# Same as PlayerItem.objects.all().filter(gameplay=gameplay)
-			for item in PlayerItem.objects.filter(gameplay=gameplay):
-				response['gameState']['playerItems'].append(item.itemName)
-			return JsonResponse(response)
-		else:
-			return HttpResponse("No saved games to load.")
-	else:
-		return HttpResponse("Not authorized.")
+        root = dict(request.POST)
+        user = request.user
+        game = Game.objects.get(pk = root['game'][0])
+
+        # If previously saved games exists, load them
+        if Gameplay.objects.filter(user=user, game=game).exists():
+            gameplay = Gameplay.objects.get(user=user, game=game)
+            # Prepare response to send to game
+            response = {'messageType' : 'LOAD', 'gameState' : {'playerItems' : [], 'score' : gameplay.score}}
+            # Fill items array one item a time
+            # Same as PlayerItem.objects.all().filter(gameplay=gameplay)
+            for item in PlayerItem.objects.filter(gameplay=gameplay):
+                response['gameState']['playerItems'].append(item.itemName)
+            return JsonResponse(response)
+        else:
+            return HttpResponse("No saved games to load.")
+    else:
+        return HttpResponse("Not authorized.")
 
 @login_required(login_url='/login/')
 @csrf_protect
@@ -589,6 +595,7 @@ def manageUploadedGames(request):
 			#put the games in a list
 			games.append(developerGame.game) # developerGame is an instance (a row in the database table) of DeveloperGames
 			#print(games)
+
 			Purchases = Transaction.objects.all().filter(game=developerGame.game) 	# Querying from the Transaction table the all transactions objects
 																					# with games matching the chosen game
 			numberOfPurchasesList.append(len(Purchases))
