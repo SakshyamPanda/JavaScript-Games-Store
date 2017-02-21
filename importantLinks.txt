@@ -9,3 +9,6 @@ http://stackoverflow.com/questions/6506897/csrf-token-missing-or-incorrect-while
 
 For Images, who is not lazy, do this pls :D. (dont forget to add stuff to requirement.txt for heroku)
 http://cloudinary.com/documentation/django_integration
+
+Deploying on Heroku, problems with gunicorn
+http://stackoverflow.com/questions/26082128/improperlyconfigured-you-must-either-define-the-environment-variable-django-set
