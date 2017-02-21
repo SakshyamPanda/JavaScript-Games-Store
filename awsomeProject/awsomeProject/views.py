@@ -207,42 +207,59 @@ def myProfile(request):
 																					# all transactions objects with games matching the chosen game
 			numberOfPurchasesList.append(len(Purchases))
 
-		gamePurchases = zip(games, numberOfPurchasesList)
+		gamePurchases = zip(games, numberOfPurchasesList)	# gamePurchases referes to no of people purchased a game
 		#gamePurchases.append
+		
+		PurchasedGames = Transaction.objects.all().filter(user=request.user) #accessing purchased games list from Transaction Table
+		purchasedGames = []
+		purchasedWhen = []
+		counts = []
+		i = 0
+		for boughtGame in PurchasedGames:
+			purchasedGames.append(boughtGame.game)
+			purchasedWhen.append(boughtGame.timestamp)
+			i += 1
+			counts.append(i)
+
+		boughtGames = zip(purchasedGames, purchasedWhen, counts)	#boughtGame refers to no. of games the user bought
+
+		return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success,
+						"context" : context, "gamePurchases": gamePurchases, "boughtGames": boughtGames })
+
 	else:
-		return HttpResponseRedirect('/') #in case address is typed, this redirects them to home (secure stuff)
-	#games = DeveloperGame.objects.get(user=request.user, game = request.game) #QUERY the games by this developer (.get or .filter?)
+		#All games the user purchased
+		PurchasedGames = Transaction.objects.all().filter(user=request.user) #accessing purchased games list from Transaction Table
+		purchasedGames = []
+		purchasedWhen = []
+		counts = []
+		i = 0
+		for boughtGame in PurchasedGames:
+			purchasedGames.append(boughtGame.game)
+			purchasedWhen.append(boughtGame.timestamp)
+			i += 1
+			counts.append(i)
 
-	#All games the user purchased
-	PurchasedGames = Transaction.objects.all().filter(user=request.user) #accessing purchased games list from Transaction Table
-	purchasedGames = []
-	purchasedWhen = []
-	counts = []
-	i = 0
-	for boughtGame in PurchasedGames:
-		purchasedGames.append(boughtGame.game)
-		purchasedWhen.append(boughtGame.timestamp)
-		i += 1
-		counts.append(i)
+		boughtGames = zip(purchasedGames, purchasedWhen, counts)	#boughtGame refers to no. of games the user bought
 
-	boughtGames = zip(purchasedGames, purchasedWhen, counts)
+		return render(request, "myProfile.html", {"userProfile" : userProfile, "boughtGames": boughtGames })
 
-	return render(request, "myProfile.html", {"userProfile" : userProfile, "form" : form, "success" : success,
-					"context" : context, "gamePurchases": gamePurchases, "boughtGames": boughtGames })
-
+						
 @login_required(login_url='/login/')
 @csrf_protect
 def editProfile(request):
-    if request.method == 'POST':
-        form = UpdateProfileForm(data=request.POST, instance=request.user)
-        if form.is_valid():
-            update = form.save(commit=False)
-            update.set_password(form.cleaned_data['password'])
-            update.save()
-            #User.objects.get().update(email=form.cleaned_data['email'], password=form.cleaned_data['password1'])
-    else:
-        form = UpdateProfileForm()
-    return render(request, "editProfile.html", {'form' : form} )
+	if request.method == 'POST':
+		form = UpdateProfileForm(data=request.POST, instance=request.user)
+		success = False
+		if form.is_valid():
+			update = form.save(commit=False)
+			update.set_password(form.cleaned_data['password'])
+			success = True
+			update.save()
+			#User.objects.get().update(email=form.cleaned_data['email'], password=form.cleaned_data['password1'])
+	else:
+		form = UpdateProfileForm()
+		success = False
+	return render(request, "editProfile.html", {'form' : form, "success":success} )
 
 def browseGames(request):
     all = Game.objects.all()
@@ -374,8 +391,8 @@ def saveScore(request):
 	# Only available as ajax post call
 	if request.method == "POST" and request.is_ajax():
 		#create python dictionary from data sent through post request
-		#root = dict(request.POST.lists())	#python2.7
-		root = dict(request.POST.iterlists()) #python3
+		#root = dict(request.POST.iterlists())	#python2.7
+		root = dict(request.POST.lists()) #python3
 		user = request.user
 		#extract data from root
 		game = Game.objects.get(pk = root['game'][0])

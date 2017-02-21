@@ -8,6 +8,8 @@
   <meta name="description" content="Memory Game">
   <meta name="author" content="Relja">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
   <style>
     #container { width: 800px; }
     ul { padding: 0;  margin: 0;}
@@ -91,7 +93,7 @@
       var start_time =  Math.floor(Date.now() / 1000);
 
 
-      $("#container").html(output);
+      $("#game-container").html(output);
       $("img").hide();
 
       var guess1 = "";
@@ -185,9 +187,18 @@
 
 <body>
 
-  <div id="container"></div>
-  <button id="save"> Save </button>
-  <button id="load"> Load </button>
-
+	<div class="conatiner">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="game-container">
+				</div>
+				<div class="col-md-12">
+					<button type="submit" id="save" class="btn btn-info btn-lg">Save</button>
+					<button type="submit" id="load" class="btn btn-success btn-lg">Load</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 </body>
 </html>
