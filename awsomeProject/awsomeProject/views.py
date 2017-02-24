@@ -14,6 +14,7 @@ from django.forms.models import model_to_dict
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.backends import ModelBackend
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
@@ -557,7 +558,7 @@ def activation(request,id):
         raise Http404()
     user.is_active=True
     user.save()
-    login(request, user)
+    login(request, user, backend='django.contrib.auth.backends.ModelBackend')
     return HttpResponseRedirect('/')
 
 # Not a view, just a function that sends email to user for validation
