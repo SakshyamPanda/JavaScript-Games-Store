@@ -1,0 +1,549 @@
+[24/Feb/2017 16:09:05] DEBUG [django.db.backends.schema:103] CREATE TABLE "awsomeProject_comment" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "commentText" text NOT NULL, "created" datetime NOT NULL); (params None)
+[24/Feb/2017 16:10:01] ERROR [django.request:124] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sharbel.dahlan\git\wsd2016\Project\wsdprojecteit\awsomeProject\awsomeProject\views.py", line 171, in home
+    return render(request, 'home.html', {'games': games })
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 104, in render
+    url = self.url(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 101, in url
+    return self.handle_simple(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 114, in handle_simple
+    return staticfiles_storage.url(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 132, in url
+    hashed_name = self.stored_name(clean_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 292, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 95, in hashed_name
+    (clean_name, self))
+ValueError: The file 'js/jquery-3.1.1.min.js' could not be found with <whitenoise.storage.CompressedManifestStaticFilesStorage object at 0x0532E5F0>.
+[24/Feb/2017 16:10:01] ERROR [django.server:131] "GET / HTTP/1.1" 500 27
+[24/Feb/2017 16:10:01] WARNING [django.request:152] Not Found: /favicon.ico
+[24/Feb/2017 16:10:01] WARNING [django.server:131] "GET /favicon.ico HTTP/1.1" 404 85
+[24/Feb/2017 16:10:01] ERROR [django.request:124] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sharbel.dahlan\git\wsd2016\Project\wsdprojecteit\awsomeProject\awsomeProject\views.py", line 171, in home
+    return render(request, 'home.html', {'games': games })
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 104, in render
+    url = self.url(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 101, in url
+    return self.handle_simple(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 114, in handle_simple
+    return staticfiles_storage.url(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 132, in url
+    hashed_name = self.stored_name(clean_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 292, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 95, in hashed_name
+    (clean_name, self))
+ValueError: The file 'js/jquery-3.1.1.min.js' could not be found with <whitenoise.storage.CompressedManifestStaticFilesStorage object at 0x0532E5F0>.
+[24/Feb/2017 16:10:01] ERROR [django.server:131] "GET / HTTP/1.1" 500 27
+[24/Feb/2017 16:10:08] ERROR [django.request:124] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sharbel.dahlan\git\wsd2016\Project\wsdprojecteit\awsomeProject\awsomeProject\views.py", line 171, in home
+    return render(request, 'home.html', {'games': games })
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 104, in render
+    url = self.url(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 101, in url
+    return self.handle_simple(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 114, in handle_simple
+    return staticfiles_storage.url(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 132, in url
+    hashed_name = self.stored_name(clean_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 292, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 95, in hashed_name
+    (clean_name, self))
+ValueError: The file 'js/jquery-3.1.1.min.js' could not be found with <whitenoise.storage.CompressedManifestStaticFilesStorage object at 0x0532E5F0>.
+[24/Feb/2017 16:10:08] ERROR [django.server:131] "GET / HTTP/1.1" 500 27
+[24/Feb/2017 16:10:09] ERROR [django.request:124] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sharbel.dahlan\git\wsd2016\Project\wsdprojecteit\awsomeProject\awsomeProject\views.py", line 171, in home
+    return render(request, 'home.html', {'games': games })
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 104, in render
+    url = self.url(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 101, in url
+    return self.handle_simple(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 114, in handle_simple
+    return staticfiles_storage.url(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 132, in url
+    hashed_name = self.stored_name(clean_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 292, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 95, in hashed_name
+    (clean_name, self))
+ValueError: The file 'js/jquery-3.1.1.min.js' could not be found with <whitenoise.storage.CompressedManifestStaticFilesStorage object at 0x0532E5F0>.
+[24/Feb/2017 16:10:09] ERROR [django.server:131] "GET / HTTP/1.1" 500 27
+[24/Feb/2017 16:10:09] ERROR [django.request:124] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sharbel.dahlan\git\wsd2016\Project\wsdprojecteit\awsomeProject\awsomeProject\views.py", line 171, in home
+    return render(request, 'home.html', {'games': games })
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 104, in render
+    url = self.url(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 101, in url
+    return self.handle_simple(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 114, in handle_simple
+    return staticfiles_storage.url(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 132, in url
+    hashed_name = self.stored_name(clean_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 292, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 95, in hashed_name
+    (clean_name, self))
+ValueError: The file 'js/jquery-3.1.1.min.js' could not be found with <whitenoise.storage.CompressedManifestStaticFilesStorage object at 0x0532E5F0>.
+[24/Feb/2017 16:10:09] ERROR [django.server:131] "GET / HTTP/1.1" 500 27
+[24/Feb/2017 16:12:08] ERROR [django.request:124] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sharbel.dahlan\git\wsd2016\Project\wsdprojecteit\awsomeProject\awsomeProject\views.py", line 171, in home
+    return render(request, 'home.html', {'games': games })
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 104, in render
+    url = self.url(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 101, in url
+    return self.handle_simple(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 114, in handle_simple
+    return staticfiles_storage.url(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 132, in url
+    hashed_name = self.stored_name(clean_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 292, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 95, in hashed_name
+    (clean_name, self))
+ValueError: The file 'js/jquery-3.1.1.min.js' could not be found with <whitenoise.storage.CompressedManifestStaticFilesStorage object at 0x0532E5F0>.
+[24/Feb/2017 16:12:08] ERROR [django.server:131] "GET / HTTP/1.1" 500 27
+[24/Feb/2017 16:12:52] DEBUG [django.db.backends:90] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[24/Feb/2017 16:12:52] DEBUG [django.db.backends:90] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[24/Feb/2017 16:12:54] DEBUG [django.db.backends:90] (0.004) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."created" BETWEEN '2017-01-24' AND '2017-02-24'; args=('2017-01-24', '2017-02-24')
+[24/Feb/2017 16:12:54] INFO [django.server:131] "GET / HTTP/1.1" 200 11265
+[24/Feb/2017 16:12:54] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 121207
+[24/Feb/2017 16:12:54] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 200 2238
+[24/Feb/2017 16:12:54] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 37051
+[24/Feb/2017 16:12:54] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 200 86713
+[24/Feb/2017 16:12:54] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 200 564
+[24/Feb/2017 16:12:54] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 200 135807
+[24/Feb/2017 16:12:54] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 200 10724
+[24/Feb/2017 16:12:55] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 200 423
+[24/Feb/2017 16:12:55] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 200 63667
+[24/Feb/2017 16:12:55] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 200 16089
+[24/Feb/2017 16:12:55] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+[24/Feb/2017 16:15:22] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'RegistrationForm'. Choices are: email, isDeveloper, password1, password2, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegistrationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[24/Feb/2017 16:15:22] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'RegistrationForm'. Choices are: email, isDeveloper, password1, password2, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegistrationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[24/Feb/2017 16:15:22] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'RegistrationForm'. Choices are: email, isDeveloper, password1, password2, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegistrationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[24/Feb/2017 16:15:22] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'RegistrationForm'. Choices are: email, isDeveloper, password1, password2, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegistrationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[24/Feb/2017 16:15:22] INFO [django.server:131] "GET /register/ HTTP/1.1" 200 6294
+[24/Feb/2017 16:15:22] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[24/Feb/2017 16:15:22] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[24/Feb/2017 16:15:22] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[24/Feb/2017 16:15:22] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[24/Feb/2017 16:15:22] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[24/Feb/2017 16:15:22] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[24/Feb/2017 16:15:22] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[24/Feb/2017 16:15:25] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[24/Feb/2017 16:15:25] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[24/Feb/2017 16:15:25] INFO [django.server:131] "GET /login/ HTTP/1.1" 200 6161
+[24/Feb/2017 16:15:25] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[24/Feb/2017 16:15:25] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[24/Feb/2017 16:15:25] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[24/Feb/2017 16:15:25] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[24/Feb/2017 16:15:25] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[24/Feb/2017 16:15:25] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[24/Feb/2017 16:15:26] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[24/Feb/2017 16:15:32] DEBUG [django.db.backends:90] (0.000) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'b8k74myiqxe5f6tnzo4111gkzt1h8cgo' LIMIT 1; args=('b8k74myiqxe5f6tnzo4111gkzt1h8cgo',)
+[24/Feb/2017 16:15:32] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[24/Feb/2017 16:15:32] DEBUG [django.db.backends:90] (0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT 'b8k74myiqxe5f6tnzo4111gkzt1h8cgo', 'YzQxZTM3NGVmMmM3NzllNDZhZmRlYTQ3YmJlNjM4ZmNjMjhhMzU0Yjp7ImdpdGh1Yl9zdGF0ZSI6ImhaZFYzQVBtMUw3bjRqTFpLWVdPcXhPNVVXZU8ybXF2In0=', '2017-03-10 14:15:32.555698'; args=('b8k74myiqxe5f6tnzo4111gkzt1h8cgo', 'YzQxZTM3NGVmMmM3NzllNDZhZmRlYTQ3YmJlNjM4ZmNjMjhhMzU0Yjp7ImdpdGh1Yl9zdGF0ZSI6ImhaZFYzQVBtMUw3bjRqTFpLWVdPcXhPNVVXZU8ybXF2In0=', '2017-03-10 14:15:32.555698')
+[24/Feb/2017 16:15:32] INFO [django.server:131] "GET /oauth/login/github/ HTTP/1.1" 302 0
+[24/Feb/2017 16:51:54] DEBUG [django.db.backends:90] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[24/Feb/2017 16:51:54] DEBUG [django.db.backends:90] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[24/Feb/2017 16:52:40] DEBUG [django.db.backends:90] (0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[24/Feb/2017 16:52:40] DEBUG [django.db.backends:90] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
