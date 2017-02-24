@@ -55,7 +55,7 @@
 				</div>
 			</div>
 			
-			<div class="well col-md-12">
+			<div class="highlight col-md-12">
 				<div class="tab-content">
 					<div class="tab-pane fade in" id="tab1">
 						<div class="col-md-10">
@@ -79,7 +79,7 @@
 											<div class="text-left">
 												{{ form|bootstrap }}
 											</div>
-											<button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 30px">Upload</button>
+											<button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 30px; margin-bottom:30px">Upload</button>
 										</form>
 									</div>
 								</div>
@@ -106,7 +106,7 @@
 												<a href={% url "manageGame" game.name %} style="color:#ddd;">Manage Game</a>
 											</div>
 											
-											<div class="col-md-12 text-left game-description highlight">
+											<div class="col-md-12 text-left game-description1 highlight">
 												<p> Number of Purchases: {{numberOfPurchases}}</p>
 												<span><strong>Description:</strong></span>
 												<p class="section-subheading text-muted">{{game.description}}</p>
@@ -137,7 +137,7 @@
 										<a href={% url "game" game.name %}> <h4 class="service-heading">{{game.name}}<h4></a>
 										<h5 class="section-subheading text-muted">[ {{game.category}} ]</h5>
 									</div>
-									<div class="col-md-12 text-left game-description">
+									<div class="col-md-12 text-left game-description1">
 										<h5 class="service-heading"><strong>Description:</strong></h5>
 										<p class="section-subheading text-muted">{{game.description}}</p>
 									</div>
