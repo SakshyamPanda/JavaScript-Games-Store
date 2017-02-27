@@ -2872,3 +2872,14 @@ ValueError: You have multiple authentication backends configured and therefore m
 [24/Feb/2017 18:21:01] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
 [24/Feb/2017 18:21:01] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
 [24/Feb/2017 18:21:02] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 15:17:03] DEBUG [django.db.backends:90] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[27/Feb/2017 15:17:03] DEBUG [django.db.backends:90] (0.000) PRAGMA foreign_keys; args=None
+[27/Feb/2017 15:17:03] DEBUG [django.db.backends:90] (0.000) PRAGMA foreign_keys = 0; args=None
+[27/Feb/2017 15:17:03] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 15:17:03] DEBUG [django.db.backends.schema:103] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params None)
+[27/Feb/2017 15:17:03] DEBUG [django.db.backends:90] (0.000) CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); args=None
+[27/Feb/2017 15:17:03] DEBUG [django.db.backends:90] (0.000) PRAGMA foreign_keys = 0; args=None
+[27/Feb/2017 15:17:03] DEBUG [django.db.backends:90] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
