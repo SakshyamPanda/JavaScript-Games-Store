@@ -162,11 +162,11 @@ CLOUDINARY = {
 }
 
 AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
     'social.backends.github.GithubOAuth2',
     'social.backends.twitter.TwitterOAuth',
     'social.backends.facebook.FacebookOAuth2',
 
-    'django.contrib.auth.backends.ModelBackend',
 )
 
 LOGIN_URL = 'login'
