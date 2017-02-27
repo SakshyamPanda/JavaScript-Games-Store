@@ -27,7 +27,7 @@
           url: "saveGame/",
           data: requestData,
           success: function(data){
-              alert(data);
+              //alert(data);
           },
           error: function(msg){
               alert( "There is an error with the server." );
@@ -69,7 +69,7 @@
           data: requestData,
           success: function(data){
               //TODO: dont reload whole page, make it like a AJAX call to refresh highscores only
-                alert(data);
+                //alert(data);
                 // Refresh page to see newly updated highscores
                 location.reload();
           },
@@ -87,7 +87,7 @@
         data: {"comment" : $("#comment").val()},
         success: function(data){
             //TODO: dont reload whole page, make it like a AJAX call to refresh highscores only
-              alert(data);
+              //alert(data);
               // Refresh page to see newly updated highscores
               location.reload();
         },
