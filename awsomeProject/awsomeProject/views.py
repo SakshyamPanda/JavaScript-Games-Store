@@ -221,7 +221,7 @@ def myProfile(request):
 
 		gamePurchases = zip(games, numberOfPurchasesList)	# gamePurchases referes to no of people purchased a game
 		#gamePurchases.append
-		
+
 		PurchasedGames = Transaction.objects.all().filter(user=request.user) #accessing purchased games list from Transaction Table
 		purchasedGames = []
 		purchasedWhen = []
@@ -255,7 +255,7 @@ def myProfile(request):
 
 		return render(request, "myProfile.html", {"userProfile" : userProfile, "boughtGames": boughtGames })
 
-						
+
 @login_required(login_url='/login/')
 @csrf_protect
 def editProfile(request):
@@ -293,7 +293,7 @@ def buyGame(request, game_name):
         #I am defining the variables here and then the buyGame.html will only have the variable names
         #This is querying the game object with the name parameter
         game = Game.objects.get(name = game_name)  #game primary key to be queried from the game table
-        pid = game.pk
+        pid = random_string_generator()
         sid = "pandareljasharbel" #this is fxed for our service
         amount = game.price #this is game price queried form game table
 

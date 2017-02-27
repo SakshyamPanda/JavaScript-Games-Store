@@ -2955,3 +2955,386 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_c
 [24/Feb/2017 17:22:20] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
 [24/Feb/2017 17:22:20] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
 [24/Feb/2017 17:22:20] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[24/Feb/2017 17:57:50] DEBUG [django.db.backends:90] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[24/Feb/2017 17:57:50] DEBUG [django.db.backends:90] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[24/Feb/2017 17:58:13] DEBUG [django.db.backends:90] (0.002) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."created" BETWEEN '2017-01-24' AND '2017-02-24'; args=('2017-01-24', '2017-02-24')
+[24/Feb/2017 17:58:13] INFO [django.server:131] "GET / HTTP/1.1" 200 11265
+[24/Feb/2017 17:58:13] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:13] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[24/Feb/2017 17:58:13] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[24/Feb/2017 17:58:13] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:13] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:13] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:13] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:13] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:14] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:14] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:14] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[24/Feb/2017 17:58:15] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[24/Feb/2017 17:58:15] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[24/Feb/2017 17:58:15] INFO [django.server:131] "GET /login/ HTTP/1.1" 200 6161
+[24/Feb/2017 17:58:15] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[24/Feb/2017 17:58:15] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[24/Feb/2017 17:58:15] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:15] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:15] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:15] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:16] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."created" BETWEEN '2017-01-24' AND '2017-02-24'; args=('2017-01-24', '2017-02-24')
+[24/Feb/2017 17:58:23] INFO [django.server:131] "GET / HTTP/1.1" 200 11265
+[24/Feb/2017 17:58:23] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:23] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:23] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[24/Feb/2017 17:58:23] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:23] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[24/Feb/2017 17:58:23] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:23] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:23] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:23] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:23] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:23] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[24/Feb/2017 17:58:33] INFO [django.server:131] "GET /game/hala%20yaba/ HTTP/1.1" 302 0
+[24/Feb/2017 17:58:33] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[24/Feb/2017 17:58:33] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[24/Feb/2017 17:58:33] INFO [django.server:131] "GET /login/?next=/game/hala%2520yaba/ HTTP/1.1" 200 6161
+[24/Feb/2017 17:58:33] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[24/Feb/2017 17:58:33] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[24/Feb/2017 17:58:33] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:33] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:33] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:33] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:34] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:45] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'RegistrationForm'. Choices are: email, isDeveloper, password1, password2, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegistrationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[24/Feb/2017 17:58:45] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'RegistrationForm'. Choices are: email, isDeveloper, password1, password2, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegistrationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[24/Feb/2017 17:58:45] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'RegistrationForm'. Choices are: email, isDeveloper, password1, password2, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegistrationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[24/Feb/2017 17:58:45] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'RegistrationForm'. Choices are: email, isDeveloper, password1, password2, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegistrationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[24/Feb/2017 17:58:45] INFO [django.server:131] "GET /register/ HTTP/1.1" 200 6454
+[24/Feb/2017 17:58:45] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[24/Feb/2017 17:58:45] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:45] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[24/Feb/2017 17:58:45] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:45] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:45] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[24/Feb/2017 17:58:46] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[24/Feb/2017 17:59:08] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" LIKE 'fakoor' ESCAPE '\'; args=('fakoor',)
+[24/Feb/2017 17:59:08] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[24/Feb/2017 17:59:08] DEBUG [django.db.backends:90] (0.003) INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES ('pbkdf2_sha256$30000$GZnEE2G2vUma$eP05e0z4dsg7W9LhNj6CVh3SMf2qTq67biaJpvt9Qlo=', NULL, 0, 'fakoor', '', '', 'sharbel.dahlan@gmail.com', 0, 1, '2017-02-24 15:59:08.720248'); args=['pbkdf2_sha256$30000$GZnEE2G2vUma$eP05e0z4dsg7W9LhNj6CVh3SMf2qTq67biaJpvt9Qlo=', None, False, 'fakoor', '', '', 'sharbel.dahlan@gmail.com', False, True, '2017-02-24 15:59:08.720248']
+[24/Feb/2017 17:59:08] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[24/Feb/2017 17:59:08] DEBUG [django.db.backends:90] (0.001) UPDATE "awsomeProject_userprofile" SET "isDeveloper" = 1, "key" = '' WHERE "awsomeProject_userprofile"."user_id" = 14; args=(True, '', 14)
+[24/Feb/2017 17:59:08] DEBUG [django.db.backends:90] (0.001) INSERT INTO "awsomeProject_userprofile" ("user_id", "isDeveloper", "key") SELECT 14, 1, ''; args=(14, True, '')
+[24/Feb/2017 17:59:08] DEBUG [django.db.backends:90] (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'fakoor'; args=('fakoor',)
+[24/Feb/2017 17:59:09] DEBUG [django.db.backends:90] (0.001) BEGIN; args=None
+[24/Feb/2017 17:59:09] DEBUG [django.db.backends:90] (0.003) UPDATE "auth_user" SET "password" = 'pbkdf2_sha256$30000$GZnEE2G2vUma$eP05e0z4dsg7W9LhNj6CVh3SMf2qTq67biaJpvt9Qlo=', "last_login" = NULL, "is_superuser" = 0, "username" = 'fakoor', "first_name" = '', "last_name" = '', "email" = 'sharbel.dahlan@gmail.com', "is_staff" = 0, "is_active" = 0, "date_joined" = '2017-02-24 15:59:08.720248' WHERE "auth_user"."id" = 14; args=('pbkdf2_sha256$30000$GZnEE2G2vUma$eP05e0z4dsg7W9LhNj6CVh3SMf2qTq67biaJpvt9Qlo=', False, 'fakoor', '', '', 'sharbel.dahlan@gmail.com', False, False, '2017-02-24 15:59:08.720248', 14)
+[24/Feb/2017 17:59:11] INFO [django.server:131] "POST /register/ HTTP/1.1" 302 0
+[24/Feb/2017 17:59:11] INFO [django.server:131] "GET /register/success/ HTTP/1.1" 200 4439
+[24/Feb/2017 17:59:12] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[24/Feb/2017 17:59:12] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[24/Feb/2017 17:59:12] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[24/Feb/2017 17:59:12] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[24/Feb/2017 17:59:12] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[24/Feb/2017 17:59:12] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[24/Feb/2017 17:59:12] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[24/Feb/2017 17:59:26] DEBUG [django.db.backends:90] (0.003) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 14; args=(14,)
+[24/Feb/2017 17:59:26] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[24/Feb/2017 17:59:26] DEBUG [django.db.backends:90] (0.002) UPDATE "auth_user" SET "password" = 'pbkdf2_sha256$30000$GZnEE2G2vUma$eP05e0z4dsg7W9LhNj6CVh3SMf2qTq67biaJpvt9Qlo=', "last_login" = NULL, "is_superuser" = 0, "username" = 'fakoor', "first_name" = '', "last_name" = '', "email" = 'sharbel.dahlan@gmail.com', "is_staff" = 0, "is_active" = 1, "date_joined" = '2017-02-24 15:59:08.720248' WHERE "auth_user"."id" = 14; args=('pbkdf2_sha256$30000$GZnEE2G2vUma$eP05e0z4dsg7W9LhNj6CVh3SMf2qTq67biaJpvt9Qlo=', False, 'fakoor', '', '', 'sharbel.dahlan@gmail.com', False, True, '2017-02-24 15:59:08.720248', 14)
+[24/Feb/2017 17:59:26] DEBUG [django.db.backends:90] (0.001) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'tat7eu8t1zyblkg6cdyew7rnqv3ufkaf' LIMIT 1; args=('tat7eu8t1zyblkg6cdyew7rnqv3ufkaf',)
+[24/Feb/2017 17:59:26] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[24/Feb/2017 17:59:26] DEBUG [django.db.backends:90] (0.003) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT 'tat7eu8t1zyblkg6cdyew7rnqv3ufkaf', 'MGQ0ZWQzYmFjY2ZjODNmNzBmODk0NjFiYzQxZmMyMDNiMDM4MGZlZDp7fQ==', '2017-03-10 15:59:26.734814'; args=('tat7eu8t1zyblkg6cdyew7rnqv3ufkaf', 'MGQ0ZWQzYmFjY2ZjODNmNzBmODk0NjFiYzQxZmMyMDNiMDM4MGZlZDp7fQ==', '2017-03-10 15:59:26.734814')
+[24/Feb/2017 17:59:26] ERROR [django.request:124] Internal Server Error: /register/14/
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\auth\__init__.py", line 112, in login
+    backend = backend or user.backend
+AttributeError: 'User' object has no attribute 'backend'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sharbel.dahlan\git\wsd2016\Project\wsdprojecteit\awsomeProject\awsomeProject\views.py", line 562, in activation
+    login(request, user)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\auth\__init__.py", line 119, in login
+    'You have multiple authentication backends configured and '
+ValueError: You have multiple authentication backends configured and therefore must provide the `backend` argument or set the `backend` attribute on the user.
+[24/Feb/2017 17:59:26] ERROR [django.server:131] "GET /register/14/ HTTP/1.1" 500 84480
