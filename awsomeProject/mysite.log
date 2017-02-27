@@ -29616,3 +29616,1526 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_c
 [27/Feb/2017 20:35:07] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
 [27/Feb/2017 20:35:07] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
 >>>>>>> sakshyam
+[27/Feb/2017 20:49:21] DEBUG [django.db.backends:90] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[27/Feb/2017 20:49:21] DEBUG [django.db.backends:90] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[27/Feb/2017 20:49:25] DEBUG [django.db.backends:90] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:49:25.621461' AND "django_session"."session_key" = '60btabg4v1w2qckwe1gj0leva00p7kgg'); args=('2017-02-27 18:49:25.621461', '60btabg4v1w2qckwe1gj0leva00p7kgg')
+[27/Feb/2017 20:49:25] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."created" BETWEEN '2017-01-27' AND '2017-02-27'; args=('2017-01-27', '2017-02-27')
+[27/Feb/2017 20:49:25] INFO [django.server:131] "GET / HTTP/1.1" 200 6374
+[27/Feb/2017 20:49:25] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:49:25] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:49:25] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:25] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:25] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:25] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:26] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:26] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:26] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:26] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:26] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:49:28] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:49:28] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:49:28] INFO [django.server:131] "GET /login/ HTTP/1.1" 200 5752
+[27/Feb/2017 20:49:28] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:28] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:49:28] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:49:28] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:28] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:28] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:28] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:36] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'sharbeld'; args=('sharbeld',)
+[27/Feb/2017 20:49:36] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="sharbeld" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:49:36] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="sharbeld" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:49:36] INFO [django.server:131] "POST /login/ HTTP/1.1" 200 5998
+[27/Feb/2017 20:49:36] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:49:37] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:37] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:49:37] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:37] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:37] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:37] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:41] DEBUG [django.db.backends:90] (0.001) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'rasffkkb1vylbuyrqyvfxohzniap4v7v' LIMIT 1; args=('rasffkkb1vylbuyrqyvfxohzniap4v7v',)
+[27/Feb/2017 20:49:41] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:49:41] DEBUG [django.db.backends:90] (0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT 'rasffkkb1vylbuyrqyvfxohzniap4v7v', 'OWM4MTJjMzI5YzI1NWEwMTdlNjdjMjlhZDA5MjBlNzY0YzgwMGViYTp7ImdpdGh1Yl9zdGF0ZSI6IjVmM05kVUFVMldlNm8wbXNiY3ZyQXhoTGcwZDB4NloyIn0=', '2017-03-13 18:49:41.044826'; args=('rasffkkb1vylbuyrqyvfxohzniap4v7v', 'OWM4MTJjMzI5YzI1NWEwMTdlNjdjMjlhZDA5MjBlNzY0YzgwMGViYTp7ImdpdGh1Yl9zdGF0ZSI6IjVmM05kVUFVMldlNm8wbXNiY3ZyQXhoTGcwZDB4NloyIn0=', '2017-03-13 18:49:41.044826')
+[27/Feb/2017 20:49:41] INFO [django.server:131] "GET /oauth/login/github/ HTTP/1.1" 302 0
+[27/Feb/2017 20:49:56] DEBUG [django.db.backends:90] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:49:56.909180' AND "django_session"."session_key" = 'rasffkkb1vylbuyrqyvfxohzniap4v7v'); args=('2017-02-27 18:49:56.909180', 'rasffkkb1vylbuyrqyvfxohzniap4v7v')
+[27/Feb/2017 20:49:56] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."created" BETWEEN '2017-01-27' AND '2017-02-27'; args=('2017-01-27', '2017-02-27')
+[27/Feb/2017 20:49:56] INFO [django.server:131] "GET / HTTP/1.1" 200 6374
+[27/Feb/2017 20:49:56] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:57] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:57] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:57] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:57] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:49:57] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:49:58] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:58] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:58] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:58] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:49:58] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:50:03] DEBUG [django.db.backends:90] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:50:03.232879' AND "django_session"."session_key" = 'rasffkkb1vylbuyrqyvfxohzniap4v7v'); args=('2017-02-27 18:50:03.232879', 'rasffkkb1vylbuyrqyvfxohzniap4v7v')
+[27/Feb/2017 20:50:03] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:50:03] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:50:03] INFO [django.server:131] "GET /login/ HTTP/1.1" 200 5752
+[27/Feb/2017 20:50:03] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:50:03] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:50:03] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:50:03] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:50:03] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:50:03] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:50:03] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:50:36] DEBUG [django.db.backends:90] (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'sharbel'; args=('sharbel',)
+[27/Feb/2017 20:50:36] DEBUG [django.db.backends:90] (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:50:36.905664' AND "django_session"."session_key" = 'rasffkkb1vylbuyrqyvfxohzniap4v7v'); args=('2017-02-27 18:50:36.905664', 'rasffkkb1vylbuyrqyvfxohzniap4v7v')
+[27/Feb/2017 20:50:36] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="sharbel" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:50:36] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="sharbel" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:50:36] INFO [django.server:131] "POST /login/ HTTP/1.1" 200 5997
+[27/Feb/2017 20:50:37] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:50:37] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:50:37] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:50:37] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:50:37] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:50:37] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:50:37] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:05] DEBUG [django.db.backends:90] (0.003) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'sharbeldhalan'; args=('sharbeldhalan',)
+[27/Feb/2017 20:51:05] DEBUG [django.db.backends:90] (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:51:05.929464' AND "django_session"."session_key" = 'rasffkkb1vylbuyrqyvfxohzniap4v7v'); args=('2017-02-27 18:51:05.929464', 'rasffkkb1vylbuyrqyvfxohzniap4v7v')
+[27/Feb/2017 20:51:05] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="sharbeldhalan" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:51:05] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="sharbeldhalan" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:51:05] INFO [django.server:131] "POST /login/ HTTP/1.1" 200 6003
+[27/Feb/2017 20:51:06] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:51:06] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:51:06] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:06] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:06] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:06] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:06] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:16] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'ladro'; args=('ladro',)
+[27/Feb/2017 20:51:16] DEBUG [django.db.backends:90] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:51:16.841218' AND "django_session"."session_key" = 'rasffkkb1vylbuyrqyvfxohzniap4v7v'); args=('2017-02-27 18:51:16.841218', 'rasffkkb1vylbuyrqyvfxohzniap4v7v')
+[27/Feb/2017 20:51:16] DEBUG [django.db.backends:90] (0.001) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv' LIMIT 1; args=('l2oam3s1o1yq5vcswcektfyopjv40odv',)
+[27/Feb/2017 20:51:16] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:51:16] DEBUG [django.db.backends:90] (0.002) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT 'l2oam3s1o1yq5vcswcektfyopjv40odv', 'OWM4MTJjMzI5YzI1NWEwMTdlNjdjMjlhZDA5MjBlNzY0YzgwMGViYTp7ImdpdGh1Yl9zdGF0ZSI6IjVmM05kVUFVMldlNm8wbXNiY3ZyQXhoTGcwZDB4NloyIn0=', '2017-03-13 18:51:16.845727'; args=('l2oam3s1o1yq5vcswcektfyopjv40odv', 'OWM4MTJjMzI5YzI1NWEwMTdlNjdjMjlhZDA5MjBlNzY0YzgwMGViYTp7ImdpdGh1Yl9zdGF0ZSI6IjVmM05kVUFVMldlNm8wbXNiY3ZyQXhoTGcwZDB4NloyIn0=', '2017-03-13 18:51:16.845727')
+[27/Feb/2017 20:51:16] DEBUG [django.db.backends:90] (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'rasffkkb1vylbuyrqyvfxohzniap4v7v'; args=('rasffkkb1vylbuyrqyvfxohzniap4v7v',)
+[27/Feb/2017 20:51:16] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:51:16] DEBUG [django.db.backends:90] (0.001) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('rasffkkb1vylbuyrqyvfxohzniap4v7v'); args=('rasffkkb1vylbuyrqyvfxohzniap4v7v',)
+[27/Feb/2017 20:51:17] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:51:17] DEBUG [django.db.backends:90] (0.002) UPDATE "auth_user" SET "last_login" = '2017-02-27 18:51:17.001584' WHERE "auth_user"."id" = 1; args=('2017-02-27 18:51:17.001584', 1)
+[27/Feb/2017 20:51:17] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:51:17] DEBUG [django.db.backends:90] (0.001) UPDATE "django_session" SET "session_data" = 'NjhlNzE2MDhiYzEzZTE3ZGM2MTgzNmYwYjkwM2Q2N2EwZDY5MDJmNTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJnaXRodWJfc3RhdGUiOiI1ZjNOZFVBVTJXZTZvMG1zYmN2ckF4aExnMGQweDZaMiIsIl9hdXRoX3VzZXJfaGFzaCI6ImJlN2MyNjQ0MjQ5MzJkYzNiOTdhMTBhODBhZDMxMmRkNGI4ZDlmNDcifQ==', "expire_date" = '2017-03-13 18:51:17.079381' WHERE "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv'; args=('NjhlNzE2MDhiYzEzZTE3ZGM2MTgzNmYwYjkwM2Q2N2EwZDY5MDJmNTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJnaXRodWJfc3RhdGUiOiI1ZjNOZFVBVTJXZTZvMG1zYmN2ckF4aExnMGQweDZaMiIsIl9hdXRoX3VzZXJfaGFzaCI6ImJlN2MyNjQ0MjQ5MzJkYzNiOTdhMTBhODBhZDMxMmRkNGI4ZDlmNDcifQ==', '2017-03-13 18:51:17.079381', 'l2oam3s1o1yq5vcswcektfyopjv40odv')
+[27/Feb/2017 20:51:17] INFO [django.server:131] "POST /login/ HTTP/1.1" 302 0
+[27/Feb/2017 20:51:17] DEBUG [django.db.backends:90] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:51:17.167757' AND "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv'); args=('2017-02-27 18:51:17.167757', 'l2oam3s1o1yq5vcswcektfyopjv40odv')
+[27/Feb/2017 20:51:17] DEBUG [django.db.backends:90] (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[27/Feb/2017 20:51:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_userprofile"."user_id", "awsomeProject_userprofile"."isDeveloper", "awsomeProject_userprofile"."key" FROM "awsomeProject_userprofile" WHERE "awsomeProject_userprofile"."user_id" = 1; args=(1,)
+[27/Feb/2017 20:51:17] INFO [django.server:131] "GET /createGitHubProfile/ HTTP/1.1" 302 0
+[27/Feb/2017 20:51:17] DEBUG [django.db.backends:90] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:51:17.501901' AND "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv'); args=('2017-02-27 18:51:17.501901', 'l2oam3s1o1yq5vcswcektfyopjv40odv')
+[27/Feb/2017 20:51:17] DEBUG [django.db.backends:90] (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[27/Feb/2017 20:51:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."created" BETWEEN '2017-01-27' AND '2017-02-27'; args=('2017-01-27', '2017-02-27')
+[27/Feb/2017 20:51:17] INFO [django.server:131] "GET / HTTP/1.1" 200 6549
+[27/Feb/2017 20:51:17] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:51:17] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:51:17] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:17] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:17] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:17] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:18] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:18] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:18] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:18] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:18] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:51:23] DEBUG [django.db.backends:90] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:51:23.469715' AND "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv'); args=('2017-02-27 18:51:23.469715', 'l2oam3s1o1yq5vcswcektfyopjv40odv')
+[27/Feb/2017 20:51:23] DEBUG [django.db.backends:90] (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[27/Feb/2017 20:51:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_userprofile"."user_id", "awsomeProject_userprofile"."isDeveloper", "awsomeProject_userprofile"."key" FROM "awsomeProject_userprofile" WHERE "awsomeProject_userprofile"."user_id" = 1; args=(1,)
+[27/Feb/2017 20:51:23] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_transaction"."id", "awsomeProject_transaction"."user_id", "awsomeProject_transaction"."game_id", "awsomeProject_transaction"."status", "awsomeProject_transaction"."timestamp", "awsomeProject_transaction"."pid" FROM "awsomeProject_transaction" WHERE ("awsomeProject_transaction"."status" = 'completed' AND "awsomeProject_transaction"."user_id" = 1); args=('completed', 1)
+[27/Feb/2017 20:51:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."id" = 1; args=(1,)
+[27/Feb/2017 20:51:23] INFO [django.server:131] "GET /myProfile/ HTTP/1.1" 200 7289
+[27/Feb/2017 20:51:23] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:51:23] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:51:23] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:23] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:23] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:23] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:24] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:24] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:24] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:24] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:24] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:51:56] DEBUG [django.db.backends:90] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:51:55.997738' AND "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv'); args=('2017-02-27 18:51:55.997738', 'l2oam3s1o1yq5vcswcektfyopjv40odv')
+[27/Feb/2017 20:51:56] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[27/Feb/2017 20:51:56] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_userprofile"."user_id", "awsomeProject_userprofile"."isDeveloper", "awsomeProject_userprofile"."key" FROM "awsomeProject_userprofile" WHERE "awsomeProject_userprofile"."user_id" = 1; args=(1,)
+[27/Feb/2017 20:51:56] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_transaction"."id", "awsomeProject_transaction"."user_id", "awsomeProject_transaction"."game_id", "awsomeProject_transaction"."status", "awsomeProject_transaction"."timestamp", "awsomeProject_transaction"."pid" FROM "awsomeProject_transaction" WHERE ("awsomeProject_transaction"."status" = 'completed' AND "awsomeProject_transaction"."user_id" = 1); args=('completed', 1)
+[27/Feb/2017 20:51:56] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."id" = 1; args=(1,)
+[27/Feb/2017 20:51:56] INFO [django.server:131] "GET /myProfile/ HTTP/1.1" 200 7298
+[27/Feb/2017 20:51:56] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:56] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:56] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:56] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:56] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:51:56] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:51:56] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:56] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:56] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:56] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:51:56] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:52:51] DEBUG [django.db.backends:90] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:52:51.966499' AND "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv'); args=('2017-02-27 18:52:51.966499', 'l2oam3s1o1yq5vcswcektfyopjv40odv')
+[27/Feb/2017 20:52:51] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[27/Feb/2017 20:52:51] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_userprofile"."user_id", "awsomeProject_userprofile"."isDeveloper", "awsomeProject_userprofile"."key" FROM "awsomeProject_userprofile" WHERE "awsomeProject_userprofile"."user_id" = 1; args=(1,)
+[27/Feb/2017 20:52:51] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_transaction"."id", "awsomeProject_transaction"."user_id", "awsomeProject_transaction"."game_id", "awsomeProject_transaction"."status", "awsomeProject_transaction"."timestamp", "awsomeProject_transaction"."pid" FROM "awsomeProject_transaction" WHERE ("awsomeProject_transaction"."status" = 'completed' AND "awsomeProject_transaction"."user_id" = 1); args=('completed', 1)
+[27/Feb/2017 20:52:51] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."id" = 1; args=(1,)
+[27/Feb/2017 20:52:51] INFO [django.server:131] "GET /myProfile/ HTTP/1.1" 200 7319
+[27/Feb/2017 20:52:52] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:52:52] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:52:52] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:52:52] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:52:52] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:52:52] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:52:52] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:52:52] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:52:52] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:52:52] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:52:52] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:53:31] DEBUG [django.db.backends:90] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:53:30.875499' AND "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv'); args=('2017-02-27 18:53:30.875499', 'l2oam3s1o1yq5vcswcektfyopjv40odv')
+[27/Feb/2017 20:53:31] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[27/Feb/2017 20:53:31] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_userprofile"."user_id", "awsomeProject_userprofile"."isDeveloper", "awsomeProject_userprofile"."key" FROM "awsomeProject_userprofile" WHERE "awsomeProject_userprofile"."user_id" = 1; args=(1,)
+[27/Feb/2017 20:53:31] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_transaction"."id", "awsomeProject_transaction"."user_id", "awsomeProject_transaction"."game_id", "awsomeProject_transaction"."status", "awsomeProject_transaction"."timestamp", "awsomeProject_transaction"."pid" FROM "awsomeProject_transaction" WHERE ("awsomeProject_transaction"."status" = 'completed' AND "awsomeProject_transaction"."user_id" = 1); args=('completed', 1)
+[27/Feb/2017 20:53:31] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."id" = 1; args=(1,)
+[27/Feb/2017 20:53:31] INFO [django.server:131] "GET /myProfile/ HTTP/1.1" 200 7339
+[27/Feb/2017 20:53:31] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:53:31] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:53:31] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:53:31] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:53:31] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:53:31] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:53:31] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:53:31] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:53:31] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:53:31] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:53:31] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:54:20] DEBUG [django.db.backends:90] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:54:20.238588' AND "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv'); args=('2017-02-27 18:54:20.238588', 'l2oam3s1o1yq5vcswcektfyopjv40odv')
+[27/Feb/2017 20:54:20] DEBUG [django.db.backends:90] (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[27/Feb/2017 20:54:20] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_userprofile"."user_id", "awsomeProject_userprofile"."isDeveloper", "awsomeProject_userprofile"."key" FROM "awsomeProject_userprofile" WHERE "awsomeProject_userprofile"."user_id" = 1; args=(1,)
+[27/Feb/2017 20:54:20] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_transaction"."id", "awsomeProject_transaction"."user_id", "awsomeProject_transaction"."game_id", "awsomeProject_transaction"."status", "awsomeProject_transaction"."timestamp", "awsomeProject_transaction"."pid" FROM "awsomeProject_transaction" WHERE ("awsomeProject_transaction"."status" = 'completed' AND "awsomeProject_transaction"."user_id" = 1); args=('completed', 1)
+[27/Feb/2017 20:54:20] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."id" = 1; args=(1,)
+[27/Feb/2017 20:54:20] INFO [django.server:131] "GET /myProfile/ HTTP/1.1" 200 7364
+[27/Feb/2017 20:54:20] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:54:20] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:54:20] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:54:20] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:54:20] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:54:20] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:54:20] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:54:20] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:54:20] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:54:20] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:54:21] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:56:08] DEBUG [django.db.backends:90] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:56:08.243386' AND "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv'); args=('2017-02-27 18:56:08.243386', 'l2oam3s1o1yq5vcswcektfyopjv40odv')
+[27/Feb/2017 20:56:08] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[27/Feb/2017 20:56:08] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_userprofile"."user_id", "awsomeProject_userprofile"."isDeveloper", "awsomeProject_userprofile"."key" FROM "awsomeProject_userprofile" WHERE "awsomeProject_userprofile"."user_id" = 1; args=(1,)
+[27/Feb/2017 20:56:08] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_transaction"."id", "awsomeProject_transaction"."user_id", "awsomeProject_transaction"."game_id", "awsomeProject_transaction"."status", "awsomeProject_transaction"."timestamp", "awsomeProject_transaction"."pid" FROM "awsomeProject_transaction" WHERE ("awsomeProject_transaction"."status" = 'completed' AND "awsomeProject_transaction"."user_id" = 1); args=('completed', 1)
+[27/Feb/2017 20:56:08] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."id" = 1; args=(1,)
+[27/Feb/2017 20:56:08] INFO [django.server:131] "GET /myProfile/ HTTP/1.1" 200 7364
+[27/Feb/2017 20:56:08] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:08] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:08] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:56:08] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:56:08] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:08] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:08] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:08] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:08] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:08] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:09] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:56:12] DEBUG [django.db.backends:90] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:56:12.948010' AND "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv'); args=('2017-02-27 18:56:12.948010', 'l2oam3s1o1yq5vcswcektfyopjv40odv')
+[27/Feb/2017 20:56:12] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[27/Feb/2017 20:56:12] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."created" BETWEEN '2017-01-27' AND '2017-02-27'; args=('2017-01-27', '2017-02-27')
+[27/Feb/2017 20:56:12] INFO [django.server:131] "GET / HTTP/1.1" 200 6549
+[27/Feb/2017 20:56:12] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:12] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:13] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:56:13] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:56:13] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:13] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:13] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:13] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:13] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:13] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:13] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:56:16] DEBUG [django.db.backends:90] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:56:16.257609' AND "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv'); args=('2017-02-27 18:56:16.257609', 'l2oam3s1o1yq5vcswcektfyopjv40odv')
+[27/Feb/2017 20:56:16] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[27/Feb/2017 20:56:16] DEBUG [django.db.backends:90] (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'l2oam3s1o1yq5vcswcektfyopjv40odv'; args=('l2oam3s1o1yq5vcswcektfyopjv40odv',)
+[27/Feb/2017 20:56:16] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:56:16] DEBUG [django.db.backends:90] (0.001) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('l2oam3s1o1yq5vcswcektfyopjv40odv'); args=('l2oam3s1o1yq5vcswcektfyopjv40odv',)
+[27/Feb/2017 20:56:16] INFO [django.server:131] "GET /logout/ HTTP/1.1" 200 4454
+[27/Feb/2017 20:56:16] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:56:16] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:56:16] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:16] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:16] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:16] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:16] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:19] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'RegistrationForm'. Choices are: email, isDeveloper, password1, password2, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegistrationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[27/Feb/2017 20:56:19] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'RegistrationForm'. Choices are: email, isDeveloper, password1, password2, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegistrationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[27/Feb/2017 20:56:19] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'RegistrationForm'. Choices are: email, isDeveloper, password1, password2, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegistrationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[27/Feb/2017 20:56:19] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'RegistrationForm'. Choices are: email, isDeveloper, password1, password2, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegistrationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[27/Feb/2017 20:56:19] INFO [django.server:131] "GET /register/ HTTP/1.1" 200 6748
+[27/Feb/2017 20:56:19] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:56:19] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:56:19] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:19] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:19] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:19] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:19] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:56:22] DEBUG [django.db.backends:90] (0.002) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'i6ryju7ph8p56d5lazw7c91qnwwgmeei' LIMIT 1; args=('i6ryju7ph8p56d5lazw7c91qnwwgmeei',)
+[27/Feb/2017 20:56:22] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:56:22] DEBUG [django.db.backends:90] (0.002) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT 'i6ryju7ph8p56d5lazw7c91qnwwgmeei', 'NWUxMTQzNjQzM2MyMjY0MDM4NDc0MDYyYWE4MWUwNDMwZWVkODZjYjp7ImZhY2Vib29rX3N0YXRlIjoiTUpCN0xrMHNEcFU2WTdKRjFIa1drT3pYUTBVQ3ZicTYifQ==', '2017-03-13 18:56:22.748082'; args=('i6ryju7ph8p56d5lazw7c91qnwwgmeei', 'NWUxMTQzNjQzM2MyMjY0MDM4NDc0MDYyYWE4MWUwNDMwZWVkODZjYjp7ImZhY2Vib29rX3N0YXRlIjoiTUpCN0xrMHNEcFU2WTdKRjFIa1drT3pYUTBVQ3ZicTYifQ==', '2017-03-13 18:56:22.748082')
+[27/Feb/2017 20:56:22] INFO [django.server:131] "GET /oauth/login/facebook/ HTTP/1.1" 302 0
+[27/Feb/2017 20:57:04] DEBUG [django.db.backends:90] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:57:04.912687' AND "django_session"."session_key" = 'i6ryju7ph8p56d5lazw7c91qnwwgmeei'); args=('2017-02-27 18:57:04.912687', 'i6ryju7ph8p56d5lazw7c91qnwwgmeei')
+[27/Feb/2017 20:57:04] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."created" BETWEEN '2017-01-27' AND '2017-02-27'; args=('2017-01-27', '2017-02-27')
+[27/Feb/2017 20:57:04] INFO [django.server:131] "GET / HTTP/1.1" 200 6374
+[27/Feb/2017 20:57:04] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:04] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:04] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:04] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:04] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:57:05] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:57:05] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:05] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:05] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:05] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:06] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:57:10] DEBUG [django.db.backends:90] (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:57:10.263190' AND "django_session"."session_key" = 'i6ryju7ph8p56d5lazw7c91qnwwgmeei'); args=('2017-02-27 18:57:10.263190', 'i6ryju7ph8p56d5lazw7c91qnwwgmeei')
+[27/Feb/2017 20:57:10] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:57:10] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:57:10] INFO [django.server:131] "GET /login/ HTTP/1.1" 200 5752
+[27/Feb/2017 20:57:10] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:57:10] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:57:10] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:10] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:10] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:10] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:10] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:12] DEBUG [django.db.backends:90] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:57:12.711375' AND "django_session"."session_key" = 'i6ryju7ph8p56d5lazw7c91qnwwgmeei'); args=('2017-02-27 18:57:12.711375', 'i6ryju7ph8p56d5lazw7c91qnwwgmeei')
+[27/Feb/2017 20:57:12] INFO [django.server:131] "GET /oauth/login/facebook/ HTTP/1.1" 302 0
+[27/Feb/2017 20:57:16] DEBUG [django.db.backends:90] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:57:16.549022' AND "django_session"."session_key" = 'i6ryju7ph8p56d5lazw7c91qnwwgmeei'); args=('2017-02-27 18:57:16.549022', 'i6ryju7ph8p56d5lazw7c91qnwwgmeei')
+[27/Feb/2017 20:57:16] ERROR [django.request:124] Internal Server Error: /oauth/complete/facebook/
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\social\apps\django_app\utils.py", line 51, in wrapper
+    return func(request, backend, *args, **kwargs)
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\social\apps\django_app\views.py", line 28, in complete
+    redirect_name=REDIRECT_FIELD_NAME, *args, **kwargs)
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\social\actions.py", line 44, in do_complete
+    user = backend.complete(user=user, *args, **kwargs)
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\social\backends\base.py", line 41, in complete
+    return self.auth_complete(*args, **kwargs)
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\social\utils.py", line 246, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\social\backends\facebook.py", line 68, in auth_complete
+    self.process_error(self.data)
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\social\backends\facebook.py", line 63, in process_error
+    data.get('error_code'))
+social.exceptions.AuthCanceled: Authentication process canceled
+[27/Feb/2017 20:57:16] ERROR [django.server:131] "GET /oauth/complete/facebook/?redirect_state=MJB7Lk0sDpU6Y7JF1HkWkOzXQ0UCvbq6&error_code=4201&error_message=User+canceled+the+Dialog+flow&state=MJB7Lk0sDpU6Y7JF1HkWkOzXQ0UCvbq6 HTTP/1.1" 500 112830
+[27/Feb/2017 20:57:22] DEBUG [django.db.backends:90] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:57:22.949149' AND "django_session"."session_key" = 'i6ryju7ph8p56d5lazw7c91qnwwgmeei'); args=('2017-02-27 18:57:22.949149', 'i6ryju7ph8p56d5lazw7c91qnwwgmeei')
+[27/Feb/2017 20:57:22] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."created" BETWEEN '2017-01-27' AND '2017-02-27'; args=('2017-01-27', '2017-02-27')
+[27/Feb/2017 20:57:22] INFO [django.server:131] "GET / HTTP/1.1" 200 6374
+[27/Feb/2017 20:57:22] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:22] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:22] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:57:22] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:22] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:23] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:57:23] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:23] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:23] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:23] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:23] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:57:25] DEBUG [django.db.backends:90] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:57:25.110900' AND "django_session"."session_key" = 'i6ryju7ph8p56d5lazw7c91qnwwgmeei'); args=('2017-02-27 18:57:25.110900', 'i6ryju7ph8p56d5lazw7c91qnwwgmeei')
+[27/Feb/2017 20:57:25] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:57:25] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'AuthenticationForm'. Choices are: password, username."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'AuthenticationForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[27/Feb/2017 20:57:25] INFO [django.server:131] "GET /login/ HTTP/1.1" 200 5752
+[27/Feb/2017 20:57:25] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:57:25] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:57:25] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:25] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:25] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:25] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:25] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:27] DEBUG [django.db.backends:90] (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:57:27.256980' AND "django_session"."session_key" = 'i6ryju7ph8p56d5lazw7c91qnwwgmeei'); args=('2017-02-27 18:57:27.256980', 'i6ryju7ph8p56d5lazw7c91qnwwgmeei')
+[27/Feb/2017 20:57:27] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:57:27] DEBUG [django.db.backends:90] (0.002) UPDATE "django_session" SET "session_data" = 'M2ZlZjEzYzVmNjllYWI2ZTRmMDY4OTg3MTkzNjRiNTY1ZmQzMmNlYTp7ImdpdGh1Yl9zdGF0ZSI6InR3OUhVSkJiSzdmVXRWSjhjWVMyZmJ2TXlsdGlMYUs4IiwiZmFjZWJvb2tfc3RhdGUiOiJNSkI3TGswc0RwVTZZN0pGMUhrV2tPelhRMFVDdmJxNiJ9', "expire_date" = '2017-03-13 18:57:27.259982' WHERE "django_session"."session_key" = 'i6ryju7ph8p56d5lazw7c91qnwwgmeei'; args=('M2ZlZjEzYzVmNjllYWI2ZTRmMDY4OTg3MTkzNjRiNTY1ZmQzMmNlYTp7ImdpdGh1Yl9zdGF0ZSI6InR3OUhVSkJiSzdmVXRWSjhjWVMyZmJ2TXlsdGlMYUs4IiwiZmFjZWJvb2tfc3RhdGUiOiJNSkI3TGswc0RwVTZZN0pGMUhrV2tPelhRMFVDdmJxNiJ9', '2017-03-13 18:57:27.259982', 'i6ryju7ph8p56d5lazw7c91qnwwgmeei')
+[27/Feb/2017 20:57:27] INFO [django.server:131] "GET /oauth/login/github/ HTTP/1.1" 302 0
+[27/Feb/2017 20:57:42] DEBUG [django.db.backends:90] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:57:42.588811' AND "django_session"."session_key" = 'i6ryju7ph8p56d5lazw7c91qnwwgmeei'); args=('2017-02-27 18:57:42.588811', 'i6ryju7ph8p56d5lazw7c91qnwwgmeei')
+[27/Feb/2017 20:57:44] DEBUG [django.db.backends:90] (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" IS NULL; args=()
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.001) SELECT "social_auth_usersocialauth"."id", "social_auth_usersocialauth"."user_id", "social_auth_usersocialauth"."provider", "social_auth_usersocialauth"."uid", "social_auth_usersocialauth"."extra_data", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "social_auth_usersocialauth" INNER JOIN "auth_user" ON ("social_auth_usersocialauth"."user_id" = "auth_user"."id") WHERE ("social_auth_usersocialauth"."provider" = 'github' AND "social_auth_usersocialauth"."uid" = '7588880'); args=('github', '7588880')
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.001) SELECT COUNT(*) AS "__count" FROM "auth_user" WHERE "auth_user"."username" = 'SakshyamPanda'; args=('SakshyamPanda',)
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.001) INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES ('!ji6cX5Zn5dmkbcTnUufFN7xvfP6mDibCaWd5I1N6', NULL, 0, 'SakshyamPanda', '', '', 'sakshyam1991@gmail.com', 0, 1, '2017-02-27 18:57:45.043437'); args=['!ji6cX5Zn5dmkbcTnUufFN7xvfP6mDibCaWd5I1N6', None, False, 'SakshyamPanda', '', '', 'sakshyam1991@gmail.com', False, True, '2017-02-27 18:57:45.043437']
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.002) INSERT INTO "social_auth_usersocialauth" ("user_id", "provider", "uid", "extra_data") VALUES (3, 'github', '7588880', '{}'); args=[3, 'github', '7588880', '{}']
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.002) UPDATE "social_auth_usersocialauth" SET "user_id" = 3, "provider" = 'github', "uid" = '7588880', "extra_data" = '{"access_token": "b172ec65c43b16fc43bab73a35f5c575082c4800", "token_type": "bearer", "expires": null, "login": "SakshyamPanda", "id": 7588880}' WHERE "social_auth_usersocialauth"."id" = 2; args=(3, 'github', '7588880', '{"access_token": "b172ec65c43b16fc43bab73a35f5c575082c4800", "token_type": "bearer", "expires": null, "login": "SakshyamPanda", "id": 7588880}', 2)
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.010) UPDATE "auth_user" SET "password" = '!ji6cX5Zn5dmkbcTnUufFN7xvfP6mDibCaWd5I1N6', "last_login" = NULL, "is_superuser" = 0, "username" = 'SakshyamPanda', "first_name" = 'Sakshyam', "last_name" = '', "email" = 'sakshyam1991@gmail.com', "is_staff" = 0, "is_active" = 1, "date_joined" = '2017-02-27 18:57:45.043437' WHERE "auth_user"."id" = 3; args=('!ji6cX5Zn5dmkbcTnUufFN7xvfP6mDibCaWd5I1N6', False, 'SakshyamPanda', 'Sakshyam', '', 'sakshyam1991@gmail.com', False, True, '2017-02-27 18:57:45.043437', 3)
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.000) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = '1nyeqeju8d9qtanlch5zbqopuacu0xe7' LIMIT 1; args=('1nyeqeju8d9qtanlch5zbqopuacu0xe7',)
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.001) BEGIN; args=None
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.003) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT '1nyeqeju8d9qtanlch5zbqopuacu0xe7', 'M2ZlZjEzYzVmNjllYWI2ZTRmMDY4OTg3MTkzNjRiNTY1ZmQzMmNlYTp7ImdpdGh1Yl9zdGF0ZSI6InR3OUhVSkJiSzdmVXRWSjhjWVMyZmJ2TXlsdGlMYUs4IiwiZmFjZWJvb2tfc3RhdGUiOiJNSkI3TGswc0RwVTZZN0pGMUhrV2tPelhRMFVDdmJxNiJ9', '2017-03-13 18:57:45.457873'; args=('1nyeqeju8d9qtanlch5zbqopuacu0xe7', 'M2ZlZjEzYzVmNjllYWI2ZTRmMDY4OTg3MTkzNjRiNTY1ZmQzMmNlYTp7ImdpdGh1Yl9zdGF0ZSI6InR3OUhVSkJiSzdmVXRWSjhjWVMyZmJ2TXlsdGlMYUs4IiwiZmFjZWJvb2tfc3RhdGUiOiJNSkI3TGswc0RwVTZZN0pGMUhrV2tPelhRMFVDdmJxNiJ9', '2017-03-13 18:57:45.457873')
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'i6ryju7ph8p56d5lazw7c91qnwwgmeei'; args=('i6ryju7ph8p56d5lazw7c91qnwwgmeei',)
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.002) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('i6ryju7ph8p56d5lazw7c91qnwwgmeei'); args=('i6ryju7ph8p56d5lazw7c91qnwwgmeei',)
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.002) UPDATE "auth_user" SET "last_login" = '2017-02-27 18:57:45.644834' WHERE "auth_user"."id" = 3; args=('2017-02-27 18:57:45.644834', 3)
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.003) UPDATE "django_session" SET "session_data" = 'YmYwNDcxYzVhNTlkMWUyMWRiOGRiMGZlZjQxMzY2MmI3NjJlNzlhNzp7ImdpdGh1Yl9zdGF0ZSI6InR3OUhVSkJiSzdmVXRWSjhjWVMyZmJ2TXlsdGlMYUs4IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoic29jaWFsLmJhY2tlbmRzLmdpdGh1Yi5HaXRodWJPQXV0aDIiLCJmYWNlYm9va19zdGF0ZSI6Ik1KQjdMazBzRHBVNlk3SkYxSGtXa096WFEwVUN2YnE2Iiwic29jaWFsX2F1dGhfbGFzdF9sb2dpbl9iYWNrZW5kIjoiZ2l0aHViIiwiX2F1dGhfdXNlcl9pZCI6IjMiLCJfYXV0aF91c2VyX2hhc2giOiI3OGFiM2ZhMDc5NDQzYzA0ZjkzNDFjYTI4MTNkOGUyZmUxY2IwMzZjIn0=', "expire_date" = '2017-03-13 18:57:45.732372' WHERE "django_session"."session_key" = '1nyeqeju8d9qtanlch5zbqopuacu0xe7'; args=('YmYwNDcxYzVhNTlkMWUyMWRiOGRiMGZlZjQxMzY2MmI3NjJlNzlhNzp7ImdpdGh1Yl9zdGF0ZSI6InR3OUhVSkJiSzdmVXRWSjhjWVMyZmJ2TXlsdGlMYUs4IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoic29jaWFsLmJhY2tlbmRzLmdpdGh1Yi5HaXRodWJPQXV0aDIiLCJmYWNlYm9va19zdGF0ZSI6Ik1KQjdMazBzRHBVNlk3SkYxSGtXa096WFEwVUN2YnE2Iiwic29jaWFsX2F1dGhfbGFzdF9sb2dpbl9iYWNrZW5kIjoiZ2l0aHViIiwiX2F1dGhfdXNlcl9pZCI6IjMiLCJfYXV0aF91c2VyX2hhc2giOiI3OGFiM2ZhMDc5NDQzYzA0ZjkzNDFjYTI4MTNkOGUyZmUxY2IwMzZjIn0=', '2017-03-13 18:57:45.732372', '1nyeqeju8d9qtanlch5zbqopuacu0xe7')
+[27/Feb/2017 20:57:45] INFO [django.server:131] "GET /oauth/complete/github/?redirect_state=tw9HUJBbK7fUtVJ8cYS2fbvMyltiLaK8&code=2bc047eb470f7ce3633d&state=tw9HUJBbK7fUtVJ8cYS2fbvMyltiLaK8 HTTP/1.1" 302 0
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:57:45.810361' AND "django_session"."session_key" = '1nyeqeju8d9qtanlch5zbqopuacu0xe7'); args=('2017-02-27 18:57:45.810361', '1nyeqeju8d9qtanlch5zbqopuacu0xe7')
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3; args=(3,)
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_userprofile"."user_id", "awsomeProject_userprofile"."isDeveloper", "awsomeProject_userprofile"."key" FROM "awsomeProject_userprofile" WHERE "awsomeProject_userprofile"."user_id" = 3; args=(3,)
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.000) BEGIN; args=None
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.000) UPDATE "awsomeProject_userprofile" SET "isDeveloper" = 1, "key" = '' WHERE "awsomeProject_userprofile"."user_id" = 3; args=(True, '', 3)
+[27/Feb/2017 20:57:45] DEBUG [django.db.backends:90] (0.001) INSERT INTO "awsomeProject_userprofile" ("user_id", "isDeveloper", "key") SELECT 3, 1, ''; args=(3, True, '')
+[27/Feb/2017 20:57:45] INFO [django.server:131] "GET /createGitHubProfile/ HTTP/1.1" 302 0
+[27/Feb/2017 20:57:46] DEBUG [django.db.backends:90] (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:57:46.242916' AND "django_session"."session_key" = '1nyeqeju8d9qtanlch5zbqopuacu0xe7'); args=('2017-02-27 18:57:46.242916', '1nyeqeju8d9qtanlch5zbqopuacu0xe7')
+[27/Feb/2017 20:57:46] DEBUG [django.db.backends:90] (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3; args=(3,)
+[27/Feb/2017 20:57:46] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."created" BETWEEN '2017-01-27' AND '2017-02-27'; args=('2017-01-27', '2017-02-27')
+[27/Feb/2017 20:57:46] INFO [django.server:131] "GET / HTTP/1.1" 200 6565
+[27/Feb/2017 20:57:46] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:57:46] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:57:46] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:46] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:46] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:46] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:46] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:46] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:46] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:46] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:47] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[27/Feb/2017 20:57:56] DEBUG [django.db.backends:90] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:57:56.858213' AND "django_session"."session_key" = '1nyeqeju8d9qtanlch5zbqopuacu0xe7'); args=('2017-02-27 18:57:56.858213', '1nyeqeju8d9qtanlch5zbqopuacu0xe7')
+[27/Feb/2017 20:57:56] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3; args=(3,)
+[27/Feb/2017 20:57:56] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_userprofile"."user_id", "awsomeProject_userprofile"."isDeveloper", "awsomeProject_userprofile"."key" FROM "awsomeProject_userprofile" WHERE "awsomeProject_userprofile"."user_id" = 3; args=(3,)
+[27/Feb/2017 20:57:56] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_developergame"."id", "awsomeProject_developergame"."user_id", "awsomeProject_developergame"."game_id" FROM "awsomeProject_developergame" WHERE "awsomeProject_developergame"."user_id" = 3; args=(3,)
+[27/Feb/2017 20:57:56] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_transaction"."id", "awsomeProject_transaction"."user_id", "awsomeProject_transaction"."game_id", "awsomeProject_transaction"."status", "awsomeProject_transaction"."timestamp", "awsomeProject_transaction"."pid" FROM "awsomeProject_transaction" WHERE ("awsomeProject_transaction"."status" = 'completed' AND "awsomeProject_transaction"."user_id" = 3); args=('completed', 3)
+[27/Feb/2017 20:57:56] DEBUG [django.template:929] Exception while resolving variable 'backend_form' in template 'myProfile.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\context.py", line 75, in __getitem__
+    raise KeyError(key)
+KeyError: 'backend_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'backend_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'backend_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [backend_form] in '[{\'False\': False, \'None\': None, \'True\': True}, {\'REDIRECT_FIELD_VALUE\': None, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'SUCCESS\': 25, \'ERROR\': 40, \'WARNING\': 30, \'INFO\': 20}, \'user\': <SimpleLazyObject: <User: SakshyamPanda>>, \'REDIRECT_FIELD_NAME\': \'next\', \'backends\': <LazyDict: <function backends.<locals>.<lambda> at 0x042BBB70>>, \'request\': <WSGIRequest: GET \'/myProfile/\'>, \'REDIRECT_QUERYSTRING\': \'\', \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x046419D0>, \'csrf_token\': <SimpleLazyObject: \'oL4KAvlvUx5KYMBDY5b5RMbKFopVw69edvoDrIvPxJx5S8D2qlIEDcdCefsIVVoV\'>, \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x04629910>}, {}, {\'context\': {\'backend_form\': <UploadGameForm bound=False, valid=Unknown, fields=(name;url;price;description;category;image)>}, \'boughtGames\': <zip object at 0x042A6850>, \'form\': <UploadGameForm bound=False, valid=Unknown, fields=(name;url;price;description;category;image)>, \'success\': False, \'gamePurchases\': <zip object at 0x04622148>, \'userProfile\': <UserProfile: UserProfile object>}, {\'block\': <Block Node: main. Contents: [<TextNode: \'\\n\\n\\n<div class="col-md-12"\'>, <django.template.library.SimpleNode object at 0x04641910>, <TextNode: \'\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class=\'>, <Variable Node: user.username>, <TextNode: \'</p>\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\'>, <IfNode>, <TextNode: \'\\n</div>\\n\\n\'>]>}]'
+[27/Feb/2017 20:57:56] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'UploadGameForm'. Choices are: category, description, image, name, price, url."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'UploadGameForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[27/Feb/2017 20:57:56] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'UploadGameForm'. Choices are: category, description, image, name, price, url."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'UploadGameForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[27/Feb/2017 20:57:56] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'UploadGameForm'. Choices are: category, description, image, name, price, url."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'UploadGameForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[27/Feb/2017 20:57:56] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'UploadGameForm'. Choices are: category, description, image, name, price, url."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'UploadGameForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[27/Feb/2017 20:57:56] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'UploadGameForm'. Choices are: category, description, image, name, price, url."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'UploadGameForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[27/Feb/2017 20:57:56] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'UploadGameForm'. Choices are: category, description, image, name, price, url."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'UploadGameForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[27/Feb/2017 20:57:56] INFO [django.server:131] "GET /myProfile/ HTTP/1.1" 200 10469
+[27/Feb/2017 20:57:57] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:57:57] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:57:57] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:57] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:57] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:57] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:57] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:57] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:57] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:57:57] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
+[27/Feb/2017 20:58:20] DEBUG [django.db.backends:90] (0.004) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-02-27 18:58:20.547335' AND "django_session"."session_key" = '1nyeqeju8d9qtanlch5zbqopuacu0xe7'); args=('2017-02-27 18:58:20.547335', '1nyeqeju8d9qtanlch5zbqopuacu0xe7')
+[27/Feb/2017 20:58:20] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3; args=(3,)
+[27/Feb/2017 20:58:20] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_userprofile"."user_id", "awsomeProject_userprofile"."isDeveloper", "awsomeProject_userprofile"."key" FROM "awsomeProject_userprofile" WHERE "awsomeProject_userprofile"."user_id" = 3; args=(3,)
+[27/Feb/2017 20:58:20] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_developergame"."id", "awsomeProject_developergame"."user_id", "awsomeProject_developergame"."game_id" FROM "awsomeProject_developergame" WHERE "awsomeProject_developergame"."user_id" = 3; args=(3,)
+[27/Feb/2017 20:58:20] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_transaction"."id", "awsomeProject_transaction"."user_id", "awsomeProject_transaction"."game_id", "awsomeProject_transaction"."status", "awsomeProject_transaction"."timestamp", "awsomeProject_transaction"."pid" FROM "awsomeProject_transaction" WHERE ("awsomeProject_transaction"."status" = 'completed' AND "awsomeProject_transaction"."user_id" = 3); args=('completed', 3)
+[27/Feb/2017 20:58:20] DEBUG [django.template:929] Exception while resolving variable 'backend_form' in template 'myProfile.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\context.py", line 75, in __getitem__
+    raise KeyError(key)
+KeyError: 'backend_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'backend_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'backend_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [backend_form] in '[{\'False\': False, \'None\': None, \'True\': True}, {\'REDIRECT_FIELD_VALUE\': None, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'SUCCESS\': 25, \'ERROR\': 40, \'WARNING\': 30, \'INFO\': 20}, \'user\': <SimpleLazyObject: <User: SakshyamPanda>>, \'REDIRECT_FIELD_NAME\': \'next\', \'backends\': <LazyDict: <function backends.<locals>.<lambda> at 0x042BEFA8>>, \'request\': <WSGIRequest: GET \'/myProfile/\'>, \'REDIRECT_QUERYSTRING\': \'\', \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x04617650>, \'csrf_token\': <SimpleLazyObject: \'4fSWlRnVhGx0qEC5dZU91MWCfU0q4l1ITZcPc4xfUSZlk0EuFfrINcYuOL3dtagp\'>, \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x0461C7F0>}, {}, {\'context\': {\'backend_form\': <UploadGameForm bound=False, valid=Unknown, fields=(name;url;price;description;category;image)>}, \'boughtGames\': <zip object at 0x042CC120>, \'form\': <UploadGameForm bound=False, valid=Unknown, fields=(name;url;price;description;category;image)>, \'success\': False, \'gamePurchases\': <zip object at 0x04623AF8>, \'userProfile\': <UserProfile: UserProfile object>}, {\'block\': <Block Node: main. Contents: [<TextNode: \'\\n\\n\\n<div class="col-md-12"\'>, <django.template.library.SimpleNode object at 0x042E8390>, <TextNode: \'\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class=\'>, <Variable Node: user.username>, <TextNode: \'</p>\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\'>, <IfNode>, <TextNode: \'\\n</div>\\n\\n\'>]>}]'
+[27/Feb/2017 20:58:20] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'UploadGameForm'. Choices are: category, description, image, name, price, url."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'UploadGameForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[27/Feb/2017 20:58:20] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'UploadGameForm'. Choices are: category, description, image, name, price, url."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'UploadGameForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[27/Feb/2017 20:58:20] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'UploadGameForm'. Choices are: category, description, image, name, price, url."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'UploadGameForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[27/Feb/2017 20:58:20] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'UploadGameForm'. Choices are: category, description, image, name, price, url."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'UploadGameForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[27/Feb/2017 20:58:20] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'UploadGameForm'. Choices are: category, description, image, name, price, url."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'UploadGameForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[27/Feb/2017 20:58:20] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 144, in __getitem__
+    field = self.fields[name]
+KeyError: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\forms\forms.py", line 150, in __getitem__
+    ', '.join(sorted(f for f in self.fields)),
+KeyError: "Key 'required_css_class' not found in 'UploadGameForm'. Choices are: category, description, image, name, price, url."
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'UploadGameForm' object has no attribute 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'required_css_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\wsdprojecteit\awsomeProject\venv\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [required_css_class] in '<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[27/Feb/2017 20:58:20] INFO [django.server:131] "GET /myProfile/ HTTP/1.1" 200 10421
+[27/Feb/2017 20:58:20] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 304 0
+[27/Feb/2017 20:58:20] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:58:20] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[27/Feb/2017 20:58:20] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 304 0
+[27/Feb/2017 20:58:20] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[27/Feb/2017 20:58:20] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 304 0
+[27/Feb/2017 20:58:20] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 304 0
+[27/Feb/2017 20:58:20] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 304 0
+[27/Feb/2017 20:58:20] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 304 0
+[27/Feb/2017 20:58:20] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 304 0
