@@ -393,8 +393,8 @@ def buyGameResult(request,game_name):
 def game(request, game_name):
     try:
         game = Game.objects.get(name=game_name)
-        gameURL = request.build_absolute_uri(reverse("game", args = (game_name, )))
-        #gameURL = "google.com"
+        #gameURL = request.build_absolute_uri(reverse("game", args = (game_name, )))
+        gameURL = "google.com"
 
         # TODO: What if highscores dont exist
         scores = Scores.objects.all().filter(game=game).order_by("-score")
