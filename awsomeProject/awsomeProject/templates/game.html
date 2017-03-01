@@ -9,7 +9,7 @@
 	<meta property="og:url"                content="{{ gameURL }}" />
 	<meta property="og:title"              content="If you're not playing {{ game.name }}, you sure are missing out!" />
 	<meta property="og:description"        content="People are going nuts over this Awsome JS Games Store.. it's the real deal!" />
-	<meta property="og:image"              content="{{game.image}}" />
+	<meta property="og:image"              content="{{game.image.url}}" />
   <meta property="og:type"               content="product" />
   <meta property="fb:app_id"             content="328098844258094" />
 
@@ -145,10 +145,17 @@
 				</div>
 			{% endif %}
 
-      <a href="https://www.facebook.com/sharer/sharer.php" target="_blank">
-        Share on Facebook
-      </a>
-			<div class="fb-share-button" data-href="{{ gameURL }}" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdry-george-eit.herokuapp.com%2Fgame%2FAwsome%2520Memory%2520Game%2F&amp;src=sdkpreparse">Share</a></div>
+			<div class="fb-share-button"
+						data-href="{{ gameURL }}"
+						data-layout="button"
+						data-size="large"
+						data-mobile-iframe="true">
+							<a class="fb-xfbml-parse-ignore"
+								 target="_blank"
+								 href="https://www.facebook.com/sharer/sharer.php">
+								 Share
+							</a>
+			</div>
 <!--https://twitter.com/home?status=Check%20out%20this%20%23AwsomeGame%20called%20%22{{ game.name }}%22%20on%20AwsomeGames%3A%20{{ gameURL }}-->
 			<a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20%23AwsomeGame%20called%20%22{{ game.name }}%22%20on%20AwsomeGames%3A%20{{ gameURL }}" target="_blank">
         Share on Twitter

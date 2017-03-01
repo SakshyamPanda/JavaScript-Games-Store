@@ -3686,3 +3686,696 @@ ValueError: You have multiple authentication backends configured and therefore m
             WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
             ORDER BY name; args=None
 [27/Feb/2017 18:40:31] DEBUG [django.db.backends:90] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[28/Feb/2017 20:24:16] INFO [django.server:131] "GET /game/exampleGame HTTP/1.1" 301 0
+[28/Feb/2017 20:24:16] INFO [django.server:131] "GET /game/exampleGame/ HTTP/1.1" 302 0
+[28/Feb/2017 20:24:16] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:16] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:16] INFO [django.server:131] "GET /login/?next=/game/exampleGame/ HTTP/1.1" 200 5332
+[28/Feb/2017 20:24:16] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 200 30070
+[28/Feb/2017 20:24:16] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 200 27482
+[28/Feb/2017 20:24:16] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 200 9806
+[28/Feb/2017 20:24:16] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 200 19644
+[28/Feb/2017 20:24:16] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 200 270
+[28/Feb/2017 20:24:16] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 200 746
+[28/Feb/2017 20:24:16] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 200 240
+[28/Feb/2017 20:24:16] WARNING [django.request:152] Not Found: /favicon.ico
+[28/Feb/2017 20:24:16] WARNING [django.server:131] "GET /favicon.ico HTTP/1.1" 404 85
+[28/Feb/2017 20:24:17] INFO [django.server:131] "GET / HTTP/1.1" 200 6006
+[28/Feb/2017 20:24:17] INFO [django.server:131] "GET /static/js/jquery.ui.widget.0b44270691b4.js HTTP/1.1" 200 4970
+[28/Feb/2017 20:24:17] INFO [django.server:131] "GET /static/js/jquery.fileupload.e5acbaa834c0.js HTTP/1.1" 200 13286
+[28/Feb/2017 20:24:17] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.7b39a42a7a2a.js HTTP/1.1" 200 2839
+[28/Feb/2017 20:24:19] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.448c34a56d69.woff2 HTTP/1.1" 200 18028
+[28/Feb/2017 20:24:25] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 302 0
+[28/Feb/2017 20:24:25] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:25] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:25] INFO [django.server:131] "GET /login/?next=/game/mannagia/ HTTP/1.1" 200 5332
+[28/Feb/2017 20:24:28] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:28] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:28] INFO [django.server:131] "GET /login/ HTTP/1.1" 200 5332
+[28/Feb/2017 20:24:33] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="Relja" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:33] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="Relja" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:33] INFO [django.server:131] "POST /login/ HTTP/1.1" 200 5575
+[28/Feb/2017 20:24:36] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="Relja" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:36] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="Relja" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:36] INFO [django.server:131] "POST /login/ HTTP/1.1" 200 5575
+[28/Feb/2017 20:24:40] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="relja" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:40] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="relja" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:40] INFO [django.server:131] "POST /login/ HTTP/1.1" 200 5575
+[28/Feb/2017 20:24:44] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="relja" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:44] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="relja" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[28/Feb/2017 20:24:44] INFO [django.server:131] "POST /login/ HTTP/1.1" 200 5575
+[28/Feb/2017 20:24:47] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[28/Feb/2017 20:24:47] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[28/Feb/2017 20:24:47] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[28/Feb/2017 20:24:47] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[28/Feb/2017 20:24:47] INFO [django.server:131] "GET /register/ HTTP/1.1" 200 6328
+[28/Feb/2017 20:25:03] INFO [django.server:131] "POST /register/ HTTP/1.1" 302 0
+[28/Feb/2017 20:25:03] INFO [django.server:131] "GET /register/success/ HTTP/1.1" 200 4094
+[28/Feb/2017 20:25:18] INFO [django.server:131] "GET /register/5/ HTTP/1.1" 302 0
+[28/Feb/2017 20:25:18] INFO [django.server:131] "GET / HTTP/1.1" 200 6181
+[28/Feb/2017 20:25:36] INFO [django.server:131] "GET / HTTP/1.1" 200 6181
+[28/Feb/2017 20:25:36] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[28/Feb/2017 20:25:36] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[28/Feb/2017 20:25:36] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[28/Feb/2017 20:25:36] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[28/Feb/2017 20:25:36] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[28/Feb/2017 20:25:36] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[28/Feb/2017 20:25:36] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[28/Feb/2017 20:25:36] INFO [django.server:131] "GET /static/js/jquery.ui.widget.0b44270691b4.js HTTP/1.1" 304 0
+[28/Feb/2017 20:25:36] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.7b39a42a7a2a.js HTTP/1.1" 304 0
+[28/Feb/2017 20:25:36] INFO [django.server:131] "GET /static/js/jquery.fileupload.e5acbaa834c0.js HTTP/1.1" 304 0
+[28/Feb/2017 20:25:41] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[28/Feb/2017 20:25:42] INFO [django.server:131] "GET / HTTP/1.1" 200 6181
+[28/Feb/2017 20:25:44] INFO [django.server:131] "GET /browseGames/ HTTP/1.1" 200 8552
+[28/Feb/2017 20:25:44] INFO [django.server:131] "GET /static/css/browseGames.19db8219c6f1.css HTTP/1.1" 200 483
+[28/Feb/2017 20:25:49] DEBUG [django.template:929] Exception while resolving variable 'backend_form' in template 'myProfile.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [backend_form] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: u\'kcrsRPpz5s8IxP6E7IbLj11kKcGSCujKT5mbkt36WI4Q2R3RXFJ3fxPH1GdBNViv\'>, \'backends\': <LazyDict: <function <lambda> at 0x7ff56f494c08>>, \'user\': <SimpleLazyObject: <User: relja>>, \'REDIRECT_QUERYSTRING\': \'\', \'REDIRECT_FIELD_VALUE\': None, \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff56e3ed650>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff56f490850>, u\'request\': <WSGIRequest: GET \'/myProfile/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'boughtGames\': [], \'context\': {\'backend_form\': <UploadGameForm bound=False, valid=Unknown, fields=(name;url;price;description;category;image)>}, \'success\': False, \'form\': <UploadGameForm bound=False, valid=Unknown, fields=(name;url;price;description;category;image)>, \'gamePurchases\': [], \'userProfile\': <UserProfile: UserProfile object>}, {\'block\': <Block Node: main. Contents: [<TextNode: u\'\\n\\n\\n<div class="col-md-12"\'>, <django.template.library.SimpleNode object at 0x7ff56fef9cd0>, <TextNode: u\'\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class=\'>, <Variable Node: user.username>, <TextNode: u\'</p>\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\'>, <IfNode>, <TextNode: u\'\\n</div>\\n\\n\'>]>}]'
+[28/Feb/2017 20:25:49] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[28/Feb/2017 20:25:49] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[28/Feb/2017 20:25:49] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[28/Feb/2017 20:25:49] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[28/Feb/2017 20:25:49] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[28/Feb/2017 20:25:49] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[28/Feb/2017 20:25:49] INFO [django.server:131] "GET /myProfile/ HTTP/1.1" 200 10037
+[28/Feb/2017 20:26:10] ERROR [django.request:124] Internal Server Error: /myProfile/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 202, in myProfile
+    form.save()
+  File "/usr/local/lib/python2.7/dist-packages/django/forms/models.py", line 453, in save
+    self.instance.save()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 796, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 824, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 908, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 947, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1045, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 1053, in execute_sql
+    for sql, params in self.as_sql():
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 1006, in as_sql
+    for obj in self.query.objs
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 955, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "/usr/local/lib/python2.7/dist-packages/cloudinary/models.py", line 87, in pre_save
+    instance_value = uploader.upload_resource(value, **options)
+  File "/usr/local/lib/python2.7/dist-packages/cloudinary/uploader.py", line 51, in upload_resource
+    result = upload(file, **options)
+  File "/usr/local/lib/python2.7/dist-packages/cloudinary/uploader.py", line 36, in upload
+    return call_api("upload", params, file=file, **options)
+  File "/usr/local/lib/python2.7/dist-packages/cloudinary/uploader.py", line 275, in call_api
+    raise Error(result["error"]["message"])
+Error: General Error
+[28/Feb/2017 20:26:10] ERROR [django.server:131] "POST /myProfile/ HTTP/1.1" 500 27
+[28/Feb/2017 20:26:13] ERROR [django.request:124] Internal Server Error: /myProfile/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 202, in myProfile
+    form.save()
+  File "/usr/local/lib/python2.7/dist-packages/django/forms/models.py", line 453, in save
+    self.instance.save()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 796, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 824, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 908, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 947, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1045, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 1053, in execute_sql
+    for sql, params in self.as_sql():
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 1006, in as_sql
+    for obj in self.query.objs
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 955, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "/usr/local/lib/python2.7/dist-packages/cloudinary/models.py", line 87, in pre_save
+    instance_value = uploader.upload_resource(value, **options)
+  File "/usr/local/lib/python2.7/dist-packages/cloudinary/uploader.py", line 51, in upload_resource
+    result = upload(file, **options)
+  File "/usr/local/lib/python2.7/dist-packages/cloudinary/uploader.py", line 36, in upload
+    return call_api("upload", params, file=file, **options)
+  File "/usr/local/lib/python2.7/dist-packages/cloudinary/uploader.py", line 275, in call_api
+    raise Error(result["error"]["message"])
+Error: General Error
+[28/Feb/2017 20:26:13] ERROR [django.server:131] "POST /myProfile/ HTTP/1.1" 500 27
+[28/Feb/2017 20:28:12] ERROR [django.request:124] Internal Server Error: /myProfile/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 202, in myProfile
+    form.save()
+  File "/usr/local/lib/python2.7/dist-packages/django/forms/models.py", line 453, in save
+    self.instance.save()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 796, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 824, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 908, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 947, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1045, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 1053, in execute_sql
+    for sql, params in self.as_sql():
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 1006, in as_sql
+    for obj in self.query.objs
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 955, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "/usr/local/lib/python2.7/dist-packages/cloudinary/models.py", line 87, in pre_save
+    instance_value = uploader.upload_resource(value, **options)
+  File "/usr/local/lib/python2.7/dist-packages/cloudinary/uploader.py", line 51, in upload_resource
+    result = upload(file, **options)
+  File "/usr/local/lib/python2.7/dist-packages/cloudinary/uploader.py", line 36, in upload
+    return call_api("upload", params, file=file, **options)
+  File "/usr/local/lib/python2.7/dist-packages/cloudinary/uploader.py", line 267, in call_api
+    raise Error("Error parsing server response (%d) - %s. Got - %s", response.status, response, e)
+Error: ('Error parsing server response (%d) - %s. Got - %s', 504, <urllib3.response.HTTPResponse object at 0x7ff56e415750>, ValueError('No JSON object could be decoded',))
+[28/Feb/2017 20:28:12] ERROR [django.server:131] "POST /myProfile/ HTTP/1.1" 500 27
+[01/Mar/2017 15:44:58] INFO [django.server:131] "GET /game/exampleGame/ HTTP/1.1" 302 0
+[01/Mar/2017 15:44:58] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 15:44:58] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 15:44:58] INFO [django.server:131] "GET /login/?next=/game/exampleGame/ HTTP/1.1" 200 5332
+[01/Mar/2017 15:45:00] INFO [django.server:131] "GET / HTTP/1.1" 200 6006
+[01/Mar/2017 15:45:52] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 15:45:52] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 15:45:52] INFO [django.server:131] "GET /login/ HTTP/1.1" 200 5332
+[01/Mar/2017 15:45:54] INFO [django.server:131] "GET /oauth/login/facebook/ HTTP/1.1" 302 0
+[01/Mar/2017 15:46:02] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 15:46:02] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 15:46:02] INFO [django.server:131] "GET /login/ HTTP/1.1" 200 5332
+[01/Mar/2017 15:46:08] INFO [django.server:131] "GET /oauth/login/facebook/ HTTP/1.1" 302 0
+[01/Mar/2017 15:46:59] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 15:46:59] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 15:46:59] INFO [django.server:131] "GET /login/ HTTP/1.1" 200 5332
+[01/Mar/2017 15:49:43] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 15:49:43] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 15:49:43] INFO [django.server:131] "GET /login/ HTTP/1.1" 200 5332
+[01/Mar/2017 15:49:45] INFO [django.server:131] "GET /oauth/login/facebook/ HTTP/1.1" 302 0
+[01/Mar/2017 15:53:39] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 15:53:39] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 15:53:39] INFO [django.server:131] "GET /login/ HTTP/1.1" 200 5332
+[01/Mar/2017 15:54:18] ERROR [django.request:124] Internal Server Error: /oauth/complete/github/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 227, in process_exception_by_middleware
+    response = middleware_method(request, exception)
+  File "/usr/local/lib/python2.7/dist-packages/social/apps/django_app/middleware.py", line 45, in process_exception
+    return redirect(url)
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 56, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 153, in resolve_url
+    if '/' not in to and '.' not in to:
+TypeError: argument of type 'NoneType' is not iterable
+[01/Mar/2017 15:54:18] ERROR [django.server:131] "GET /oauth/complete/github/?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23redirect-uri-mismatch&state=BY7DUrMHI8z6qdJzousqWzhWvSXYR7q4 HTTP/1.1" 500 27
+[01/Mar/2017 15:54:18] WARNING [django.request:152] Not Found: /favicon.ico
+[01/Mar/2017 15:54:18] WARNING [django.server:131] "GET /favicon.ico HTTP/1.1" 404 85
+[01/Mar/2017 15:54:36] ERROR [django.request:124] Internal Server Error: /oauth/complete/github/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 227, in process_exception_by_middleware
+    response = middleware_method(request, exception)
+  File "/usr/local/lib/python2.7/dist-packages/social/apps/django_app/middleware.py", line 45, in process_exception
+    return redirect(url)
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 56, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 153, in resolve_url
+    if '/' not in to and '.' not in to:
+TypeError: argument of type 'NoneType' is not iterable
+[01/Mar/2017 15:54:36] ERROR [django.server:131] "GET /oauth/complete/github/?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23redirect-uri-mismatch&state=BY7DUrMHI8z6qdJzousqWzhWvSXYR7q4 HTTP/1.1" 500 27
+[01/Mar/2017 16:26:05] INFO [django.server:131] "GET /browseGames/ HTTP/1.1" 200 8049
+[01/Mar/2017 16:26:05] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:26:05] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:26:05] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[01/Mar/2017 16:26:05] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[01/Mar/2017 16:26:05] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[01/Mar/2017 16:26:05] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:26:05] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[01/Mar/2017 16:26:05] INFO [django.server:131] "GET /static/js/jquery.fileupload.e5acbaa834c0.js HTTP/1.1" 304 0
+[01/Mar/2017 16:26:05] INFO [django.server:131] "GET /static/js/jquery.ui.widget.0b44270691b4.js HTTP/1.1" 304 0
+[01/Mar/2017 16:26:05] INFO [django.server:131] "GET /static/css/browseGames.19db8219c6f1.css HTTP/1.1" 304 0
+[01/Mar/2017 16:26:05] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.7b39a42a7a2a.js HTTP/1.1" 304 0
+[01/Mar/2017 16:26:06] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:26:06] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.448c34a56d69.woff2 HTTP/1.1" 304 0
+[01/Mar/2017 16:26:07] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 302 0
+[01/Mar/2017 16:26:07] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 16:26:07] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 16:26:07] INFO [django.server:131] "GET /login/?next=/game/mannagia/ HTTP/1.1" 200 5332
+[01/Mar/2017 16:26:12] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="relja" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 16:26:12] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="relja" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 16:26:12] INFO [django.server:131] "POST /login/?next=/game/mannagia/ HTTP/1.1" 200 5575
+[01/Mar/2017 16:26:18] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="sharbel" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 16:26:18] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><td colspan="2"><ul class="errorlist nonfield"><li>Please enter a correct username and password. Note that both fields may be case-sensitive.</li></ul></td></tr>\n<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" value="sharbel" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[01/Mar/2017 16:26:18] INFO [django.server:131] "POST /login/?next=/game/mannagia/ HTTP/1.1" 200 5577
+[01/Mar/2017 16:26:24] INFO [django.server:131] "POST /login/?next=/game/mannagia/ HTTP/1.1" 302 0
+[01/Mar/2017 16:26:24] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11114
+[01/Mar/2017 16:31:50] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11157
+[01/Mar/2017 16:31:50] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:31:50] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:31:50] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[01/Mar/2017 16:31:50] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[01/Mar/2017 16:31:50] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[01/Mar/2017 16:31:50] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[01/Mar/2017 16:31:50] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:32:09] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11224
+[01/Mar/2017 16:32:09] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:32:09] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:32:09] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[01/Mar/2017 16:32:09] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[01/Mar/2017 16:32:09] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[01/Mar/2017 16:32:09] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:32:09] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[01/Mar/2017 16:33:17] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11115
+[01/Mar/2017 16:33:17] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:33:17] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:33:17] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[01/Mar/2017 16:33:17] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[01/Mar/2017 16:33:17] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[01/Mar/2017 16:33:17] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:33:17] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:04] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11709
+[01/Mar/2017 16:36:04] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:04] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[01/Mar/2017 16:36:04] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:04] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[01/Mar/2017 16:36:04] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:04] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:04] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:04] INFO [django.server:131] "GET /static/js/jquery.ui.widget.0b44270691b4.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:04] INFO [django.server:131] "GET /static/js/jquery.fileupload.e5acbaa834c0.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:04] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.7b39a42a7a2a.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:04] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:20] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11709
+[01/Mar/2017 16:36:20] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:20] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:20] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[01/Mar/2017 16:36:20] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[01/Mar/2017 16:36:20] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:20] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:20] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:21] INFO [django.server:131] "GET /static/js/jquery.ui.widget.0b44270691b4.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:21] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.7b39a42a7a2a.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:21] INFO [django.server:131] "GET /static/js/jquery.fileupload.e5acbaa834c0.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:21] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:32] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11627
+[01/Mar/2017 16:36:32] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:32] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:32] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[01/Mar/2017 16:36:32] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:32] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:32] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:32] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[01/Mar/2017 16:36:33] INFO [django.server:131] "GET /static/js/jquery.ui.widget.0b44270691b4.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:33] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.7b39a42a7a2a.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:33] INFO [django.server:131] "GET /static/js/jquery.fileupload.e5acbaa834c0.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:33] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:41] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11695
+[01/Mar/2017 16:36:41] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:41] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:41] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[01/Mar/2017 16:36:41] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[01/Mar/2017 16:36:41] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:41] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:41] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:41] INFO [django.server:131] "GET /static/js/jquery.ui.widget.0b44270691b4.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:41] INFO [django.server:131] "GET /static/js/jquery.fileupload.e5acbaa834c0.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:41] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.7b39a42a7a2a.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:41] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:49] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11179
+[01/Mar/2017 16:36:49] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:49] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:49] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[01/Mar/2017 16:36:49] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[01/Mar/2017 16:36:49] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:49] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:36:49] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[01/Mar/2017 16:37:13] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11062
+[01/Mar/2017 16:37:13] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:37:13] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[01/Mar/2017 16:37:13] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:37:13] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[01/Mar/2017 16:37:13] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:37:13] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[01/Mar/2017 16:37:13] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[01/Mar/2017 16:39:05] INFO [django.server:131] "GET /browseGames/ HTTP/1.1" 200 8552
+[01/Mar/2017 16:39:07] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" maxlength="254" name="email" type="email" /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" max_length="30" maxlength="128" name="password" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>'
+[01/Mar/2017 16:39:07] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" maxlength="254" name="email" type="email" /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" max_length="30" maxlength="128" name="password" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>'
+[01/Mar/2017 16:39:07] INFO [django.server:131] "GET /myProfile/editProfile/ HTTP/1.1" 200 5829
+[01/Mar/2017 16:39:09] INFO [django.server:131] "GET /myProfile/ HTTP/1.1" 200 6996
+[01/Mar/2017 16:39:15] INFO [django.server:131] "GET /logout/ HTTP/1.1" 200 4034
+[01/Mar/2017 16:39:17] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[01/Mar/2017 16:39:17] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[01/Mar/2017 16:39:17] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[01/Mar/2017 16:39:17] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[01/Mar/2017 16:39:17] INFO [django.server:131] "GET /register/ HTTP/1.1" 200 6328
+[01/Mar/2017 16:39:19] INFO [django.server:131] "GET /oauth/login/facebook/ HTTP/1.1" 302 0
+[01/Mar/2017 16:39:24] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[01/Mar/2017 16:39:24] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[01/Mar/2017 16:39:24] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[01/Mar/2017 16:39:24] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input class=" form-control" id="id_username" max_length="30" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_email">Email address:</label></th><td><input class=" form-control" id="id_email" max_length="30" name="email" type="text" required /></td></tr>\n<tr><th><label for="id_password1">Password:</label></th><td><input class=" form-control" id="id_password1" max_length="30" name="password1" type="password" required /></td></tr>\n<tr><th><label for="id_password2">Password (again):</label></th><td><input class=" form-control" id="id_password2" max_length="30" name="password2" type="password" required /></td></tr>\n<tr><th><label for="id_isDeveloper">Developer?</label></th><td><input id="id_isDeveloper" name="isDeveloper" type="checkbox" /></td></tr>'
+[01/Mar/2017 16:39:24] INFO [django.server:131] "GET /register/ HTTP/1.1" 200 6328
+[01/Mar/2017 16:39:36] INFO [django.server:131] "POST /register/ HTTP/1.1" 302 0
+[01/Mar/2017 16:39:36] INFO [django.server:131] "GET /register/success/ HTTP/1.1" 200 4094
+[01/Mar/2017 16:39:51] INFO [django.server:131] "GET /register/10/ HTTP/1.1" 302 0
+[01/Mar/2017 16:39:52] INFO [django.server:131] "GET / HTTP/1.1" 200 6181
+[01/Mar/2017 16:39:56] DEBUG [django.template:929] Exception while resolving variable 'backend_form' in template 'myProfile.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [backend_form] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: u\'sFPptTtC1pmvsgeHK4hXKWZnIJQQ8KOMzy3OvBJZdztmoP7OYdn7OqI90SWx0YaM\'>, \'backends\': <LazyDict: <function <lambda> at 0x7fe62e6bd848>>, \'user\': <SimpleLazyObject: <User: relja>>, \'REDIRECT_QUERYSTRING\': \'\', \'REDIRECT_FIELD_VALUE\': None, \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7fe62e68d2d0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7fe62e6110d0>, u\'request\': <WSGIRequest: GET \'/myProfile/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'boughtGames\': [], \'context\': {\'backend_form\': <UploadGameForm bound=False, valid=Unknown, fields=(name;url;price;description;category;image)>}, \'success\': False, \'form\': <UploadGameForm bound=False, valid=Unknown, fields=(name;url;price;description;category;image)>, \'gamePurchases\': [], \'userProfile\': <UserProfile: UserProfile object>}, {\'block\': <Block Node: main. Contents: [<TextNode: u\'\\n\\n\\n<div class="col-md-12"\'>, <django.template.library.SimpleNode object at 0x7fe62e67e750>, <TextNode: u\'\\n\\t\\t\\t</div>\\n\\t\\t\\t<div class=\'>, <Variable Node: user.username>, <TextNode: u\'</p>\\n\\t\\t\\t</div>\\n\\t\\t</div>\\n\\t\'>, <IfNode>, <TextNode: u\'\\n</div>\\n\\n\'>]>}]'
+[01/Mar/2017 16:39:56] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[01/Mar/2017 16:39:56] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[01/Mar/2017 16:39:56] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[01/Mar/2017 16:39:56] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[01/Mar/2017 16:39:56] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[01/Mar/2017 16:39:56] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[01/Mar/2017 16:39:56] INFO [django.server:131] "GET /myProfile/ HTTP/1.1" 200 10037
+[01/Mar/2017 16:40:16] DEBUG [django.template:929] Exception while resolving variable 'backend_form' in template 'myProfile.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[01/Mar/2017 16:40:16] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[01/Mar/2017 16:40:16] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[01/Mar/2017 16:40:16] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[01/Mar/2017 16:40:16] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[01/Mar/2017 16:40:16] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[01/Mar/2017 16:40:16] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[01/Mar/2017 16:40:16] INFO [django.server:131] "POST /myProfile/ HTTP/1.1" 200 11430
+[01/Mar/2017 16:40:21] INFO [django.server:131] "GET /game/gmae/ HTTP/1.1" 200 10994
+[01/Mar/2017 16:41:12] INFO [django.server:131] "GET /game/gmae/ HTTP/1.1" 200 11000
+[01/Mar/2017 16:41:12] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:41:12] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[01/Mar/2017 16:41:12] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[01/Mar/2017 16:41:12] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[01/Mar/2017 16:41:12] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[01/Mar/2017 16:41:12] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:41:12] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:41:17] INFO [django.server:131] "GET /browseGames/ HTTP/1.1" 200 10546
+[01/Mar/2017 16:41:19] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11149
