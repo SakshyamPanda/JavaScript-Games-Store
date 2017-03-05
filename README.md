@@ -1,4 +1,6 @@
 
+UPDATE: For full project documentation please refer to the "WSD_Awsome_JS_Games_Store_Report.pdf" document on this directory.
+
 ### 1. Team
 
 605078 Relja Paunovic
