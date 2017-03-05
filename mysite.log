@@ -4379,3 +4379,735 @@ VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><l
 [01/Mar/2017 16:41:12] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
 [01/Mar/2017 16:41:17] INFO [django.server:131] "GET /browseGames/ HTTP/1.1" 200 10546
 [01/Mar/2017 16:41:19] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11149
+[01/Mar/2017 16:58:28] INFO [django.server:131] "GET /game/mannagia/ HTTP/1.1" 200 11327
+[01/Mar/2017 16:58:28] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[01/Mar/2017 16:58:28] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[01/Mar/2017 16:58:28] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[01/Mar/2017 16:58:28] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[01/Mar/2017 16:58:28] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[01/Mar/2017 16:58:28] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[01/Mar/2017 16:58:28] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[05/Mar/2017 16:32:02] INFO [django.server:131] "GET / HTTP/1.1" 200 7130
+[05/Mar/2017 16:32:02] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 200 30070
+[05/Mar/2017 16:32:02] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 200 746
+[05/Mar/2017 16:32:02] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 200 19644
+[05/Mar/2017 16:32:02] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 200 9806
+[05/Mar/2017 16:32:02] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 200 270
+[05/Mar/2017 16:32:02] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 200 27482
+[05/Mar/2017 16:32:02] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 200 240
+[05/Mar/2017 16:32:02] INFO [django.server:131] "GET /static/js/jquery.ui.widget.0b44270691b4.js HTTP/1.1" 200 4970
+[05/Mar/2017 16:32:02] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.7b39a42a7a2a.js HTTP/1.1" 200 2839
+[05/Mar/2017 16:32:02] INFO [django.server:131] "GET /static/js/jquery.fileupload.e5acbaa834c0.js HTTP/1.1" 200 13286
+[05/Mar/2017 16:32:02] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.448c34a56d69.woff2 HTTP/1.1" 200 18028
+[05/Mar/2017 16:32:03] WARNING [django.request:152] Not Found: /favicon.ico
+[05/Mar/2017 16:32:03] WARNING [django.server:131] "GET /favicon.ico HTTP/1.1" 404 85
+[05/Mar/2017 16:32:06] INFO [django.server:131] "GET / HTTP/1.1" 200 7130
+[05/Mar/2017 16:32:08] INFO [django.server:131] "GET /about/ HTTP/1.1" 200 6552
+[05/Mar/2017 16:32:10] INFO [django.server:131] "GET /browseGames/ HTTP/1.1" 200 10546
+[05/Mar/2017 16:32:10] INFO [django.server:131] "GET /static/css/browseGames.19db8219c6f1.css HTTP/1.1" 200 483
+[05/Mar/2017 16:32:13] INFO [django.server:131] "GET /about/ HTTP/1.1" 200 6552
+[05/Mar/2017 16:33:09] INFO [django.server:131] "GET /about/ HTTP/1.1" 200 6541
+[05/Mar/2017 16:33:10] DEBUG [django.template:929] Exception while resolving variable 'backend_form' in template 'myProfile.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 16:33:10] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[05/Mar/2017 16:33:10] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[05/Mar/2017 16:33:10] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[05/Mar/2017 16:33:10] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[05/Mar/2017 16:33:10] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[05/Mar/2017 16:33:10] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_name">Name:</label></th><td><input class=" form-control" id="id_name" maxlength="255" name="name" type="text" required /></td></tr>\n<tr><th><label for="id_url">Url:</label></th><td><input class=" form-control" id="id_url" maxlength="200" name="url" type="url" required /></td></tr>\n<tr><th><label for="id_price">Price:</label></th><td><input class=" form-control" id="id_price" name="price" step="any" type="number" required /></td></tr>\n<tr><th><label for="id_description">Description:</label></th><td><textarea class=" form-control" cols="40" id="id_description" maxlength="300" name="description" placeholder="Enter description here." rows="10" required>\r\n</textarea></td></tr>\n<tr><th><label for="id_category">Category:</label></th><td><select class=" form-control" id="id_category" name="category" required>\n<option value="Action" selected="selected">Action</option>\n<option value="Adventure">Adventure</option>\n<option value="Sports">Sports</option>\n<option value="Strategy">Strategy</option>\n<option value="Puzzle">Puzzle</option>\n</select></td></tr>\n<tr><th><label for="id_image">Image:</label></th><td><input id="id_image" name="image" type="file" required /></td></tr>'
+[05/Mar/2017 16:33:10] INFO [django.server:131] "GET /myProfile/ HTTP/1.1" 200 11087
+[05/Mar/2017 16:33:12] INFO [django.server:131] "GET /browseGames/ HTTP/1.1" 200 10546
+[05/Mar/2017 16:33:13] INFO [django.server:131] "GET / HTTP/1.1" 200 7130
+[05/Mar/2017 16:50:38] DEBUG [django.template:929] Exception while resolving variable 'gameURL' in template 'home.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 16:50:38] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'home.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 16:50:38] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'home.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 16:50:38] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'home.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 16:50:38] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'home.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 16:50:38] INFO [django.server:131] "GET / HTTP/1.1" 200 7984
+[05/Mar/2017 16:50:38] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[05/Mar/2017 16:50:38] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[05/Mar/2017 16:50:38] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[05/Mar/2017 16:50:38] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[05/Mar/2017 16:50:38] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[05/Mar/2017 16:50:38] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[05/Mar/2017 16:50:38] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[05/Mar/2017 16:50:38] INFO [django.server:131] "GET /static/js/jquery.ui.widget.0b44270691b4.js HTTP/1.1" 304 0
+[05/Mar/2017 16:50:38] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.7b39a42a7a2a.js HTTP/1.1" 304 0
+[05/Mar/2017 16:50:38] INFO [django.server:131] "GET /static/js/jquery.fileupload.e5acbaa834c0.js HTTP/1.1" 304 0
+[05/Mar/2017 16:50:38] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[05/Mar/2017 16:50:40] INFO [django.server:131] "GET /game/gmae/ HTTP/1.1" 200 11991
+[05/Mar/2017 17:26:43] WARNING [django.request:152] Not Found: /api/eu.json
+[05/Mar/2017 17:26:43] WARNING [django.server:131] "GET /api/eu.json?callback=myCallbackFunction HTTP/1.1" 404 85
+[05/Mar/2017 17:26:44] WARNING [django.request:152] Not Found: /favicon.ico
+[05/Mar/2017 17:26:44] WARNING [django.server:131] "GET /favicon.ico HTTP/1.1" 404 85
+[05/Mar/2017 17:26:44] WARNING [django.request:152] Not Found: /favicon.ico
+[05/Mar/2017 17:26:44] WARNING [django.server:131] "GET /favicon.ico HTTP/1.1" 404 85
+[05/Mar/2017 17:26:50] DEBUG [django.template:929] Exception while resolving variable 'gameURL' in template 'home.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 17:26:50] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'home.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 17:26:50] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'home.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 17:26:50] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'home.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 17:26:50] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'home.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 17:26:50] INFO [django.server:131] "GET / HTTP/1.1" 200 7829
+[05/Mar/2017 17:26:50] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 200 30070
+[05/Mar/2017 17:26:50] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 200 746
+[05/Mar/2017 17:26:50] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 200 9806
+[05/Mar/2017 17:26:50] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 200 27482
+[05/Mar/2017 17:26:50] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 200 270
+[05/Mar/2017 17:26:50] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 200 19644
+[05/Mar/2017 17:26:50] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 200 240
+[05/Mar/2017 17:26:50] INFO [django.server:131] "GET /static/js/jquery.ui.widget.0b44270691b4.js HTTP/1.1" 200 4970
+[05/Mar/2017 17:26:50] INFO [django.server:131] "GET /static/js/jquery.fileupload.e5acbaa834c0.js HTTP/1.1" 200 13286
+[05/Mar/2017 17:26:50] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.7b39a42a7a2a.js HTTP/1.1" 200 2839
+[05/Mar/2017 17:26:50] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.448c34a56d69.woff2 HTTP/1.1" 200 18028
+[05/Mar/2017 17:26:53] INFO [django.server:131] "GET /game/gmae/ HTTP/1.1" 302 0
+[05/Mar/2017 17:26:53] DEBUG [django.template:929] Exception while resolving variable 'gameURL' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [gameURL] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c718af140>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c718af0c8>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c70073de8>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c718ac7d0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c718e7310>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c718e76d0>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:26:53] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [game] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c718af140>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c718af0c8>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c70073de8>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c718ac7d0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c718e7310>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c718e76d0>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:26:53] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [game] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c718af140>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c718af0c8>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c70073de8>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c718ac7d0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c718e7310>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c718e76d0>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:26:53] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [game] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c718af140>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c718af0c8>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c70073de8>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c718ac7d0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c718e7310>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c718e76d0>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:26:53] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [game] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c718af140>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c718af0c8>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c70073de8>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c718ac7d0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c718e7310>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c718e76d0>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:26:53] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[05/Mar/2017 17:26:53] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[05/Mar/2017 17:26:53] INFO [django.server:131] "GET /login/?next=/game/gmae/ HTTP/1.1" 200 6206
+[05/Mar/2017 17:26:56] INFO [django.server:131] "GET /oauth/login/github/ HTTP/1.1" 302 0
+[05/Mar/2017 17:26:58] DEBUG [django.template:929] Exception while resolving variable 'gameURL' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [gameURL] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c7b5a9f50>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c7b5b6050>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c7b5a9cf8>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c73131f50>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c718e7310>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c718e7c90>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:26:58] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [game] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c7b5a9f50>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c7b5b6050>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c7b5a9cf8>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c73131f50>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c718e7310>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c718e7c90>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:26:58] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [game] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c7b5a9f50>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c7b5b6050>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c7b5a9cf8>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c73131f50>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c718e7310>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c718e7c90>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:26:58] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [game] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c7b5a9f50>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c7b5b6050>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c7b5a9cf8>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c73131f50>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c718e7310>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c718e7c90>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:26:58] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [game] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c7b5a9f50>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c7b5b6050>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c7b5a9cf8>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c73131f50>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c718e7310>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c718e7c90>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:26:58] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[05/Mar/2017 17:26:58] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[05/Mar/2017 17:26:58] INFO [django.server:131] "GET /login/?next=/game/gmae/ HTTP/1.1" 200 6206
+[05/Mar/2017 17:26:59] INFO [django.server:131] "GET /oauth/login/facebook/ HTTP/1.1" 302 0
+[05/Mar/2017 17:27:01] DEBUG [django.template:929] Exception while resolving variable 'gameURL' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [gameURL] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c7b5b8230>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c7b5b81b8>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c7b5a9e60>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c718c70d0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c7b599f50>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c7b599e90>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:27:01] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [game] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c7b5b8230>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c7b5b81b8>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c7b5a9e60>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c718c70d0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c7b599f50>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c7b599e90>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:27:01] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [game] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c7b5b8230>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c7b5b81b8>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c7b5a9e60>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c718c70d0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c7b599f50>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c7b599e90>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:27:01] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [game] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c7b5b8230>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c7b5b81b8>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c7b5a9e60>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c718c70d0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c7b599f50>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c7b599e90>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:27:01] DEBUG [django.template:929] Exception while resolving variable 'game' in template 'registration/login.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [game] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'csrf_token\': <SimpleLazyObject: <function _get_val at 0x7f6c7b5b8230>>, \'backends\': <LazyDict: <function <lambda> at 0x7f6c7b5b81b8>>, \'user\': <SimpleLazyObject: <function <lambda> at 0x7f6c7b5a9e60>>, \'REDIRECT_QUERYSTRING\': u\'next=/game/gmae/\', \'REDIRECT_FIELD_VALUE\': u\'/game/gmae/\', \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x7f6c718c70d0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'WARNING\': 30, \'SUCCESS\': 25, \'ERROR\': 40}, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f6c7b599f50>, u\'request\': <WSGIRequest: GET \'/login/?next=/game/gmae/\'>, \'REDIRECT_FIELD_NAME\': \'next\'}, {}, {\'site_name\': \'localhost:8000\', \'site\': <django.contrib.sites.requests.RequestSite object at 0x7f6c7b599e90>, \'form\': <AuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, \'next\': u\'/game/gmae/\'}, {\'block\': <Block Node: meta. Contents: [<TextNode: u\'\\n\\t\\t<meta property="og:sit\'>, <Variable Node: gameURL>, <TextNode: u\'" />\\n\\t\\t<meta property="og\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image.url>, <TextNode: u\'" />\\n\\t  <meta property="o\'>, <Variable Node: game.name>, <TextNode: u\', you sure are missing ou\'>, <Variable Node: game.image>, <TextNode: u\'">\\n\\t\\t\'>]>}]'
+[05/Mar/2017 17:27:01] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[05/Mar/2017 17:27:01] DEBUG [django.template:929] Exception while resolving variable 'required_css_class' in template 'bootstrapform/form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [required_css_class] in u'<tr><th><label for="id_username">Username:</label></th><td><input autofocus="" class=" form-control" id="id_username" maxlength="254" name="username" type="text" required /></td></tr>\n<tr><th><label for="id_password">Password:</label></th><td><input class=" form-control" id="id_password" name="password" type="password" required /></td></tr>'
+[05/Mar/2017 17:27:01] INFO [django.server:131] "GET /login/?next=/game/gmae/ HTTP/1.1" 200 6206
+[05/Mar/2017 17:27:08] INFO [django.server:131] "POST /login/?next=/game/gmae/ HTTP/1.1" 302 0
+[05/Mar/2017 17:27:08] INFO [django.server:131] "GET /game/gmae/ HTTP/1.1" 200 11052
+[05/Mar/2017 17:27:21] INFO [django.server:131] "GET /game/gmae/ HTTP/1.1" 200 11052
+[05/Mar/2017 17:27:21] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[05/Mar/2017 17:27:21] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[05/Mar/2017 17:27:21] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[05/Mar/2017 17:27:21] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[05/Mar/2017 17:27:21] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[05/Mar/2017 17:27:21] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[05/Mar/2017 17:27:21] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[05/Mar/2017 17:28:55] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 150: 'cloudinary_url', expected 'endblock'. Did you forget to register or load this tag?
+[05/Mar/2017 17:28:55] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 27
+[05/Mar/2017 17:28:56] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 150: 'cloudinary_url', expected 'endblock'. Did you forget to register or load this tag?
+[05/Mar/2017 17:28:56] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 27
+[05/Mar/2017 17:28:57] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 150: 'cloudinary_url', expected 'endblock'. Did you forget to register or load this tag?
+[05/Mar/2017 17:28:57] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 27
+[05/Mar/2017 17:28:57] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 150: 'cloudinary_url', expected 'endblock'. Did you forget to register or load this tag?
+[05/Mar/2017 17:28:57] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 27
+[05/Mar/2017 17:28:57] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 150: 'cloudinary_url', expected 'endblock'. Did you forget to register or load this tag?
+[05/Mar/2017 17:28:57] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 27
+[05/Mar/2017 17:28:57] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 150: 'cloudinary_url', expected 'endblock'. Did you forget to register or load this tag?
+[05/Mar/2017 17:28:57] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 27
+[05/Mar/2017 17:28:58] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 150: 'cloudinary_url', expected 'endblock'. Did you forget to register or load this tag?
+[05/Mar/2017 17:28:58] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 27
+[05/Mar/2017 17:28:58] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 150: 'cloudinary_url', expected 'endblock'. Did you forget to register or load this tag?
+[05/Mar/2017 17:28:58] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 27
+[05/Mar/2017 17:28:58] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 150: 'cloudinary_url', expected 'endblock'. Did you forget to register or load this tag?
+[05/Mar/2017 17:28:58] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 27
+[05/Mar/2017 17:28:58] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 150: 'cloudinary_url', expected 'endblock'. Did you forget to register or load this tag?
+[05/Mar/2017 17:28:58] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 27
+[05/Mar/2017 17:28:58] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/relja/Desktop/WebSoftwareDevelopment/wsdprojecteit/awsomeProject/awsomeProject/views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 150: 'cloudinary_url', expected 'endblock'. Did you forget to register or load this tag?
+[05/Mar/2017 17:28:58] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 27
+[05/Mar/2017 17:29:43] INFO [django.server:131] "GET /game/gmae/ HTTP/1.1" 200 11579
+[05/Mar/2017 17:29:43] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[05/Mar/2017 17:29:43] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[05/Mar/2017 17:29:43] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[05/Mar/2017 17:29:43] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[05/Mar/2017 17:29:43] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[05/Mar/2017 17:29:43] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[05/Mar/2017 17:29:43] INFO [django.server:131] "GET /static/js/jquery.ui.widget.0b44270691b4.js HTTP/1.1" 304 0
+[05/Mar/2017 17:29:43] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[05/Mar/2017 17:29:43] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.7b39a42a7a2a.js HTTP/1.1" 304 0
+[05/Mar/2017 17:29:43] INFO [django.server:131] "GET /static/js/jquery.fileupload.e5acbaa834c0.js HTTP/1.1" 304 0
+[05/Mar/2017 17:29:43] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[05/Mar/2017 17:31:09] INFO [django.server:131] "GET /game/gmae/ HTTP/1.1" 200 11480
+[05/Mar/2017 17:31:09] INFO [django.server:131] "GET /static/js/jquery.ui.widget.0b44270691b4.js HTTP/1.1" 304 0
+[05/Mar/2017 17:31:09] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[05/Mar/2017 17:31:09] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[05/Mar/2017 17:31:09] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[05/Mar/2017 17:31:09] INFO [django.server:131] "GET /static/js/jquery.fileupload.e5acbaa834c0.js HTTP/1.1" 304 0
+[05/Mar/2017 17:31:09] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.7b39a42a7a2a.js HTTP/1.1" 304 0
+[05/Mar/2017 17:31:09] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[05/Mar/2017 17:31:09] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[05/Mar/2017 17:31:09] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[05/Mar/2017 17:31:09] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[05/Mar/2017 17:31:09] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[05/Mar/2017 18:24:17] DEBUG [django.template:929] Exception while resolving variable 'super' in template 'game.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 18:24:17] WARNING [django.template:219] Exception raised while rendering {% include %} for template 'game.html'. Empty string rendered instead.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in render
+    template = context.template.engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 146, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+TemplateDoesNotExist: tags.html
+[05/Mar/2017 18:24:17] INFO [django.server:131] "GET /game/gmae/ HTTP/1.1" 200 9798
+[05/Mar/2017 18:24:17] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[05/Mar/2017 18:24:17] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[05/Mar/2017 18:24:17] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[05/Mar/2017 18:24:17] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[05/Mar/2017 18:24:17] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[05/Mar/2017 18:24:17] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[05/Mar/2017 18:24:17] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[05/Mar/2017 18:24:39] DEBUG [django.template:929] Exception while resolving variable 'super' in template 'game.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: <unprintable VariableDoesNotExist object>
+[05/Mar/2017 18:24:39] WARNING [django.template:219] Exception raised while rendering {% include %} for template 'game.html'. Empty string rendered instead.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in render
+    template = context.template.engine.get_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 146, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+TemplateDoesNotExist: tags.html
+[05/Mar/2017 18:24:39] INFO [django.server:131] "GET /game/gmae/ HTTP/1.1" 200 9798
+[05/Mar/2017 18:24:39] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.e071abda8fe6.js HTTP/1.1" 304 0
+[05/Mar/2017 18:24:39] INFO [django.server:131] "GET /static/js/profile.e28cd12750b6.js HTTP/1.1" 304 0
+[05/Mar/2017 18:24:39] INFO [django.server:131] "GET /static/css/style.96944255df70.css HTTP/1.1" 304 0
+[05/Mar/2017 18:24:39] INFO [django.server:131] "GET /static/css/bootstrap.min.e3e8b38fed66.css HTTP/1.1" 304 0
+[05/Mar/2017 18:24:39] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
+[05/Mar/2017 18:24:39] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
+[05/Mar/2017 18:24:39] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0

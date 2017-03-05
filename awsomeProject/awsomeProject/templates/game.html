@@ -1,25 +1,15 @@
 {% extends "base.html" %}
+{% load static %}
+{% load cloudinary %}
+{% load bootstrap %}
 
-{%load bootstrap %}
-
-{% block scriptsAndStylesheets %}
-
+{% block metaTags %}
   <!-- Open Graph Tags for customized facebook sharing-->
-	<meta property="og:site_name"          content="Awsome JS Games Store" />
-	<meta property="og:url"                content="{{ gameURL }}" />
-	<meta property="og:title"              content="If you're not playing {{ game.name }}, you sure are missing out!" />
-	<meta property="og:description"        content="People are going nuts over this Awsome JS Games Store.. it's the real deal!" />
-	<meta property="og:image"              content="{{game.image.url}}" />
-  <meta property="og:type"               content="product" />
-  <meta property="fb:app_id"             content="328098844258094" />
+	{{ super }}
+	{% include "tags.html" %}
+{% endblock metaTags %}
 
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="If you're not playing {{ game.name }}, you sure are missing out!">
-	<meta name="twitter:description" content="People are going nuts over this Awsome JS Games Store.. it's the real deal!">
-	<meta name="twitter:image" content="{{game.image}}">
-{% endblock %}
-
-{%load bootstrap %}
+{% load bootstrap %}
 
 {% block main %}
 
@@ -146,7 +136,6 @@
 			{% endif %}
 
 			<div class="fb-share-button"
-						data-href="{{ gameURL }}"
 						data-layout="button"
 						data-size="large"
 						data-mobile-iframe="true">
