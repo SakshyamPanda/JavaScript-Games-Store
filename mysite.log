@@ -5111,3 +5111,546 @@ TemplateDoesNotExist: tags.html
 [05/Mar/2017 18:24:39] INFO [django.server:131] "GET /static/js/csrf.fd32d7cde860.js HTTP/1.1" 304 0
 [05/Mar/2017 18:24:39] INFO [django.server:131] "GET /static/js/jquery.cloudinary.c84fbc1bfef9.js HTTP/1.1" 304 0
 [05/Mar/2017 18:24:39] INFO [django.server:131] "GET /static/js/bootstrap.min.5869c96cc8f1.js HTTP/1.1" 304 0
+[07/Mar/2017 16:04:52] ERROR [django.request:124] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sharbel.dahlan\git\wsd2016\Project\wsdprojecteit\awsomeProject\awsomeProject\views.py", line 167, in home
+    return render(request, 'home.html', {'games': games })
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 104, in render
+    url = self.url(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 101, in url
+    return self.handle_simple(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\templatetags\static.py", line 114, in handle_simple
+    return staticfiles_storage.url(path)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 132, in url
+    hashed_name = self.stored_name(clean_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 292, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\staticfiles\storage.py", line 95, in hashed_name
+    (clean_name, self))
+ValueError: The file 'js/jquery-3.1.1.min.js' could not be found with <whitenoise.storage.CompressedManifestStaticFilesStorage object at 0x049F0A50>.
+[07/Mar/2017 16:04:52] ERROR [django.server:131] "GET / HTTP/1.1" 500 27
+[07/Mar/2017 16:04:52] WARNING [django.request:152] Not Found: /favicon.ico
+[07/Mar/2017 16:04:52] WARNING [django.server:131] "GET /favicon.ico HTTP/1.1" 404 85
+[07/Mar/2017 16:06:11] DEBUG [django.db.backends:90] (0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[07/Mar/2017 16:06:11] DEBUG [django.db.backends:90] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[07/Mar/2017 16:06:14] DEBUG [django.db.backends:90] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-03-07 14:06:14.824421' AND "django_session"."session_key" = 'csk9nnxt4ye6dhuykviwixokv0kiywas'); args=('2017-03-07 14:06:14.824421', 'csk9nnxt4ye6dhuykviwixokv0kiywas')
+[07/Mar/2017 16:06:14] DEBUG [django.db.backends:90] (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[07/Mar/2017 16:06:14] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."created" BETWEEN '2017-02-04' AND '2017-03-07'; args=('2017-02-04', '2017-03-07')
+[07/Mar/2017 16:06:14] INFO [django.server:131] "GET / HTTP/1.1" 200 6960
+[07/Mar/2017 16:06:14] INFO [django.server:131] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 37051
+[07/Mar/2017 16:06:14] INFO [django.server:131] "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 200 86713
+[07/Mar/2017 16:06:14] INFO [django.server:131] "GET /static/js/jquery.cloudinary.js HTTP/1.1" 200 135807
+[07/Mar/2017 16:06:15] INFO [django.server:131] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 121207
+[07/Mar/2017 16:06:15] INFO [django.server:131] "GET /static/js/csrf.js HTTP/1.1" 200 564
+[07/Mar/2017 16:06:15] INFO [django.server:131] "GET /static/css/style.css HTTP/1.1" 200 2445
+[07/Mar/2017 16:06:15] INFO [django.server:131] "GET /static/js/profile.js HTTP/1.1" 200 483
+[07/Mar/2017 16:06:15] INFO [django.server:131] "GET /static/js/jquery.ui.widget.js HTTP/1.1" 200 16089
+[07/Mar/2017 16:06:15] INFO [django.server:131] "GET /static/js/jquery.iframe-transport.js HTTP/1.1" 200 10724
+[07/Mar/2017 16:06:15] INFO [django.server:131] "GET /static/js/jquery.fileupload.js HTTP/1.1" 200 63667
+[07/Mar/2017 16:06:15] INFO [django.server:131] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-03-07 14:06:17.504287' AND "django_session"."session_key" = 'csk9nnxt4ye6dhuykviwixokv0kiywas'); args=('2017-03-07 14:06:17.504287', 'csk9nnxt4ye6dhuykviwixokv0kiywas')
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."name" = 'gmae'; args=('gmae',)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT (1) AS "a" FROM "awsomeProject_transaction" WHERE ("awsomeProject_transaction"."game_id" = 2 AND "awsomeProject_transaction"."user_id" = 1 AND "awsomeProject_transaction"."status" = 'completed') LIMIT 1; args=(2, 1, 'completed')
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT (1) AS "a" FROM "awsomeProject_developergame" WHERE ("awsomeProject_developergame"."game_id" = 2 AND "awsomeProject_developergame"."user_id" = 1) LIMIT 1; args=(2, 1)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_comment"."id", "awsomeProject_comment"."user_id", "awsomeProject_comment"."game_id", "awsomeProject_comment"."commentText", "awsomeProject_comment"."created" FROM "awsomeProject_comment" WHERE "awsomeProject_comment"."game_id" = 2 ORDER BY "awsomeProject_comment"."created" DESC; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.template:929] Exception while resolving variable 'super' in template 'game.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\context.py", line 75, in __getitem__
+    raise KeyError(key)
+KeyError: 'super'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'super'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'super'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [super] in "[{'True': True, 'False': False, 'None': None}, {'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x049550F0>, 'backends': <LazyDict: <function backends.<locals>.<lambda> at 0x0497AB70>>, 'REDIRECT_FIELD_VALUE': None, 'user': <SimpleLazyObject: <User: ladro>>, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0497AA08>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'WARNING': 30, 'ERROR': 40, 'INFO': 20, 'SUCCESS': 25}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0497BFF0>, 'REDIRECT_FIELD_NAME': 'next', 'REDIRECT_QUERYSTRING': '', 'request': <WSGIRequest: GET '/game/gmae/'>}, {}, {'game': <Game: Game object>, 'gameURL': 'http://localhost:8000/game/gmae/', 'gameBought': False, 'scores': <QuerySet []>, 'userComments': []}, {'block': <Block Node: metaTags. Contents: [<TextNode: '\\n  <!-- Open Graph Tags f'>, <Variable Node: super>, <TextNode: '\\n\\t'>, <django.template.loader_tags.IncludeNode object at 0x053AF090>, <TextNode: '\\n'>]>}]"
+[07/Mar/2017 16:06:17] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 201, in render
+    template = context.template.engine.get_template(template_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\engine.py", line 146, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: tags.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\sharbel.dahlan\git\wsd2016\Project\wsdprojecteit\awsomeProject\awsomeProject\views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 68, in render
+    reraise(exc, self.backend)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 89, in reraise
+    six.reraise(exc.__class__, new, sys.exc_info()[2])
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 201, in render
+    template = context.template.engine.get_template(template_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\engine.py", line 146, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: tags.html
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:17] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 242697
+[07/Mar/2017 16:06:20] DEBUG [django.db.backends:90] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-03-07 14:06:20.946882' AND "django_session"."session_key" = 'csk9nnxt4ye6dhuykviwixokv0kiywas'); args=('2017-03-07 14:06:20.946882', 'csk9nnxt4ye6dhuykviwixokv0kiywas')
+[07/Mar/2017 16:06:20] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[07/Mar/2017 16:06:20] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."name" = 'gmae'; args=('gmae',)
+[07/Mar/2017 16:06:20] DEBUG [django.db.backends:90] (0.000) SELECT (1) AS "a" FROM "awsomeProject_transaction" WHERE ("awsomeProject_transaction"."game_id" = 2 AND "awsomeProject_transaction"."user_id" = 1 AND "awsomeProject_transaction"."status" = 'completed') LIMIT 1; args=(2, 1, 'completed')
+[07/Mar/2017 16:06:20] DEBUG [django.db.backends:90] (0.001) SELECT (1) AS "a" FROM "awsomeProject_developergame" WHERE ("awsomeProject_developergame"."game_id" = 2 AND "awsomeProject_developergame"."user_id" = 1) LIMIT 1; args=(2, 1)
+[07/Mar/2017 16:06:20] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_comment"."id", "awsomeProject_comment"."user_id", "awsomeProject_comment"."game_id", "awsomeProject_comment"."commentText", "awsomeProject_comment"."created" FROM "awsomeProject_comment" WHERE "awsomeProject_comment"."game_id" = 2 ORDER BY "awsomeProject_comment"."created" DESC; args=(2,)
+[07/Mar/2017 16:06:20] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:20] DEBUG [django.template:929] Exception while resolving variable 'super' in template 'game.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\context.py", line 75, in __getitem__
+    raise KeyError(key)
+KeyError: 'super'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'super'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'super'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [super] in "[{'True': True, 'False': False, 'None': None}, {'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x04D49BD0>, 'backends': <LazyDict: <function backends.<locals>.<lambda> at 0x04D1FCD8>>, 'REDIRECT_FIELD_VALUE': None, 'user': <SimpleLazyObject: <User: ladro>>, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x04D1FBB8>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'WARNING': 30, 'ERROR': 40, 'INFO': 20, 'SUCCESS': 25}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x04D45250>, 'REDIRECT_FIELD_NAME': 'next', 'REDIRECT_QUERYSTRING': '', 'request': <WSGIRequest: GET '/game/gmae/'>}, {}, {'game': <Game: Game object>, 'gameURL': 'http://localhost:8000/game/gmae/', 'gameBought': False, 'scores': <QuerySet []>, 'userComments': []}, {'block': <Block Node: metaTags. Contents: [<TextNode: '\\n  <!-- Open Graph Tags f'>, <Variable Node: super>, <TextNode: '\\n\\t'>, <django.template.loader_tags.IncludeNode object at 0x04D49F10>, <TextNode: '\\n'>]>}]"
+[07/Mar/2017 16:06:20] ERROR [django.request:124] Internal Server Error: /game/gmae/
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 201, in render
+    template = context.template.engine.get_template(template_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\engine.py", line 146, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: tags.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\sharbel.dahlan\git\wsd2016\Project\wsdprojecteit\awsomeProject\awsomeProject\views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 68, in render
+    reraise(exc, self.backend)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 89, in reraise
+    six.reraise(exc.__class__, new, sys.exc_info()[2])
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 201, in render
+    template = context.template.engine.get_template(template_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\engine.py", line 146, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: tags.html
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 2 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(2,)
+[07/Mar/2017 16:06:21] ERROR [django.server:131] "GET /game/gmae/ HTTP/1.1" 500 242697
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2017-03-07 14:06:23.616323' AND "django_session"."session_key" = 'csk9nnxt4ye6dhuykviwixokv0kiywas'); args=('2017-03-07 14:06:23.616323', 'csk9nnxt4ye6dhuykviwixokv0kiywas')
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_game"."id", "awsomeProject_game"."name", "awsomeProject_game"."url", "awsomeProject_game"."price", "awsomeProject_game"."description", "awsomeProject_game"."created", "awsomeProject_game"."category", "awsomeProject_game"."image" FROM "awsomeProject_game" WHERE "awsomeProject_game"."name" = 'mannagia'; args=('mannagia',)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT (1) AS "a" FROM "awsomeProject_transaction" WHERE ("awsomeProject_transaction"."game_id" = 1 AND "awsomeProject_transaction"."user_id" = 1 AND "awsomeProject_transaction"."status" = 'completed') LIMIT 1; args=(1, 1, 'completed')
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_comment"."id", "awsomeProject_comment"."user_id", "awsomeProject_comment"."game_id", "awsomeProject_comment"."commentText", "awsomeProject_comment"."created" FROM "awsomeProject_comment" WHERE "awsomeProject_comment"."game_id" = 1 ORDER BY "awsomeProject_comment"."created" DESC; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.template:929] Exception while resolving variable 'super' in template 'game.html'.
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\context.py", line 75, in __getitem__
+    raise KeyError(key)
+KeyError: 'super'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'super'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'super'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [super] in "[{'True': True, 'False': False, 'None': None}, {'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x04D58D50>, 'backends': <LazyDict: <function backends.<locals>.<lambda> at 0x04D2F588>>, 'REDIRECT_FIELD_VALUE': None, 'user': <SimpleLazyObject: <User: ladro>>, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x04D2F468>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'WARNING': 30, 'ERROR': 40, 'INFO': 20, 'SUCCESS': 25}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x053A5D30>, 'REDIRECT_FIELD_NAME': 'next', 'REDIRECT_QUERYSTRING': '', 'request': <WSGIRequest: GET '/game/mannagia/'>}, {}, {'game': <Game: Game object>, 'gameURL': 'http://localhost:8000/game/mannagia/', 'gameBought': True, 'scores': <QuerySet []>, 'userComments': []}, {'block': <Block Node: metaTags. Contents: [<TextNode: '\\n  <!-- Open Graph Tags f'>, <Variable Node: super>, <TextNode: '\\n\\t'>, <django.template.loader_tags.IncludeNode object at 0x04D58FB0>, <TextNode: '\\n'>]>}]"
+[07/Mar/2017 16:06:23] ERROR [django.request:124] Internal Server Error: /game/mannagia/
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 201, in render
+    template = context.template.engine.get_template(template_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\engine.py", line 146, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: tags.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\sharbel.dahlan\git\wsd2016\Project\wsdprojecteit\awsomeProject\awsomeProject\views.py", line 415, in game
+    return render(request, "game.html", {"game" : game, "scores" : scores, "gameBought" : gameBought, "userComments": userComments, "gameURL" : gameURL})
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 68, in render
+    reraise(exc, self.backend)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 89, in reraise
+    six.reraise(exc.__class__, new, sys.exc_info()[2])
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 208, in render
+    return self._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\loader_tags.py", line 201, in render
+    template = context.template.engine.get_template(template_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\sharbel.dahlan\AppData\Local\Programs\Python\Python35-32\lib\site-packages\django\template\engine.py", line 146, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: tags.html
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.001) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] DEBUG [django.db.backends:90] (0.000) SELECT "awsomeProject_scores"."id", "awsomeProject_scores"."user_id", "awsomeProject_scores"."game_id", "awsomeProject_scores"."score" FROM "awsomeProject_scores" WHERE "awsomeProject_scores"."game_id" = 1 ORDER BY "awsomeProject_scores"."score" DESC LIMIT 21; args=(1,)
+[07/Mar/2017 16:06:23] ERROR [django.server:131] "GET /game/mannagia/ HTTP/1.1" 500 242883
